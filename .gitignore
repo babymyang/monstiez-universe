@@ -47,3 +47,5 @@ Thumbs.db
 *.tsbuildinfo
 .eslintcache
 .turbo/
+prisma/
+scripts/tmp/
