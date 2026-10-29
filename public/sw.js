@@ -1,10 +1,11 @@
-/* MONSTIEZ Universe service worker — minimal, safe caching.
+/* MONSTIEZ Universe service worker — minimal, safe caching. v2
  * Strategy:
- *  - navigation requests: network-first, fall back to cached shell/offline page
- *  - static assets (fonts, icons, illustrations): cache-first
- *  - never cache non-GET, never cache cross-origin media (YouTube/Spotify)
+ *  - navigation requests: network-first → cache → /offline fallback
+ *  - hashed static assets (/_next/static/*, fonts, icons): cache-first (immutable)
+ *  - other same-origin GET: network-first → cache
+ *  - never cache non-GET, never intercept cross-origin media (YouTube/Spotify)
  */
-const VERSION = "monstiez-v1";
+const VERSION = "monstiez-v2";
 const SHELL = [
   "/",
   "/home",
@@ -21,10 +22,23 @@ const SHELL = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(VERSION)
-      .then((cache) => cache.addAll(SHELL))
-      .then(() => self.skipWaiting()),
+    (async () => {
+      const cache = await caches.open(VERSION);
+      await cache.addAll(SHELL);
+      // precache all hashed build assets so the FIRST visit enables offline
+      try {
+        const res = await fetch("/sw-precache.json");
+        if (res.ok) {
+          const assets = await res.json();
+          if (Array.isArray(assets) && assets.length > 0) {
+            await cache.addAll(assets);
+          }
+        }
+      } catch {
+        /* precache list unavailable — runtime caching still applies */
+      }
+      await self.skipWaiting();
+    })(),
   );
 });
 
@@ -43,26 +57,15 @@ self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
-  // only handle same-origin — never intercept YouTube/Spotify media
   if (url.origin !== self.location.origin) return;
 
-  if (req.mode === "navigate") {
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((c) => c.put(req, copy));
-          return res;
-        })
-        .catch(async () => {
-          const cached = await caches.match(req);
-          return cached || caches.match("/offline") || new Response("Offline", { status: 503 });
-        }),
-    );
-    return;
-  }
-
-  if (url.pathname.startsWith("/fonts/") || url.pathname.startsWith("/icons/") || url.pathname.startsWith("/illustrations/")) {
+  // Immutable hashed assets — cache-first, populate as they are fetched
+  if (
+    url.pathname.startsWith("/_next/static/") ||
+    url.pathname.startsWith("/fonts/") ||
+    url.pathname.startsWith("/icons/") ||
+    url.pathname.startsWith("/illustrations/")
+  ) {
     event.respondWith(
       caches.match(req).then(
         (cached) =>
@@ -74,5 +77,40 @@ self.addEventListener("fetch", (event) => {
           }),
       ),
     );
+    return;
   }
+
+  if (req.mode === "navigate") {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(VERSION).then((c) => c.put(req, copy));
+          return res;
+        })
+        .catch(async () => {
+          const cached = await caches.match(req);
+          return (
+            cached ||
+            caches.match("/offline") ||
+            new Response("<h1>Offline</h1>", {
+              status: 503,
+              headers: { "Content-Type": "text/html" },
+            })
+          );
+        }),
+    );
+    return;
+  }
+
+  // other same-origin GETs — network-first with cache fallback
+  event.respondWith(
+    fetch(req)
+      .then((res) => {
+        const copy = res.clone();
+        caches.open(VERSION).then((c) => c.put(req, copy));
+        return res;
+      })
+      .catch(() => caches.match(req).then((c) => c || Response.error())),
+  );
 });

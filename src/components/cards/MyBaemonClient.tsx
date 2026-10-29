@@ -13,6 +13,7 @@ import {
 } from "@/hooks/use-preferences";
 import {
   resetPreferences,
+  PREFS_EVENT,
   type Preferences,
 } from "@/lib/local-storage";
 
@@ -154,7 +155,7 @@ export default function MyBaemonClient({ contentTitles }: { contentTitles: Recor
             onClick={() => {
               resetPreferences();
               setResetDone(true);
-              window.dispatchEvent(new Event("monstiez:prefs-changed"));
+              window.dispatchEvent(new Event(PREFS_EVENT));
             }}
             className="inline-flex items-center gap-1.5 text-[12px] font-bold underline decoration-dotted"
             style={{ color: "#6E5A70" }}

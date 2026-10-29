@@ -40,7 +40,6 @@ export function writeJson(key: string, data: unknown): void {
     /* quota/private mode — preferences degrade gracefully */
   }
 }
-
 /* ---------- typed preference helpers ---------- */
 
 export interface Preferences {
@@ -59,12 +58,25 @@ const DEFAULT_PREFS: Preferences = {
   onboarded: false,
 };
 
+/**
+ * Stable snapshot cache — useSyncExternalStore requires getSnapshot to return
+ * the SAME reference until the underlying data changes (otherwise React loops).
+ */
+let snapshotCache: Preferences | null = null;
+
+export function invalidatePreferencesCache(): void {
+  snapshotCache = null;
+}
+
 export function readPreferences(): Preferences {
-  return { ...DEFAULT_PREFS, ...readJson<Partial<Preferences>>("prefs", {}) };
+  if (snapshotCache) return snapshotCache;
+  snapshotCache = { ...DEFAULT_PREFS, ...readJson<Partial<Preferences>>("prefs", {}) };
+  return snapshotCache;
 }
 
 export function writePreferences(prefs: Preferences): void {
   writeJson("prefs", prefs);
+  snapshotCache = prefs; // keep the cached snapshot coherent
 }
 
 export function updatePreferences(
@@ -72,8 +84,13 @@ export function updatePreferences(
 ): Preferences {
   const next = mutate(readPreferences());
   writePreferences(next);
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new Event(PREFS_EVENT));
+  }
   return next;
 }
+
+export const PREFS_EVENT = "monstiez:prefs-changed";
 
 export function resetPreferences(): void {
   if (!available()) return;
@@ -81,6 +98,7 @@ export function resetPreferences(): void {
     Object.keys(window.localStorage)
       .filter((k) => k.startsWith(PREFIX))
       .forEach((k) => window.localStorage.removeItem(k));
+    invalidatePreferencesCache();
   } catch {
     /* noop */
   }

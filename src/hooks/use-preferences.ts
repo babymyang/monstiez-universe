@@ -4,10 +4,10 @@ import { useSyncExternalStore } from "react";
 import {
   readPreferences,
   writePreferences,
+  invalidatePreferencesCache,
+  PREFS_EVENT,
   type Preferences,
 } from "@/lib/local-storage";
-
-const EVENT = "monstiez:prefs-changed";
 
 export const PREFS_DEFAULTS: Preferences = {
   bias: null,
@@ -18,11 +18,17 @@ export const PREFS_DEFAULTS: Preferences = {
 };
 
 function subscribe(cb: () => void) {
-  window.addEventListener(EVENT, cb);
-  window.addEventListener("storage", cb);
+  // invalidate the cached snapshot before notifying — external changes
+  // (other tabs, resets) must be visible to the next getSnapshot()
+  const onChange = () => {
+    invalidatePreferencesCache();
+    cb();
+  };
+  window.addEventListener(PREFS_EVENT, onChange);
+  window.addEventListener("storage", onChange);
   return () => {
-    window.removeEventListener(EVENT, cb);
-    window.removeEventListener("storage", cb);
+    window.removeEventListener(PREFS_EVENT, onChange);
+    window.removeEventListener("storage", onChange);
   };
 }
 
@@ -45,7 +51,7 @@ export function useLocalPreferences(): readonly [
   const prefs = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const update = (mutate: (p: Preferences) => Preferences) => {
     writePreferences(mutate(readPreferences()));
-    window.dispatchEvent(new Event(EVENT));
+    window.dispatchEvent(new Event(PREFS_EVENT));
   };
   return [prefs, update] as const;
 }
