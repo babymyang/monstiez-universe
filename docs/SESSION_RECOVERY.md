@@ -42,8 +42,10 @@ ask the operator for the current token; never paste tokens into files, logs, or 
 4. A task is done only when: implementation + tests + worklog entry + commit + verified push + issue updated.
 5. The dev server runs automatically on port 3000; check `/home/z/my-project/dev.log` for runtime errors.
 
-## Current snapshot (updated: 2026-10-29, session 1)
+## Current snapshot (updated: 2026-10-29, session 1 — post-implementation)
 
-- Branch `main` @ `87ecbff` (verified pushed).
-- Issues #1–#8 opened as foundation tracker.
-- Next: UI research audit → design tokens → four screens → data layer → PWA → QA.
+- Branch `main` — all work committed & pushed (see WORKLOG for hash chain, latest = final docs commit).
+- Issues #2–#7 implemented & closed with evidence; #1, #8 closing with final commit.
+- App fully implemented: 4 reference screens + 3 supporting routes, data w/ provenance, PWA verified offline.
+- Environment limitation on record: youtube RSS blocked in sandbox → curated fallback active.
+- Next best action: optional CI workflow for RSS refresh; per-member content curation; real-device install test.
