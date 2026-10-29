@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import HomeHeader from "@/components/cards/HomeHeader";
 import CountdownCard, { CountdownData } from "@/components/cards/CountdownCard";
 import QuickActions from "@/components/cards/QuickActions";
@@ -11,8 +10,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import ChipRow from "@/components/ui/ChipRow";
 import EmptyState from "@/components/ui/EmptyState";
 import BottomNav from "@/components/bottom-nav/BottomNav";
-import { readPreferences } from "@/lib/local-storage";
-import { useEffect } from "react";
+import { useLocalPreferences } from "@/hooks/use-preferences";
 
 export interface HomeData {
   countdown: CountdownData | null;
@@ -34,15 +32,8 @@ const CHIPS = [
 
 export default function HomeClient({ data }: { data: HomeData }) {
   const [chip, setChip] = useState("all");
-  const [bias, setBias] = useState<string | null>(null);
-
-  useEffect(() => {
-    try {
-      setBias(readPreferences().bias);
-    } catch {
-      /* noop */
-    }
-  }, []);
+  const [prefs] = useLocalPreferences();
+  const bias = prefs.bias;
 
   const forYouItems = useMemo(() => {
     if (!bias) return [];

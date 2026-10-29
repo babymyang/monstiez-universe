@@ -13,7 +13,7 @@ export default function ChipRow({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className="flex gap-2 overflow-x-auto no-scrollbar py-1"
+      className="flex gap-1.5 overflow-x-auto no-scrollbar py-1"
     >
       {options.map((opt) => {
         const active = opt.value === value;

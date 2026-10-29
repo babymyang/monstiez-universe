@@ -1,42 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Heart, Bookmark, CheckCircle2, RotateCcw, WifiOff, Bell } from "lucide-react";
 import ScreenHeader from "@/components/app-shell/ScreenHeader";
 import BottomNav from "@/components/bottom-nav/BottomNav";
 import MemberAvatar from "@/components/mascot/MemberAvatar";
-import { memberVisuals, memberOrder, type MemberSlug } from "@/lib/design-tokens";
+import { memberVisuals, memberOrder } from "@/lib/design-tokens";
 import {
-  readPreferences,
-  updatePreferences,
+  useLocalPreferences,
+  useOnline,
+} from "@/hooks/use-preferences";
+import {
   resetPreferences,
   type Preferences,
 } from "@/lib/local-storage";
 
 export default function MyBaemonClient({ contentTitles }: { contentTitles: Record<string, string> }) {
-  const [prefs, setPrefs] = useState<Preferences | null>(null);
-  const [online, setOnline] = useState(true);
-
-  useEffect(() => {
-    try {
-      setPrefs(readPreferences());
-    } catch {
-      setPrefs({ bias: null, bookmarks: [], watched: [], reminders: [], onboarded: false });
-    }
-    const update = () => setOnline(navigator.onLine);
-    update();
-    window.addEventListener("online", update);
-    window.addEventListener("offline", update);
-    return () => {
-      window.removeEventListener("online", update);
-      window.removeEventListener("offline", update);
-    };
-  }, []);
+  const [prefs, updatePrefs] = useLocalPreferences();
+  const online = useOnline();
+  const [resetDone, setResetDone] = useState(false);
 
   const mutate = (fn: (p: Preferences) => Preferences) => {
-    const next = updatePreferences(fn);
-    setPrefs({ ...next });
+    updatePrefs(fn);
   };
 
   return (
@@ -167,13 +153,15 @@ export default function MyBaemonClient({ contentTitles }: { contentTitles: Recor
             type="button"
             onClick={() => {
               resetPreferences();
-              setPrefs({ bias: null, bookmarks: [], watched: [], reminders: [], onboarded: false });
+              setResetDone(true);
+              window.dispatchEvent(new Event("monstiez:prefs-changed"));
             }}
             className="inline-flex items-center gap-1.5 text-[12px] font-bold underline decoration-dotted"
             style={{ color: "#6E5A70" }}
           >
             <RotateCcw size={13} aria-hidden="true" /> Reset all local preferences
           </button>
+          {resetDone && <p className="meta-text mt-1">Preferences cleared.</p>}
           <p className="meta-text mt-2">
             Everything on this screen lives in your browser&apos;s localStorage only — no account, no server, no tracking.
           </p>

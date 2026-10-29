@@ -3,19 +3,12 @@
 import Link from "next/link";
 import { Bell, Search, Heart } from "lucide-react";
 import Wordmark from "@/components/app-shell/Wordmark";
-import { useEffect, useState } from "react";
-import { readPreferences } from "@/lib/local-storage";
+import { useLocalPreferences } from "@/hooks/use-preferences";
 
 /** Home header: wordmark left, search + reminders right (bell dot = local reminders only). */
 export default function HomeHeader() {
-  const [hasReminders, setHasReminders] = useState(false);
-  useEffect(() => {
-    try {
-      setHasReminders(readPreferences().reminders.length > 0);
-    } catch {
-      /* noop */
-    }
-  }, []);
+  const [prefs] = useLocalPreferences();
+  const hasReminders = prefs.reminders.length > 0;
 
   return (
     <header className="sticky top-0 z-40" style={{ background: "rgba(255,249,252,0.92)", backdropFilter: "blur(10px)" }}>

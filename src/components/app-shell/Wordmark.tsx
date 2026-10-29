@@ -11,6 +11,8 @@ export default function Wordmark({
 }) {
   const mono = size === "lg" ? 44 : 22;
   const sub = size === "lg" ? 22 : 12;
+  const w = Math.round(mono * 5.75);
+  const h = Math.round(mono * 1.42);
   return (
     <span
       className="inline-flex flex-col items-start leading-none select-none"
@@ -18,9 +20,9 @@ export default function Wordmark({
       aria-label="MONSTIEZ universe"
     >
       <svg
-        width={(mono * 4.6) | 0}
-        height={(mono * 1.35) | 0}
-        viewBox={`0 0 ${(mono * 4.6) | 0} ${(mono * 1.35) | 0}`}
+        width={w}
+        height={h}
+        viewBox={`0 0 ${w} ${h}`}
         role="presentation"
         aria-hidden="true"
       >

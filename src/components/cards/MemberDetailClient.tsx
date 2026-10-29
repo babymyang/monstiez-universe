@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, Heart, ExternalLink, Bookmark } from "lucide-react";
@@ -9,7 +9,7 @@ import EmptyState from "@/components/ui/EmptyState";
 import Thumb from "@/components/ui/Thumb";
 import BottomNav from "@/components/bottom-nav/BottomNav";
 import { memberVisuals, memberOrder, type MemberSlug } from "@/lib/design-tokens";
-import { updatePreferences, readPreferences } from "@/lib/local-storage";
+import { useLocalPreferences } from "@/hooks/use-preferences";
 import { formatBirthDate, formatAge, zodiacFrom } from "@/lib/formatters";
 
 export interface MemberPageData {
@@ -53,40 +53,21 @@ export default function MemberDetailClient({ data }: { data: MemberPageData }) {
   const v = memberVisuals[data.slug];
   const [tab, setTab] = useState<(typeof PROFILE_TABS)[number]>("Profile");
   const [filter, setFilter] = useState("all");
-  const [isBias, setIsBias] = useState(false);
-  const [bookmarks, setBookmarks] = useState<string[]>([]);
-
-  useMemo(() => {
-    // initial local state on first render (client-only component usage)
-    try {
-      const prefs = readPreferences();
-      setIsBias(prefs.bias === data.slug);
-      setBookmarks(prefs.bookmarks);
-    } catch {
-      /* noop */
-    }
-  }, [data.slug]);
+  const [prefs, updatePrefs] = useLocalPreferences();
+  const isBias = prefs.bias === data.slug;
+  const bookmarks = prefs.bookmarks;
 
   const toggleBias = () => {
-    const next = !isBias;
-    setIsBias(next);
-    try {
-      updatePreferences((p) => ({ ...p, bias: next ? data.slug : null }));
-    } catch {
-      /* noop */
-    }
+    updatePrefs((p) => ({ ...p, bias: p.bias === data.slug ? null : data.slug }));
   };
 
   const toggleBookmark = (id: string) => {
-    setBookmarks((prev) => {
-      const next = prev.includes(id) ? prev.filter((b) => b !== id) : [...prev, id];
-      try {
-        updatePreferences((p) => ({ ...p, bookmarks: next }));
-      } catch {
-        /* noop */
-      }
-      return next;
-    });
+    updatePrefs((p) => ({
+      ...p,
+      bookmarks: p.bookmarks.includes(id)
+        ? p.bookmarks.filter((b) => b !== id)
+        : [...p.bookmarks, id],
+    }));
   };
 
   const filteredContent = data.content.filter(
@@ -113,7 +94,7 @@ export default function MemberDetailClient({ data }: { data: MemberPageData }) {
 
       <div className="screen-gutter pt-2 space-y-4">
         {/* member selector */}
-        <nav aria-label="Member selector" className="flex gap-1 overflow-x-auto no-scrollbar py-1 -mx-5 px-5">
+        <nav aria-label="Member selector" className="flex gap-0.5 overflow-x-auto no-scrollbar py-1 -mx-5 px-4">
           {memberOrder.map((slug) => {
             const mv = memberVisuals[slug];
             const active = slug === data.slug;
@@ -123,7 +104,7 @@ export default function MemberDetailClient({ data }: { data: MemberPageData }) {
                 href={`/members/${slug}`}
                 aria-current={active ? "true" : undefined}
                 className="flex flex-col items-center shrink-0 pt-1"
-                style={{ width: 52 }}
+                style={{ width: 49 }}
               >
                 <span
                   className="rounded-full transition-transform"
@@ -134,10 +115,10 @@ export default function MemberDetailClient({ data }: { data: MemberPageData }) {
                     transform: active ? "scale(1.06)" : "scale(1)",
                   }}
                 >
-                  <MemberAvatar slug={slug} size={40} />
+                  <MemberAvatar slug={slug} size={37} />
                 </span>
                 <span
-                  className="text-[9px] font-extrabold mt-0.5"
+                  className="text-[8.5px] font-extrabold mt-0.5 whitespace-nowrap"
                   style={{ color: active ? "#FF4F9A" : "#6E5A70", letterSpacing: "0.02em" }}
                 >
                   {mv.name}

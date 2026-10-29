@@ -40,7 +40,6 @@ export default function Thumb({
       }}
     >
       {showImg ? (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`}
           alt={alt}

@@ -47,7 +47,7 @@ export default function TrendingRow({ data }: { data: TrendingRowData }) {
         >
           <span
             className="font-display font-extrabold text-white/95 leading-none text-center px-1"
-            style={{ fontSize: 8.5, textShadow: "0 1px 2px rgba(32,35,51,0.4)", transform: "rotate(-5deg) translateY(6px)" }}
+            style={{ fontSize: 8.5, textShadow: "0 1px 2px rgba(32,35,51,0.4)", transform: "rotate(-5deg) translateY(-4px)" }}
           >
             {data.title.split(" ")[0].slice(0, 10)}
           </span>

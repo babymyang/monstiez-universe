@@ -32,10 +32,10 @@ export default function BottomNav() {
                 className="flex flex-col items-center justify-center gap-0.5 min-h-[56px] pt-1.5"
                 style={{ color: active ? "#FF4F9A" : "#6E5A70" }}
               >
-                <Icon size={22} strokeWidth={active ? 2.6 : 2} aria-hidden="true" />
+                <Icon size={21} strokeWidth={active ? 2.6 : 2} aria-hidden="true" />
                 <span
-                  className="text-[10px] font-bold"
-                  style={{ letterSpacing: "0.01em" }}
+                  className="text-[9.5px] font-bold whitespace-nowrap"
+                  style={{ letterSpacing: "0" }}
                 >
                   {label}
                 </span>

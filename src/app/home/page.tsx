@@ -22,7 +22,7 @@ export default function HomePage() {
       videoId: c.videoId,
       title: c.title.replace("BABYMONSTER - ", ""),
       meta: snap
-        ? `Official · ${formatCompact(snap.value)} views (observed Oct 29)`
+        ? `Official · ${formatCompact(snap.value)} views`
         : "Official · BABYMONSTER",
       duration: c.duration,
       url: c.url,

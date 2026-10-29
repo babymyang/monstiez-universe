@@ -1,10 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { ArrowRight, Crown, Heart, Sparkle, Star } from "lucide-react";
 import Mascot from "@/components/mascot/Mascot";
-import { readPreferences } from "@/lib/local-storage";
+import { useLocalPreferences } from "@/hooks/use-preferences";
 
 const SLIDES = [
   {
@@ -28,16 +28,8 @@ const SLIDE_HREF = ["/home", "/members/ahyeon", "/stats"] as const;
 
 export default function WelcomeScreen() {
   const [slide, setSlide] = useState(0);
-  const [returning, setReturning] = useState(false);
-
-  useEffect(() => {
-    // returning visitors: gentle acknowledgement, no forced redirect
-    try {
-      if (readPreferences().onboarded) setReturning(true);
-    } catch {
-      /* storage unavailable */
-    }
-  }, []);
+  const [prefs] = useLocalPreferences();
+  const returning = prefs.onboarded;
 
   const s = SLIDES[slide];
 
@@ -51,15 +43,31 @@ export default function WelcomeScreen() {
     >
       {/* floating doodles */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <Crown className="float-soft absolute" style={{ top: 54, left: 54 }} size={30} strokeWidth={1.8} color="#38293A" fill="#FFE7AE" />
-        <Sparkle className="twinkle absolute" style={{ top: 120, left: 130 }} size={16} color="#FF4F9A" fill="#FF4F9A" />
-        <Star className="twinkle absolute" style={{ top: 88, right: 66, animationDelay: "0.6s" }} size={18} color="#9B8EC4" fill="#DCD3FA" />
-        <Heart className="float-soft absolute" style={{ top: 300, left: 30, animationDelay: "1.2s" }} size={20} color="#FF7FAE" fill="#FF7FAE" />
-        <Star className="twinkle absolute" style={{ top: 420, right: 36, animationDelay: "1s" }} size={14} color="#FFC66E" fill="#FFE7AE" />
+        <Crown className="float-soft absolute" style={{ top: 42, left: "50%", marginLeft: -15 }} size={30} strokeWidth={1.8} color="#38293A" fill="#FFE7AE" />
+        <Sparkle className="twinkle absolute" style={{ top: 128, left: 46 }} size={16} color="#FF4F9A" fill="#FF4F9A" />
+        <Star className="twinkle absolute" style={{ top: 100, right: 52, animationDelay: "0.6s" }} size={18} color="#9B8EC4" fill="#DCD3FA" />
+        <Sparkle className="twinkle absolute" style={{ top: 200, right: 110, animationDelay: "0.4s" }} size={12} color="#C9B8F5" fill="#C9B8F5" />
+        <Heart className="float-soft absolute" style={{ top: 316, left: 34, animationDelay: "1.2s" }} size={20} color="#FF7FAE" fill="#FF7FAE" />
+        <Star className="twinkle absolute" style={{ top: 430, right: 36, animationDelay: "1s" }} size={14} color="#FFC66E" fill="#FFE7AE" />
         <Sparkle className="twinkle absolute" style={{ bottom: 270, right: 84, animationDelay: "0.3s" }} size={13} color="#C9B8F5" fill="#C9B8F5" />
+        <Star className="twinkle absolute" style={{ bottom: 320, left: 70, animationDelay: "0.8s" }} size={13} color="#DCD3FA" fill="#DCD3FA" />
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-8 pt-16">
+      {returning && (
+        <div
+          className="absolute z-10"
+          style={{ top: 88, left: "50%", transform: "translateX(-50%)" }}
+        >
+          <span
+            className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] font-extrabold"
+            style={{ background: "rgba(255,255,255,0.85)", color: "#FF4F9A", border: "1px solid rgba(255,79,154,0.25)" }}
+          >
+            Welcome back ♡
+          </span>
+        </div>
+      )}
+
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-8 pt-20">
         {/* wordmark */}
         <div className="relative">
           <svg width="248" height="74" viewBox="0 0 248 74" role="img" aria-label="MONSTIEZ universe">
@@ -138,7 +146,7 @@ export default function WelcomeScreen() {
             }
           }}
         >
-          {returning ? "Welcome back" : s.cta}
+          {s.cta}
           <ArrowRight size={19} aria-hidden="true" />
         </Link>
 

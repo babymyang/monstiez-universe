@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, ExternalLink, Bookmark, CheckCircle2 } from "lucide-react";
 import ScreenHeader from "@/components/app-shell/ScreenHeader";
@@ -9,7 +9,7 @@ import Thumb from "@/components/ui/Thumb";
 import EmptyState from "@/components/ui/EmptyState";
 import ChipRow from "@/components/ui/ChipRow";
 import SourceBadge from "@/components/ui/SourceBadge";
-import { readPreferences, updatePreferences } from "@/lib/local-storage";
+import { useLocalPreferences } from "@/hooks/use-preferences";
 
 export interface DiscoverItem {
   id: string;
@@ -35,26 +35,15 @@ const TYPE_CHIPS = [
 export default function DiscoverClient({ items }: { items: DiscoverItem[] }) {
   const [query, setQuery] = useState("");
   const [type, setType] = useState("all");
-  const [bookmarks, setBookmarks] = useState<string[]>([]);
-  const [watched, setWatched] = useState<string[]>([]);
-
-  useEffect(() => {
-    try {
-      const p = readPreferences();
-      setBookmarks(p.bookmarks);
-      setWatched(p.watched);
-    } catch {
-      /* noop */
-    }
-  }, []);
+  const [prefs, updatePrefs] = useLocalPreferences();
+  const bookmarks = prefs.bookmarks;
+  const watched = prefs.watched;
 
   const toggle = (key: "bookmarks" | "watched", id: string) => {
-    const setter = key === "bookmarks" ? setBookmarks : setWatched;
-    setter((prev) => {
-      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
-      updatePreferences((p) => ({ ...p, [key]: next }));
-      return next;
-    });
+    updatePrefs((p) => ({
+      ...p,
+      [key]: p[key].includes(id) ? p[key].filter((x) => x !== id) : [...p[key], id],
+    }));
   };
 
   const results = useMemo(() => {
