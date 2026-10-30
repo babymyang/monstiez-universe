@@ -57,6 +57,13 @@
     const target = $(`#${screen}Screen`);
     if (!target) return;
     currentScreen = screen;
+    // Keep the URL on the active screen (F-10): share links carry the screen,
+    // and the tracker appends its own state to #stats?… via syncStatsHash().
+    if (['home','discover','stats','events','me','member'].includes(screen)) {
+      const wanted = '#' + screen;
+      const baseHash = (location.hash.split('?')[0] || '#');
+      if (baseHash !== wanted) history.replaceState(null, '', location.pathname + location.search + wanted);
+    }
     $$('.screen').forEach(node => node.classList.toggle('active', node === target));
     $('#topbar').style.display = screen === 'welcome' ? 'none' : 'flex';
     $('#bottomNav').style.display = screen === 'welcome' ? 'none' : 'grid';
@@ -73,10 +80,16 @@
 
   /* ---------- hash router for tracker subviews ---------- */
   function routeFromHash() {
-    const hash = location.hash.replace(/^#\/?/, '');
-    if (!hash) return false;
+    const rawHash = location.hash.replace(/^#\/?/, '');
+    if (!rawHash) return false;
+    const [hash, queryString] = rawHash.split('?');
     if (['home','discover','stats','events','me','member'].includes(hash)) {
       // Main screens are also deep-linkable (e.g. shared #stats links).
+      // #stats?platform=…&sort=…&q=…&channel=…&tag=… carries the list state (F-10).
+      if (hash === 'stats' && queryString) {
+        MONSTIEZ.tracker.applyParams(new URLSearchParams(queryString));
+        statsPlatform = MONSTIEZ.tracker.getPlatform() === 'spotify' ? 'Spotify' : 'YouTube';
+      }
       state.entered = true; persist();
       goTo(hash);
       return true;
@@ -214,9 +227,24 @@
   }
 
   /* ---------- Stats screen: tracker tabs + fan goals ---------- */
+  function syncPlatformTabs() {
+    $$('[data-platform]').forEach(b => {
+      const sel = b.dataset.platform === statsPlatform;
+      b.classList.toggle('selected', sel);
+      b.setAttribute('aria-selected', String(sel));
+    });
+  }
+  /** Mirror the tracker list state into the URL (F-10) — replaceState, so Back still leaves the app. */
+  function syncStatsHash() {
+    if (currentScreen !== 'stats' || statsPlatform === 'Fan goals') return;
+    const qs = MONSTIEZ.tracker.listParams().toString();
+    const wanted = qs ? `#stats?${qs}` : '#stats';
+    if (location.hash !== wanted) history.replaceState(null, '', location.pathname + location.search + wanted);
+  }
   function renderStatsScreen() {
     const trackerRoot = $('#trackerRoot');
     const goalsPane = $('#fanGoalsPane');
+    syncPlatformTabs();
     if (statsPlatform === 'Fan goals') {
       trackerRoot.hidden = true; trackerRoot.innerHTML = '';
       goalsPane.hidden = false;
@@ -289,7 +317,7 @@
   $$('[data-feed]').forEach(btn=>btn.addEventListener('click',()=>{feedFilter=btn.dataset.feed;$$('[data-feed]').forEach(b=>b.classList.toggle('active',b===btn));renderHomeContent();}));
   $$('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{contentFilter=btn.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderDiscover();}));
   $('#searchInput').addEventListener('input',renderDiscover);$('#clearSearch').addEventListener('click',()=>{$('#searchInput').value='';renderDiscover();$('#searchInput').focus();});
-  $$('[data-platform]').forEach(btn=>btn.addEventListener('click',()=>{statsPlatform=btn.dataset.platform;$$('[data-platform]').forEach(b=>{b.classList.toggle('selected',b===btn);b.setAttribute('aria-selected',String(b===btn));});renderStatsScreen();}));
+  $$('[data-platform]').forEach(btn=>btn.addEventListener('click',()=>{statsPlatform=btn.dataset.platform;renderStatsScreen();syncStatsHash();}));
   $('#goalForm').addEventListener('submit',e=>{e.preventDefault();addGoal($('#goalInput').value);});
   $('#addGoalButton').addEventListener('click',()=>{$('#goalInput').focus();$('#goalForm').scrollIntoView({behavior:'smooth',block:'center'});});
   $('#eventForm').addEventListener('submit',e=>{e.preventDefault();addEvent($('#eventName').value,$('#eventDate').value,$('#eventName').dataset.editId);});
@@ -338,7 +366,7 @@
     if(currentScreen==='member') renderMember();
   });
   MONSTIEZ.store.load();
-  MONSTIEZ.tracker.init($('#trackerRoot'), { onOpenRelease: (href)=>{ location.hash = href.replace(/^#/,''); } });
+  MONSTIEZ.tracker.init($('#trackerRoot'), { onOpenRelease: (href)=>{ location.hash = href.replace(/^#/,''); }, onListChange: syncStatsHash });
   if(!routeFromHash()){ if(state.entered) goTo('home'); else goTo('welcome'); }
   if('serviceWorker' in navigator && location.protocol.startsWith('http') && !['localhost','127.0.0.1'].includes(location.hostname)) window.addEventListener('load',()=>{
     navigator.serviceWorker.register('./service-worker.js').then(reg=>{

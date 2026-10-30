@@ -14,15 +14,50 @@
     query: { youtube: '', spotify: '' },
     channel: 'all',
     tag: 'all',
+    onListChange: null, // set by app.js — keeps the hash in step with the list state (F-10)
   };
+
+  /* ---------- URL state (F-10): the reference keeps tab/order/search/filters in the URL ---------- */
+
+  function cleanParam(v, max = 80) { return String(v).replace(/[\u0000-\u001f\u007f]/g, '').trim().slice(0, max); }
+
+  /** Non-default list state for the current platform, as URLSearchParams. */
+  function listParams() {
+    const p = new URLSearchParams();
+    if (S.platform === 'spotify') p.set('platform', 'spotify');
+    if (S.sort[S.platform] && S.sort[S.platform] !== 'newest') p.set('sort', S.sort[S.platform]);
+    if (S.query[S.platform] && S.query[S.platform].trim()) p.set('q', cleanParam(S.query[S.platform]));
+    if (S.platform === 'youtube') {
+      if (S.channel !== 'all') p.set('channel', cleanParam(S.channel));
+      if (S.tag !== 'all') p.set('tag', cleanParam(S.tag));
+    }
+    return p;
+  }
+
+  /** Apply validated state from a deep link; unknown values are ignored, never crash. */
+  function applyParams(params) {
+    if (!params) return;
+    const plat = params.get('platform');
+    if (plat === 'spotify' || plat === 'youtube') S.platform = plat;
+    const validSorts = S.platform === 'youtube' ? ['newest', 'movement', 'totals'] : ['albums', 'newest', 'movement', 'totals'];
+    const sort = params.get('sort');
+    if (sort && validSorts.includes(sort)) S.sort[S.platform] = sort;
+    const q = params.get('q');
+    if (q != null) S.query[S.platform] = cleanParam(q);
+    if (S.platform === 'youtube') {
+      const ch = params.get('channel'); if (ch) S.channel = cleanParam(ch) || 'all';
+      const tag = params.get('tag'); if (tag) S.tag = cleanParam(tag) || 'all';
+    }
+  }
 
   const TAG_ABBR = {
     music_video: 'MV', performance: 'PF', music_show: 'MS',
     dance_performance: 'DP', cover: 'CV', dance_cover: 'DC', variety: 'VY',
   };
 
-  function init(root, { onOpenRelease }) {
+  function init(root, { onOpenRelease, onListChange }) {
     S.onOpenRelease = onOpenRelease;
+    S.onListChange = onListChange || null;
     return { render };
   }
 
@@ -318,6 +353,7 @@
     const stale = st.stale;
 
     // Spotify Albums sort: group rows under the record they came out on, each heading with its own total.
+    // F-18: expanding a record reveals its own chart — album line with per-track bands underneath.
     let listHtml;
     if (S.platform === 'spotify' && sort === 'albums') {
       const groups = [];
@@ -326,16 +362,27 @@
         if (!cur || cur.albumId !== it.albumId) { cur = { albumId: it.albumId, album: it.album, type: it.albumType, date: it.releaseDate, items: [] }; groups.push(cur); }
         cur.items.push(it);
       }
-      listHtml = groups.map(g => {
+      listHtml = groups.map((g, gi) => {
         let total = 0, any = false;
-        for (const it of g.items) { const l = latestOf(it); if (l) { total += l.v; any = true; } }
+        const perDay = new Map();
+        for (const it of g.items) {
+          const l = latestOf(it);
+          if (l) { total += l.v; any = true; }
+          for (const [day, rec] of Object.entries(it.plays || {})) perDay.set(day, (perDay.get(day) || 0) + rec.v);
+        }
+        const totalPts = [...perDay.entries()].sort().map(([day, v]) => ({ day, v }));
         const rows = g.items.map(it => rowHtml(it, ranks)).join('');
         return `<div class="album-group">
-          <a class="album-head" href="https://open.spotify.com/album/${esc(g.albumId)}" target="_blank" rel="noopener">
+          <button class="album-head" data-album-toggle="${esc(g.albumId)}" aria-expanded="false" aria-controls="album-panel-${gi}">
             <span class="album-name">${esc(g.album)}</span>
             <span class="album-meta">${esc(g.type || 'Record')} · ${esc(U.dayShort(g.date))}</span>
             <span class="album-total">${esc(any ? U.compact(total) + ' plays' : '—')}</span>
-          </a>${rows}</div>`;
+            <span class="album-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="album-panel" id="album-panel-${gi}" hidden>
+            <div class="album-chart" data-album-chart="${esc(g.albumId)}"></div>
+            <a class="album-ext" href="https://open.spotify.com/album/${esc(g.albumId)}" target="_blank" rel="noopener">Open on Spotify ↗</a>
+          </div>${rows}</div>`;
       }).join('');
     } else {
       listHtml = visible.map(it => rowHtml(it, ranks)).join('');
@@ -358,18 +405,41 @@
 
   function bind(root) {
     root.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => {
-      S.sort[S.platform] = b.dataset.sort; render();
+      S.sort[S.platform] = b.dataset.sort; changed(); render();
     }));
     const search = root.querySelector('#trackerSearch');
     if (search) {
-      search.addEventListener('input', () => { S.query[S.platform] = search.value; render(); const s2 = root.querySelector('#trackerSearch'); if (s2) { s2.focus(); s2.setSelectionRange(s2.value.length, s2.value.length); } });
+      search.addEventListener('input', () => { S.query[S.platform] = search.value; changed(); render(); const s2 = root.querySelector('#trackerSearch'); if (s2) { s2.focus(); s2.setSelectionRange(s2.value.length, s2.value.length); } });
       const clear = root.querySelector('#trackerSearchClear');
-      if (clear) clear.addEventListener('click', () => { S.query[S.platform] = ''; render(); });
+      if (clear) clear.addEventListener('click', () => { S.query[S.platform] = ''; changed(); render(); });
     }
     const chan = root.querySelector('select[aria-label="Channel"]');
-    if (chan) chan.addEventListener('change', () => { S.channel = chan.value; render(); });
+    if (chan) chan.addEventListener('change', () => { S.channel = chan.value; changed(); render(); });
     root.querySelectorAll('[data-tag]').forEach(b => b.addEventListener('click', () => {
-      S.tag = b.dataset.tag; render();
+      S.tag = b.dataset.tag; changed(); render();
+    }));
+    // F-18: expand a record to see its own chart — album line + per-track bands.
+    root.querySelectorAll('[data-album-toggle]').forEach(btn => btn.addEventListener('click', () => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      const open = panel.hidden;
+      panel.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      const caret = btn.querySelector('.album-caret');
+      if (caret) caret.textContent = open ? '▴' : '▾';
+      const chartHost = panel.querySelector('[data-album-chart]');
+      if (open && chartHost && !chartHost.dataset.rendered) {
+        const albumId = btn.dataset.albumToggle;
+        const items = MONSTIEZ.store.songList().filter(x => x.albumId === albumId);
+        const perDay = new Map();
+        for (const it of items) {
+          for (const [day, rec] of Object.entries(it.plays || {})) perDay.set(day, (perDay.get(day) || 0) + rec.v);
+        }
+        const total = [...perDay.entries()].sort().map(([day, v]) => ({ day, v }));
+        const bands = items.map(x => ({ name: x.name, points: U.points(x.plays || {}) }));
+        MONSTIEZ.charts.renderBands(chartHost, { total, bands, unit: 'plays' });
+        chartHost.dataset.rendered = '1';
+      }
     }));
     root.querySelectorAll('[data-href]').forEach(row => row.addEventListener('click', (e) => {
       if (e.target.closest('a') && e.target.closest('a').target === '_blank') return;
@@ -378,8 +448,10 @@
     }));
   }
 
+  function changed() { if (S.onListChange) S.onListChange(); }
+
   function setPlatform(p) { S.platform = p === 'spotify' ? 'spotify' : 'youtube'; }
   function getPlatform() { return S.platform; }
 
-  MONSTIEZ.tracker = { init, render, setPlatform, getPlatform, valueState };
+  MONSTIEZ.tracker = { init, render, setPlatform, getPlatform, valueState, listParams, applyParams };
 })();

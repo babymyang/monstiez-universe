@@ -6,7 +6,7 @@
 **Audit date/time/timezone:** 2026-10-30 ~09:00–09:30 UTC (KST 18:00, 30 Oct 2026)
 **Browser/runtime:** agent-browser (Playwright/Chromium headless), network request tracking enabled
 **Viewport sizes tested:** 1280×900 desktop, 390×844 mobile
-**Screenshot evidence:** `docs/reference/bm-tracker/` (guide-top.png, app-desktop-top.png, app-spotify-tab.png, release-deserve-mv.png, audience.png, app-mobile-390.png)
+**Screenshot evidence:** `docs/reference/bm-tracker/` — first pass (09:00–09:30 UTC): guide-top.png, app-desktop-top.png, app-spotify-tab.png, release-deserve-mv.png, audience.png, app-mobile-390.png. Follow-up pass (18:42–18:45 KST): song-detail-deserve.png, compare-page.png, totals-youtube.png, totals-spotify.png, privacy.png — the four `partially-confirmed` routes were opened and are now `confirmed`.
 
 > Every row below was directly observed in the live browser session on 2026-10-30.
 > Nothing is inferred from the platform name alone. The full expanded guide text
@@ -40,12 +40,12 @@
 | NAV-01 | YouTube tab · count badge | `/` | Yes | Switch to video list | app-desktop-top.png | confirmed |
 | NAV-02 | Spotify tab · count badge | `/?platform=spotify` (client) | Yes | Switch to song list | app-spotify-tab.png | confirmed |
 | NAV-03 | Release detail | `/v/{videoId}` | Yes | One video's full tracker page | release-deserve-mv.png | confirmed |
-| NAV-04 | Song detail | `/s/{key}` (client-side) | Yes (inferred from row links; not opened) | One song's full tracker page | guide §"song page" | partially-confirmed |
+| NAV-04 | Song detail | `/s/{name%7CspotifyTrackId}` — opened as `/s/DESERVE%7C189986` | Yes | One song's full tracker page | song-detail-deserve.png | confirmed |
 | NAV-05 | Audience | `/audience` | Yes | Follower panels per platform | audience.png | confirmed |
 | NAV-06 | Guide | `/user-guide` | Yes | Documentation | guide-top.png | confirmed |
-| NAV-07 | Privacy | `/privacy` (footer link) | Yes (linked, not opened) | Privacy statement | footer snapshot | partially-confirmed |
-| NAV-08 | Totals ("Everything added up") | tap big total | Yes (documented; not opened) | Platform total history | guide §10 | partially-confirmed |
-| NAV-09 | Compare | "Compare with…" from release page | Yes (documented; not opened) | Age-aligned comparison | guide §11 | partially-confirmed |
+| NAV-07 | Privacy | `/privacy` | Yes | Privacy statement: no account, no cookies, no analytics, no third-party scripts; host (Cloudflare) sees only request counts | privacy.png | confirmed |
+| NAV-08 | Totals ("Everything added up") | `/totals/youtube` (big-total tap) | Yes | Platform total history: full range (23 Nov 2023 – 30 Oct 2026, 1073 days), "the whole channel, not just what is tracked here", added-per-month bars, counting metadata | totals-youtube.png | confirmed |
+| NAV-09 | Compare | `/compare?items=sp:DESERVE%7C189986,sp:WILD%7C177320` | Yes | Age-aligned comparison: picker groups songs by work, chart lines drawn "against its own age", "HOW IT STANDS" summary ("4.13× ahead"), milestone-reach table with honest blanks, + Add a release | compare-page.png | confirmed |
 
 ## 3. Feature-by-feature audit
 
@@ -134,12 +134,12 @@ Implemented in the MONSTIEZ design language on `main` (commit history in `worklo
 | Area | BM Tracker features | MONSTIEZ destination | Status |
 |---|---|---|---|
 | Lists + controls | F-01, F-05–F-09 | Stats screen tracker lists (YouTube/Spotify tabs) | ✅ implemented & tested |
-| URL state | F-10 | Share button + hash deep links for screens/releases; sort/filter URL encoding deferred | ◐ partial (share works; filter-in-URL pending) |
+| URL state | F-10 | Share button + hash deep links; **list state fully URL-encoded** — `#stats?platform=…&sort=…&q=…&channel=…&tag=…` (replaceState, Back-safe, validated/tolerant parse). Follow-up pass confirmed the reference does the same via paths (`/spotify`, `/totals/youtube`) and `/compare?items=…` | ✅ implemented & tested (fresh-load round-trip verified in browser) |
 | Release detail | F-11–F-17 | Release detail view (`#/release/v/{id}`, `#/release/s/{key}`) | ✅ implemented & tested |
-| Albums | F-18 | Spotify Albums grouping with record totals + Spotify links; per-track band chart deferred | ◐ partial |
+| Albums | F-18 | Spotify Albums grouping with record totals; **expandable album panel** — record total line with per-track bands underneath, tap-a-chip highlight, touch readout, honest build-up state (each track currently has one dated reading; bands appear as daily readings accumulate) | ✅ implemented & tested (renderer verified with synthetic series; live data honest-state verified) |
 | Totals | F-03, F-19 | Totals views (`#/totals/youtube`, `#/totals/spotify`) | ✅ implemented |
 | Compare | F-20 | Compare view (`#/compare/from/{kind}/{id}`) — age-aligned chart + milestone race table | ✅ implemented |
-| Audience | F-02, F-21 | Audience view (`#/audience`); TikTok/IG/X panels pending collector extension | ◐ partial (YT+SP live) |
+| Audience | F-02, F-21 | Audience view (`#/audience`); TikTok/IG/X panels pending an evidenced collector source | ◐ partial (YT+SP live) |
 | Provenance/honesty | F-06, F-22, F-23 | Series schema (`estimated`, `source`, `method`, `alt`), est flags, honest state words, Sources view, `docs/DATA_SOURCES.md`, validator | ✅ implemented & enforced |
 | Shell features | F-24–F-27 | Share button, light/dark theme, update bar, offline SW v4, no accounts/tracking | ✅ implemented & tested |
 
@@ -148,9 +148,19 @@ Implemented in the MONSTIEZ design language on `main` (commit history in `worklo
 | Question | Why it matters | Evidence attempted | Still unknown | Next safe step |
 |---|---|---|---|---|
 | Exact upstream mechanism for BM Tracker's Spotify current-day counts | Not needed for parity if we use our own providers | Network trace (no third-party calls visible); guide disclosure | Whether backend uses official feeds, licensed data or page reading | Use our own evidence-based providers (Kworb parse / manual snapshots), labelled |
-| Song detail route shape (`/s/…`) | Nice-to-have for URL parity | Not opened in session | exact route + layout differences | open one song page in follow-up audit pass |
-| Totals page + Compare UI details | Follow-up pass | Documented in guide; not screenshot | exact controls | open both pages in follow-up pass |
-| Privacy page contents | Attribution completeness | Link observed | contents | open in follow-up pass |
+| ~~Song detail route shape (`/s/…`)~~ | — | **Resolved in follow-up pass:** `/s/{name%7CtrackId}`, opened with full screenshot | — | — |
+| ~~Totals page + Compare UI details~~ | — | **Resolved in follow-up pass:** `/totals/{platform}` and `/compare?items=…`, screenshots captured | — | — |
+| ~~Privacy page contents~~ | — | **Resolved in follow-up pass:** no cookies/analytics/third-party scripts statement | — | — |
+| Whether the guide documents TikTok/Instagram/X collector sources | Our Audience view has YT+SP only | Guide §12 read; no source named for social panels in extracted text | Exact provider if any | Keep panels pending; extend only with an evidenced source |
+
+## 11. Follow-up pass findings (18:42–18:45 KST, 30 Oct 2026)
+
+- **Routing is path-based**: `/?platform=spotify` from the morning audit had become `/spotify`; totals live at `/totals/youtube`; compare at `/compare?items=sp:key1,sp:key2`. The reference keeps full view state in URLs — confirms F-10 as a real requirement.
+- **Live drift observed**: YouTube list count grew 138 → 140 between passes (~9 h apart); DESERVE M/V moved 76,330,759 (our 09:00 observation) → 76,454,189 (18:43). Dated observations in our series remain correct; this is expected freshness lag, not an error.
+- **Spotify exact follower figure**: 9,291,034 (audience page) vs rounded 9.29M in the header line — both shown; rounded headline, exact panel value.
+- **Compare picker**: groups candidates by work ("Recording · WE GO UP") with totals; picking two produces age-aligned chart + "HOW IT STANDS" ("At 6 days old, DESERVE had 5,521,770, ahead of the other." "4.13× ahead") + milestone table where blank means "cannot say".
+- **Song page coverage block**: "Released 23 October 2026 · Tracked since 21 October 2026 · 8 days · Sampled once a day · Coverage 8 days · 1 not collected" — the exact honesty pattern our detail views implement.
+- **Privacy**: no cookies, no analytics, no third-party scripts; Cloudflare sees only request counts. Our app matches (no accounts/tracking, F-27).
 
 ## Status definitions
 

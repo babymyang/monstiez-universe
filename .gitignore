@@ -13,3 +13,11 @@ Thumbs.db
 # Local tooling
 /tmp/
 *.log
+
+# sandbox-only dirs (agent runtime, not project files)
+/skills/
+/upload/
+/download/
+/tool-results/
+/handoff-extract/
+/backup/

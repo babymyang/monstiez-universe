@@ -75,3 +75,36 @@
 
 ### Git checkpoints (verified pushed)
 d0fc597 baseline → 21bb811 audit → a784706 tracker core → 5005598 parity shell → bae66ee/5d17820 deep-link fixes → 77aa90c update bar → 1e6c7f6 SW v4 → 9256c7d + 3db75f8 overflow fixes → release checkpoint (this commit).
+
+## Session 2026-10-30 (2) — Super Z verification pass + F-10/F-18 completion
+
+**Repo:** https://github.com/babymyang/monstiez-universe (branch `main`)
+**Starting state:** sandbox was recycled; local checkout was stale. Remote `main` (202ff93, release checkpoint) verified as source of truth; local stale commits preserved on `backup/local-m0-starter`; fast-forwarded cleanly.
+
+### Independent verification of the release checkpoint (all PASS)
+- GitHub Pages live (HTTP 200) at https://babymyang.github.io/monstiez-universe/ ; Pages builds green for the release commit.
+- `node scripts/validate.js` → 0 errors, 0 warnings.
+- `node scripts/collect.js --dry-run` → Kworb honest no-op (page still dated 2026-10-28, 41 already-same), YouTube skipped with recorded reason (no key).
+- Live app walked in a real browser (390×844): Welcome → Join → `#stats` tracker (138 rows, header line, milestone cards, channel/tag chips with counts) → release detail `#/release/v/oC6brLXQe4I` (76,330,759 views, "No full day", rank 29th-of-138, 10.5 likes/1000, provenance line, honest "only 2 days so far" chart) → `#audience` (rounded-subs honesty, never-summed rule). No console errors.
+
+### Milestone 6 — first REAL workflow run ✅
+- Triggered `collect-public-stats` via `workflow_dispatch` → **completed / success**.
+- Result: Kworb 0 changed / 41 already-same (page still 2026-10-28 — no fabricated flat day); YouTube skipped-with-reason; commit `614504a` ("data: daily collection 2026-10-30 [kworb]") written by the workflow itself; Pages redeployed. Scheduling (01:20 UTC daily) remains armed.
+
+### Milestone 1 follow-up — audit gaps closed ✅
+- The first audit cited screenshots in `docs/reference/bm-tracker/` that were never committed. Re-captured all six + five new follow-up pages (song detail, compare, totals×2, privacy) — 11 PNGs committed.
+- Opened the four `partially-confirmed` routes on the live reference: song page `/s/DESERVE%7C189986` (share slices 0.2%/20.1%, milestone ladder with EST date, coverage block), compare `/compare?items=…` (age-aligned, "4.13× ahead", honest blanks), totals `/totals/youtube` (1073-day history, scope note), `/privacy` (no cookies/analytics/third-party scripts). All four are now `confirmed` in `docs/BM_TRACKER_FEATURE_AUDIT.md` §2; §11 records follow-up findings (path-based routing, 138→140 live drift, exact 9,291,034 followers vs rounded header).
+
+### Parity completion — F-10 and F-18 ✅ (were the two ◐ partials)
+- **F-10 URL state**: `#stats?platform=…&sort=…&q=…&channel=…&tag=…` — tracker mutations mirror into the hash via `history.replaceState` (Back-safe), deep links are parsed with validation (unknown values ignored, input sanitised, ≤80 chars). Verified in-browser: search→`q=deserve`, tag→`#stats?tag=music_video` (18 rows = chip count), fresh load of `#stats?tag=music_video&sort=movement&channel=BABYMONSTER` applies fully (sort/tab/channel selected, 18 rows). Files: `js/ui/tracker.js` (`listParams`/`applyParams`/`changed`), `app.js` (router param parsing, `syncStatsHash`, tab sync, main-screen hash).
+- **F-18 album bands**: new `MONSTIEZ.charts.renderBands` — record total line + per-track bands, tap-a-chip highlight (aria-pressed), touch readout incl. highlighted band, honest build-up state. Albums-sort headers are now expandable panels (`aria-expanded`) with the Spotify link moved inside. Renderer verified with a synthetic in-browser series (2 bands, highlight works); live data shows the honest empty state because every track currently has exactly one dated reading (Kworb page 2026-10-28) — bands appear as the daily workflow accumulates readings. Files: `js/ui/charts.js`, `js/ui/tracker.js`, `styles.css` (light+dark).
+
+### Honest remaining blockers (unchanged by design, not by omission)
+- Every Spotify track has one dated reading so far; second readings start with the next Kworb page refresh (the daily workflow files them automatically).
+- YouTube official collection starts when the user adds `YOUTUBE_API_KEY` to Actions secrets (collector ready + tested in no-key mode).
+- TikTok/IG/X audience panels await an evidenced source (no provider named by the reference's guide).
+- Real-device PWA install test (no Android device in this environment).
+
+### Verification still pending in this session
+- [ ] Production offline re-check after these edits (SW v4 self-heal)
+- [ ] Commit + push + live-deployment browser check

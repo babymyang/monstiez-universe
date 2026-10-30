@@ -202,6 +202,103 @@
     svgEl.addEventListener('touchmove', show, { passive: true });
   }
 
+  /** Album chart (F-18): the record's total line with each track's own line as a band underneath.
+   * Tapping a track chip highlights that band; the readout reads the day across total + highlighted band. */
+  const BAND_COLOURS = ['#a78bfa', '#7cc5f0', '#7ed6a5', '#f0a35c', '#e58cc4', '#c9b6f2', '#8fd4c1', '#f2b6c9'];
+
+  function renderBands(el, { total, bands, unit = 'plays' }) {
+    const totalPts = (total || []).filter(p => p.v != null).sort((a, b) => a.day < b.day ? -1 : 1);
+    el.innerHTML = '';
+    if (totalPts.length < 2) {
+      el.innerHTML = `<div class="chart-empty"><img src="./assets/myangni-peek.svg" alt="" width="64"/><p><b>History is building up.</b></p><p>The record's own chart appears once at least two dated readings exist for it.</p></div>`;
+      return;
+    }
+    const W = 560, H = 240, PADL = 46, PADR = 12, PADT = 16, PADB = 26;
+    const d0 = totalPts[0].day, d1 = totalPts[totalPts.length - 1].day;
+    const t0 = Date.parse(d0 + 'T00:00:00Z'), t1 = Date.parse(d1 + 'T00:00:00Z');
+    let max = Math.max(...totalPts.map(p => p.v));
+    const cleanBands = (bands || []).map((b, i) => ({
+      name: b.name || `Track ${i + 1}`, colour: BAND_COLOURS[i % BAND_COLOURS.length],
+      pts: (b.points || []).filter(p => p.v != null && p.day >= d0 && p.day <= d1).sort((a, c) => a.day < c.day ? -1 : 1),
+    }));
+    for (const b of cleanBands) for (const p of b.pts) max = Math.max(max, p.v);
+    const ticks = niceTicks(0, max, 4);
+    const hi = ticks[ticks.length - 1];
+    const x = (day) => PADL + ((Date.parse(day + 'T00:00:00Z') - t0) / (t1 - t0 || 1)) * (W - PADL - PADR);
+    const y = (v) => PADT + (1 - v / (hi || 1)) * (H - PADT - PADB);
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Record total with per-track bands" class="tracker-svg">`;
+    for (const t of ticks) {
+      svg += `<line x1="${PADL}" x2="${W - PADR}" y1="${y(t)}" y2="${y(t)}" stroke="#f1e7ef" stroke-width="1"/>`;
+      svg += `<text x="${PADL - 6}" y="${y(t) + 3.5}" text-anchor="end" font-size="9" fill="${GREY}">${U.compact(t)}</text>`;
+    }
+    cleanBands.forEach((b, i) => {
+      if (b.pts.length < 2) return;
+      const path = b.pts.map((p, j) => `${j ? 'L' : 'M'}${x(p.day).toFixed(1)} ${y(p.v).toFixed(1)}`).join(' ');
+      svg += `<path class="band" data-band="${i}" d="${path}" fill="none" stroke="${b.colour}" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>`;
+    });
+    const linePts = totalPts.map(p => `${x(p.day).toFixed(1)},${y(p.v).toFixed(1)}`);
+    svg += `<polygon points="${PADL},${y(ticks[0])} ${linePts.join(' ')} ${x(d1).toFixed(1)},${y(ticks[0])}" fill="${PINK}" opacity=".10"/>`;
+    svg += `<polyline points="${linePts.join(' ')}" fill="none" stroke="${PINK}" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    for (const d of new Set([d0, d1])) {
+      svg += `<text x="${x(d)}" y="${H - 8}" text-anchor="middle" font-size="9" fill="${GREY}">${U.dayShort(d)}</text>`;
+    }
+    svg += `</svg>`;
+    el.innerHTML = svg;
+
+    const legend = document.createElement('div');
+    legend.className = 'band-legend';
+    legend.innerHTML = cleanBands.map((b, i) => {
+      if (b.pts.length < 2) return `<span class="band-chip static"><i style="background:${b.colour}"></i>${U.escapeHtml(b.name)} · not enough readings for a band yet</span>`;
+      return `<button class="band-chip" data-band="${i}" aria-pressed="false"><i style="background:${b.colour}"></i>${U.escapeHtml(b.name)}</button>`;
+    }).join('');
+    el.appendChild(legend);
+    const note = document.createElement('p');
+    note.className = 'micro-note';
+    note.textContent = 'The thick line is the whole record — each band is one track\u2019s own readings. Bands are never added to anything outside this record.';
+    el.appendChild(note);
+
+    // highlight interaction
+    const svgEl = el.querySelector('svg');
+    legend.querySelectorAll('button.band-chip').forEach(chip => chip.addEventListener('click', () => {
+      const idx = chip.dataset.band;
+      const on = chip.getAttribute('aria-pressed') !== 'true';
+      legend.querySelectorAll('button.band-chip').forEach(c => { c.setAttribute('aria-pressed', 'false'); });
+      svgEl.querySelectorAll('.band').forEach(b => { b.style.opacity = '.14'; b.style.strokeWidth = '1.6'; });
+      if (on) {
+        chip.setAttribute('aria-pressed', 'true');
+        const sel = svgEl.querySelector(`.band[data-band="${idx}"]`);
+        if (sel) { sel.style.opacity = '.95'; sel.style.strokeWidth = '3'; }
+      } else {
+        svgEl.querySelectorAll('.band').forEach(b => { b.style.opacity = '.5'; b.style.strokeWidth = '1.8'; });
+      }
+    }));
+
+    // readout: nearest total day; reads highlighted band's value too
+    const readout = document.createElement('div');
+    readout.className = 'chart-readout';
+    readout.setAttribute('role', 'status');
+    readout.innerHTML = `<span>Touch the chart to read a day.</span>`;
+    el.insertBefore(readout, svgEl);
+    const show = (evt) => {
+      const rect = svgEl.getBoundingClientRect();
+      const cx = ((evt.touches ? evt.touches[0].clientX : evt.clientX) - rect.left) / rect.width * W;
+      let best = null, bestD = 1e9;
+      for (const p of totalPts) { const d = Math.abs(x(p.day) - cx); if (d < bestD) { bestD = d; best = p; } }
+      if (!best) return;
+      const selIdx = [...legend.querySelectorAll('button.band-chip')].find(c => c.getAttribute('aria-pressed') === 'true');
+      let bandTxt = '';
+      if (selIdx) {
+        const b = cleanBands[+selIdx.dataset.band];
+        const bp = b && b.pts.find(p => p.day === best.day);
+        if (bp) bandTxt = ` · ${U.escapeHtml(b.name)} ${U.full(bp.v)}`;
+      }
+      readout.innerHTML = `<b>${U.dayLabel(best.day)}</b> · ${U.full(best.v)} ${unit}${bandTxt}`;
+    };
+    svgEl.addEventListener('pointerdown', show);
+    svgEl.addEventListener('pointermove', (e) => { if (e.pressure > 0 || e.buttons) show(e); });
+    svgEl.addEventListener('touchmove', show, { passive: true });
+  }
+
   /** Simple multi-series age-aligned comparison chart (compare view). */
   function renderCompare(el, seriesList, { unit = 'views', maxDay = 120 } = {}) {
     // seriesList: [{name, colour, points:[{day,v}], startDay}]
@@ -245,5 +342,5 @@
     el.appendChild(legend);
   }
 
-  MONSTIEZ.charts = { render, renderCompare, bucketDiffs, niceTicks };
+  MONSTIEZ.charts = { render, renderCompare, renderBands, bucketDiffs, niceTicks };
 })();
