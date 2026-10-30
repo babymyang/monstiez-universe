@@ -243,3 +243,7 @@ html.dark .album-head{background:linear-gradient(120deg,#251f2e,#271e33);border-
 .d-big strong{overflow-wrap:anywhere}
 .d-stat span,.m-name,.t-title,.ver-name{overflow-wrap:anywhere}
 html,body{overflow-x:clip}
+.d-big{min-width:0}
+.d-big>div{min-width:0}
+.d-big b,.d-big strong{white-space:nowrap}
+.d-head{min-width:0}
