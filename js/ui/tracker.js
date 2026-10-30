@@ -317,6 +317,30 @@
     const asOf = store.dataAsOf();
     const stale = st.stale;
 
+    // Spotify Albums sort: group rows under the record they came out on, each heading with its own total.
+    let listHtml;
+    if (S.platform === 'spotify' && sort === 'albums') {
+      const groups = [];
+      let cur = null;
+      for (const it of visible) {
+        if (!cur || cur.albumId !== it.albumId) { cur = { albumId: it.albumId, album: it.album, type: it.albumType, date: it.releaseDate, items: [] }; groups.push(cur); }
+        cur.items.push(it);
+      }
+      listHtml = groups.map(g => {
+        let total = 0, any = false;
+        for (const it of g.items) { const l = latestOf(it); if (l) { total += l.v; any = true; } }
+        const rows = g.items.map(it => rowHtml(it, ranks)).join('');
+        return `<div class="album-group">
+          <a class="album-head" href="https://open.spotify.com/album/${esc(g.albumId)}" target="_blank" rel="noopener">
+            <span class="album-name">${esc(g.album)}</span>
+            <span class="album-meta">${esc(g.type || 'Record')} · ${esc(U.dayShort(g.date))}</span>
+            <span class="album-total">${esc(any ? U.compact(total) + ' plays' : '—')}</span>
+          </a>${rows}</div>`;
+      }).join('');
+    } else {
+      listHtml = visible.map(it => rowHtml(it, ranks)).join('');
+    }
+
     root.innerHTML = `
       ${stale ? `<div class="stale-bar" role="status">⏳ Showing your last saved numbers — the fresh copy could not be reached just now.</div>` : ''}
       ${headerHtml()}
@@ -324,7 +348,7 @@
       <p class="as-of">Days are Korea days (KST) · YouTube as of ${esc(U.dayShort(asOf.youtube) || '—')} · Spotify as of ${esc(U.dayShort(asOf.spotify) || '—')} · <a href="#sources" data-nav="sources">where numbers come from</a></p>
       ${controlsHtml(items)}
       <div class="t-head"><span></span><span>${S.platform === 'youtube' ? 'RELEASE' : 'RECORDING'}</span><span>DAY · TOTAL</span></div>
-      <div class="t-list">${visible.length ? visible.map(it => rowHtml(it, ranks)).join('')
+      <div class="t-list">${visible.length ? listHtml
         : `<div class="tracker-loading"><img src="./assets/myangni-peek.svg" alt="" width="84"/><p>Nothing matches that search or filter.</p></div>`}</div>
       <p class="list-note">${visible.length} of ${items.length} ${S.platform === 'youtube' ? 'videos' : 'recordings'} shown · figures are dated observations with their own sources — see <a href="#sources" data-nav="sources">data sources</a>.</p>
     `;

@@ -1,0 +1,52 @@
+name: collect-public-stats
+
+# Daily collection of dated public metric snapshots.
+# - Kworb (Spotify play totals, third-party public figures): no secrets needed.
+# - YouTube Data API (official): runs only when YOUTUBE_API_KEY is configured
+#   in the repository's Settings → Secrets and variables → Actions.
+# Commits only when the collected values changed.
+
+on:
+  schedule:
+    - cron: "20 1 * * *"   # 01:20 UTC = 10:20 KST, after Spotify/Kworb day rollover
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-public-stats
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run collector
+        id: collect
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          BABYMONSTER_CHANNEL_ID: UCqwUnggBBct-AY2lAdI88jQ
+        run: node scripts/collect.js
+
+      - name: Validate data honesty invariants
+        run: node scripts/validate.js
+
+      - name: Commit snapshots only when data changed
+        run: |
+          git config user.name "monstiez-collector"
+          git config user.email "babymyang@users.noreply.github.com"
+          git add data/ scripts/last-collect-summary.json
+          if git diff --cached --quiet; then
+            echo "No data changes today."
+          else
+            git commit -m "data: daily collection $(date -u +%F) [kworb${{ steps.collect.outputs.yt && '+youtube' || '' }}]"
+            git push
+          fi

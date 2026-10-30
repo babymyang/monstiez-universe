@@ -116,6 +116,31 @@
       <div class="content-body"><div class="content-meta">✦ ${escapeHtml(item.category)}</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.subtitle)}</p><div class="content-foot"><span>${escapeHtml(item.duration)} · Link to be verified</span><button class="save-btn ${saved?'saved':''}" data-save="${escapeHtml(item.id)}" aria-label="${saved?'Remove saved':'Save'} ${escapeHtml(item.title)}">${saved?'♥':'♡'}</button></div></div>
     </article>`;
   }
+  /* ---------- real tracked videos (from data/*.json, provenance preserved) ---------- */
+  function realVideos() {
+    const st = MONSTIEZ.store.get();
+    if (!st.loaded || !st.catalog || !st.catalog.videos || !st.catalog.videos.length) return null;
+    return MONSTIEZ.store.videoList();
+  }
+  function tagLabelOf(slug) {
+    const t = ((MONSTIEZ.store.get().catalog || {}).tags || []).find(t => t.slug === slug);
+    return t ? t.label : (slug || '').replace(/_/g, ' ');
+  }
+  function makeVideoCard(v) {
+    const saved = state.saved.includes(v.id);
+    const l = v.views && MONSTIEZ.util.latest(v.views);
+    const views = l ? `${MONSTIEZ.util.compact(l.v)} views` : 'counting…';
+    return `<article class="content-card" data-id="${escapeHtml(v.id)}">
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=${escapeHtml(v.id)}" target="_blank" rel="noopener" aria-label="Open ${escapeHtml(v.title)} on YouTube">
+        <img src="${escapeHtml(v.thumb)}" alt="" loading="lazy" onerror="this.classList.add('broken')"/>
+        <span class="thumb-play" aria-hidden="true">▶</span>
+      </a>
+      <div class="content-body"><div class="content-meta">✦ ${escapeHtml(tagLabelOf(v.tag))}</div><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.channel)} · ${escapeHtml(views)}</p><div class="content-foot"><span>YouTube · official video</span><button class="save-btn ${saved?'saved':''}" data-save="${escapeHtml(v.id)}" aria-label="${saved?'Remove saved':'Save'} ${escapeHtml(v.title)}">${saved?'♥':'♡'}</button></div></div>
+    </article>`;
+  }
+  function videoMatches(v, query) {
+    return `${v.title} ${v.channel} ${tagLabelOf(v.tag)}`.toLowerCase().includes(query);
+  }
   function attachSaveListeners(root) {
     $$('[data-save]', root).forEach(button => button.addEventListener('click', () => {
       const id = button.dataset.save;
@@ -125,6 +150,17 @@
   }
   function renderHomeContent() {
     const list = $('#latestList');
+    const vids = realVideos();
+    if (vids) {
+      let items = [...vids].sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
+      if (feedFilter === 'News') items = items.filter(v => v.tag === 'variety');
+      if (feedFilter === 'Events') { list.innerHTML = '<div class="empty-state">Your calendar is ready for release dates, livestreams and personal reminders. Open <b>Fan calendar</b> to add one.</div>'; return; }
+      if (feedFilter === 'For You') items = items.filter(v => videoMatches(v, selectedMember.toLowerCase()));
+      if (feedFilter === 'Videos') items = items.filter(v => ['music_video','performance'].includes(v.tag));
+      list.innerHTML = items.length ? items.slice(0,4).map(makeVideoCard).join('') : '<div class="empty-state">Nothing here yet — new releases appear automatically as the tracker catalogue updates.</div>';
+      attachSaveListeners(list);
+      return;
+    }
     let items = demoContent;
     if (feedFilter === 'Videos') items = items.filter(x => ['Music video','Shorts'].includes(x.category));
     if (feedFilter === 'News') items = items.filter(x => x.category === 'Behind the scenes');
@@ -132,8 +168,30 @@
     if (feedFilter === 'For You') items = items.filter(x => x.member === selectedMember || x.id === 'fan-favorite');
     list.innerHTML = items.slice(0,4).map(makeContentCard).join(''); attachSaveListeners(list);
   }
+  function renderDiscoverFilters() {
+    const vids = realVideos();
+    const row = $('#discoverFilters');
+    if (!vids) return;
+    const counts = new Map([['All', vids.length]]);
+    for (const v of vids) { const lbl = tagLabelOf(v.tag); counts.set(lbl, (counts.get(lbl) || 0) + 1); }
+    const entries = [...counts.entries()].sort((a,b)=>b[1]-a[1]);
+    if (!entries.some(([lbl]) => lbl === contentFilter)) contentFilter = 'All';
+    row.innerHTML = entries.map(([lbl,n]) => `<button class="chip ${contentFilter===lbl?'active':''}" data-category="${escapeHtml(lbl)}">${escapeHtml(lbl)} <small>${n}</small></button>`).join('');
+    $$('[data-category]', row).forEach(btn=>btn.addEventListener('click',()=>{contentFilter=btn.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderDiscover();}));
+  }
   function renderDiscover() {
+    renderDiscoverFilters();
     const query = ($('#searchInput')?.value || '').trim().toLowerCase();
+    const vids = realVideos();
+    if (vids) {
+      let items = vids.filter(v => contentFilter === 'All' || tagLabelOf(v.tag) === contentFilter);
+      if (query) items = items.filter(v => videoMatches(v, query));
+      items.sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
+      $('#discoverCount').textContent = `${items.length} ${items.length === 1 ? 'video' : 'videos'}`;
+      $('#discoverList').innerHTML = items.length ? items.map(makeVideoCard).join('') : '<div class="empty-state">No matching videos yet. Try another search, or clear the filter.</div>';
+      attachSaveListeners($('#discoverList'));
+      return;
+    }
     let items = demoContent.filter(item => contentFilter === 'All' || item.category === contentFilter);
     if (query) items = items.filter(item => `${item.title} ${item.subtitle} ${item.category} ${item.member} ${item.label}`.toLowerCase().includes(query));
     $('#discoverCount').textContent = `${items.length} ${items.length === 1 ? 'collection' : 'collections'}`;
@@ -182,9 +240,21 @@
     const m=members.find(x=>x.name===selectedMember)||members[3];selectedMember=m.name;
     renderMembers();$('#memberName').textContent=m.name;$('#memberAvatar').textContent=m.initial;$('#memberAvatar').style.background=`linear-gradient(145deg,${m.color},#38303f)`;$('#memberTagline').textContent=m.tagline;$('#memberDescription').textContent=m.description;
     const favorite=state.favorites.includes(m.name);$('#favoriteMember').classList.toggle('favorited',favorite);$('#favoriteMember').textContent=favorite?'♥ In your favorites':'♡ Add to favorites';
-    let items=demoContent.filter(item=>item.member==='All members'||item.member===m.name);
-    if(memberFilter!=='All') items=items.filter(item=>item.category===memberFilter);
-    $('#memberContent').innerHTML=items.length?items.map(makeContentCard).join(''):'<div class="empty-state">No matching saved sample cards for this category. Try All, or add verified content for this member.</div>';
+    let items;
+    const vids = realVideos();
+    if (vids) {
+      // Real tracked content mentioning this member by name (channels/title), honest empty state otherwise.
+      const nameRe = new RegExp(selectedMember.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'i');
+      items = vids.filter(v => nameRe.test(v.title) || nameRe.test(v.channel));
+      if (memberFilter !== 'All') items = items.filter(v => tagLabelOf(v.tag) === memberFilter);
+      items.sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
+      $('#memberContent').innerHTML = items.length ? items.map(makeVideoCard).join('')
+        : `<div class="empty-state">No tracked videos mention ${escapeHtml(selectedMember)} by name yet. The catalogue follows the channels the tracker watches — try another member or browse Discover.</div>`;
+    } else {
+      items = demoContent.filter(item => item.member === 'All members' || item.member === selectedMember);
+      if (memberFilter !== 'All') items = items.filter(item => item.category === memberFilter);
+      $('#memberContent').innerHTML = items.length ? items.map(makeContentCard).join('') : '<div class="empty-state">No matching saved sample cards for this category. Try All, or add verified content for this member.</div>';
+    }
     attachSaveListeners($('#memberContent'));
   }
   function addGoal(title) {
@@ -221,13 +291,45 @@
   $$('[data-member-tab]').forEach(btn=>btn.addEventListener('click',()=>{memberFilter=btn.dataset.memberTab;$$('[data-member-tab]').forEach(b=>b.classList.toggle('active',b===btn));renderMember();}));
   $('#exportButton').addEventListener('click',exportData);$('#resetButton').addEventListener('click',resetDemo);
 
+  /* ---------- theme (F-25) + share (F-24) ---------- */
+  function applyTheme(mode) {
+    document.documentElement.classList.toggle('dark', mode === 'dark');
+    const btn = $('#themeToggle');
+    if (btn) { btn.textContent = mode === 'dark' ? '☀' : '☾'; btn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); }
+  }
+  let themeMode = 'light';
+  try { themeMode = localStorage.getItem('monstiez-theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch {}
+  applyTheme(themeMode);
+  $('#themeToggle').addEventListener('click', () => {
+    themeMode = themeMode === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('monstiez-theme', themeMode); } catch {}
+    applyTheme(themeMode);
+    showToast(themeMode === 'dark' ? 'Dark mode on — easy on the night-time eyes.' : 'Light mode on ♡');
+  });
+  $('#shareButton').addEventListener('click', async () => {
+    const url = location.href;
+    try {
+      if (navigator.share) { await navigator.share({ title: 'MONSTIEZ Universe', url }); return; }
+      await navigator.clipboard.writeText(url);
+      showToast('Link copied — same screen, same filters ♡');
+    } catch {
+      showToast('Could not share from here — copy the address bar link instead.');
+    }
+  });
+
   // First render: show the welcome screen until Join is tapped on a new installation.
   renderHomeContent();renderDiscover();renderEvents();renderMember();
   // Dynamic date label on the home screen.
   const dateLabel=$('#homeScreen .date-label');
   if(dateLabel) dateLabel.textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',month:'long',day:'numeric'}).toUpperCase();
   // Data store: load tracker data, then refresh any visible tracker UI.
-  MONSTIEZ.store.onChange(()=>{ if(currentScreen==='stats' && statsPlatform!=='Fan goals') MONSTIEZ.tracker.render(); if(currentScreen==='trackerview' && currentTrackerView){ routeFromHash(); } });
+  MONSTIEZ.store.onChange(()=>{
+    if(currentScreen==='stats' && statsPlatform!=='Fan goals') MONSTIEZ.tracker.render();
+    if(currentScreen==='trackerview' && currentTrackerView){ routeFromHash(); }
+    if(currentScreen==='home') renderHomeContent();
+    if(currentScreen==='discover') renderDiscover();
+    if(currentScreen==='member') renderMember();
+  });
   MONSTIEZ.store.load();
   MONSTIEZ.tracker.init($('#trackerRoot'), { onOpenRelease: (href)=>{ location.hash = href.replace(/^#/,''); } });
   if(!routeFromHash()){ if(state.entered) goTo('home'); else goTo('welcome'); }

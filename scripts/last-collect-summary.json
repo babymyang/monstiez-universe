@@ -1,0 +1,18 @@
+{
+ "day": "2026-10-30",
+ "at": "2026-10-30T09:16:45.182Z",
+ "results": {
+  "kworb": {
+   "tracks": 42,
+   "readingDay": "2026-10-28",
+   "changed": 0,
+   "alreadySame": 41,
+   "conflicts": 0
+  },
+  "youtube": {
+   "skipped": true,
+   "reason": "YOUTUBE_API_KEY not configured — official collection pending; dated manual observations remain in the series."
+  }
+ },
+ "failed": 0
+}

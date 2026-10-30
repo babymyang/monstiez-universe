@@ -188,3 +188,45 @@
   .ms-next{grid-template-columns:1fr}
   .bigday-row{grid-template-columns:1fr}
 }
+
+/* ============ dark theme (F-25) ============ */
+html.dark{background:#17141d}
+html.dark body{background:radial-gradient(ellipse at 8% 0%,#2a1a26 0,transparent 34%),linear-gradient(145deg,#17141d,#1b1522 68%,#1d1830);color:#f2ecf4}
+html.dark .topbar{background:transparent}
+html.dark .icon-btn,html.dark .search-box,html.dark .chip,html.dark .quick-card,html.dark .content-card,html.dark .metric-card,html.dark .goal-item,html.dark .event-item,html.dark .profile-option,html.dark .member-choice,html.dark .t-row,html.dark .m-card,html.dark .aud-line,html.dark .total-line,html.dark .card,html.dark .stats-feature,html.dark .chart-card,html.dark .goal-form,html.dark .info-note,html.dark .ver-row,html.dark .ms-item,html.dark .d-stat,html.dark .range-nav button,html.dark .seg-row button{background:#221e2b;color:#f2ecf4;border-color:#37303f}
+html.dark .total-line{background:linear-gradient(120deg,#221e2b,#261e2e 70%,#241d33)}
+html.dark .brand,html.dark .t-title,html.dark .d-head h1,html.dark .view-head h1,html.dark .profile-banner h1,html.dark .member-bio h2,html.dark .section-heading h2,html.dark .page-title-row h1,html.dark .welcome-logo,html.dark .hero-copy h2,html.dark .calendar-banner h2,html.dark .content-body h3,html.dark .m-name,html.dark .d-big strong,html.dark .aud-line b,html.dark .total-line strong,html.dark .d-stat b,html.dark .ms-next b,html.dark .ms-item b,html.dark .goal-detail strong,html.dark .event-content strong,html.dark .profile-option strong,html.dark .gloss dt,html.dark .ver-name,html.dark .quick-card strong,html.dark .milestone-copy strong,html.dark .chart-readout b,html.dark .m-go b,html.dark .eyebrow strong{color:#f6f0f7}
+html.dark .subcopy,html.dark .content-body p,html.dark .t-sub,html.dark .muted,html.dark .micro-note,html.dark .list-note,html.dark .as-of,html.dark .d-meta,html.dark .t-nums small,html.dark .m-eta,html.dark .m-go,html.dark .aud-next small,html.dark .d-stat span,html.dark .profile-option small,html.dark .legal-note,html.dark .goal-detail small,html.dark .event-content p,html.dark .made-for-fans,html.dark .member-bio>p,html.dark .gloss dd,html.dark .src-list li,html.dark .quick-card small,html.dark .m-empty,html.dark .d-window,html.dark .chart-readout,html.dark .t-nums strong.word,html.dark .t-nums strong{color:#b6aabc}
+html.dark .t-nums strong{color:#ff7fb4}
+html.dark .t-nums strong.word{color:#9c8fa4}
+html.dark .bottom-nav{background:#1d1926f0;border-color:#2e2838}
+html.dark .toast{background:#f2ecf4;color:#24232f}
+html.dark .empty-state,html.dark .info-note{background:#211d29;border-color:#37303f;color:#b6aabc}
+html.dark .welcome-screen,html.dark .hero-card,html.dark .member-hero,html.dark .profile-banner,html.dark .calendar-banner{background:linear-gradient(150deg,#241d2e 0,#241a28 72%,#231c33 100%);border-color:#3a3142}
+html.dark .welcome-copy,html.dark .hero-copy p,html.dark .calendar-banner p{color:#c9bcd0}
+html.dark .t-head,html.dark .kicker,html.dark .date-label{color:#94879c}
+html.dark .seg-row,html.dark .range-row,html.dark .segmented{background:#2a2434}
+html.dark .seg-row button.selected{background:#3a3142;color:#ff9dc4}
+html.dark .segmented button{color:#b6aabc}
+html.dark .segmented button.selected{background:var(--pink);color:#fff}
+html.dark .range-row button{color:#b6aabc}
+html.dark .range-row button.selected{background:var(--pink);color:#fff}
+html.dark .chan-select select{background:#221e2b;color:#f2ecf4;border-color:#37303f}
+html.dark .t-thumb,html.dark .thumb,html.dark .t-cover{background:#2a2434}
+html.dark .ver-row,html.dark .ms-next div,html.dark .aud-next,html.dark .cmp-table thead th,html.dark .cmp-table tbody th{background:#251f2e;color:#e8e0ec}
+html.dark .cmp-table th,html.dark .cmp-table td{border-color:#37303f}
+html.dark .goal-symbol,html.dark .option-icon,html.dark .metric-card span{background:#3a2536;color:#ff9dc4}
+html.dark .stale-bar{background:#33291a;border-color:#5a4720;color:#e8c87e}
+html.dark .chart-empty{color:#b6aabc}
+html.dark .d-src{color:#9c8fa4}
+html.dark .secondary-btn{background:#221e2b;border-color:#4a2b3e}
+html.dark .save-btn{background:#3a2536;color:#ff9dc4}
+html.dark .save-btn.saved{background:var(--pink);color:#fff}
+
+/* album grouping (Spotify Albums sort) */
+.album-group{margin-bottom:6px}
+.album-head{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);background:linear-gradient(120deg,#fdf3fa,#f6efff);border:1px solid #f0e0f0;border-radius:14px;padding:11px 14px;margin:10px 0 7px}
+.album-name{font-weight:900;font-size:13px;letter-spacing:-.2px}
+.album-meta{font-size:10px;color:var(--muted)}
+.album-total{margin-left:auto;font-weight:900;font-size:12px;color:var(--purple)}
+html.dark .album-head{background:linear-gradient(120deg,#251f2e,#271e33);border-color:#37303f}

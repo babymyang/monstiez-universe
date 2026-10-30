@@ -18,6 +18,8 @@
       </a>
       <div class="top-actions">
         <button class="icon-btn" aria-label="Search" data-screen="discover">⌕</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch between light and dark theme" title="Light / dark">☾</button>
+        <button class="icon-btn" id="shareButton" aria-label="Share a link to this view" title="Share this view">↗</button>
         <button class="icon-btn notification-btn" aria-label="Notifications" id="notificationButton">♧<i></i></button>
       </div>
     </header>
@@ -62,9 +64,9 @@
         <div class="page-title-row"><div><p class="kicker">YOUR DAILY DOSE</p><h1 id="discoverTitle">Discover</h1><p class="subcopy">Videos, news, stages and fan moments in one spot.</p></div><span class="title-sticker">✦</span></div>
         <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search videos, topics, members…" aria-label="Search content" /><button id="clearSearch" aria-label="Clear search">×</button></div>
         <div class="filter-row" id="discoverFilters" aria-label="Content categories"><button class="chip active" data-category="All">All</button><button class="chip" data-category="Music video">Music videos</button><button class="chip" data-category="Performance">Performances</button><button class="chip" data-category="Behind the scenes">Behind the scenes</button><button class="chip" data-category="Shorts">Shorts</button></div>
-        <div class="section-heading"><div><p class="kicker">HANDPICKED FOR MONSTIEZ</p><h2 id="discoverCount">Explore content</h2></div><span class="live-note"><i></i> Sample content</span></div>
+        <div class="section-heading"><div><p class="kicker">HANDPICKED FOR MONSTIEZ</p><h2 id="discoverCount">Explore content</h2></div><span class="live-note" id="discoverSourceNote"><i></i> Tracked videos</span></div>
         <div id="discoverList" class="content-grid discover-grid"></div>
-        <div class="info-note"><span>ⓘ</span><p>This starter uses illustrative sample entries, not live API data. Content links and data providers should be verified during implementation.</p></div>
+        <div class="info-note"><span>ⓘ</span><p>Videos come from the tracker catalogue (data/catalog.json) with each video’s official YouTube link. View counts shown on cards are dated observations — see Stats › Sources.</p></div>
       </section>
 
       <section id="statsScreen" class="screen" aria-labelledby="statsTitle">
