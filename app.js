@@ -74,7 +74,13 @@
   /* ---------- hash router for tracker subviews ---------- */
   function routeFromHash() {
     const hash = location.hash.replace(/^#\/?/, '');
-    if (!hash || ['home','discover','stats','events','me','member','welcome'].includes(hash)) return false;
+    if (!hash) return false;
+    if (['home','discover','stats','events','me','member'].includes(hash)) {
+      // Main screens are also deep-linkable (e.g. shared #stats links).
+      state.entered = true; persist();
+      goTo(hash);
+      return true;
+    }
     const parts = hash.split('/');
     const detailRoot = $('#detailRoot');
     if (parts[0] === 'release' && (parts[1] === 'v' || parts[1] === 's') && parts[2]) {
