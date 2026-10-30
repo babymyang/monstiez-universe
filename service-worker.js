@@ -1,4 +1,4 @@
-const CACHE_NAME = 'monstiez-universe-shell-v2';
+const CACHE_NAME = 'monstiez-universe-shell-v3';
 const FILES = ['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./assets/myangni.svg','./assets/myangni-happy.svg','./assets/myangni-sleepy.svg','./assets/myangni-excited.svg','./assets/myangni-love.svg','./assets/myangni-peek.svg','./assets/app-icon.svg','./js/util.js','./js/data/store.js','./js/ui/charts.js','./js/ui/tracker.js','./js/ui/detail.js','./js/ui/views.js','./data/catalog.json','./data/series/youtube.json','./data/series/spotify.json','./data/feed-status.json'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

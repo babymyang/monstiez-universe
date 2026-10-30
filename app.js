@@ -340,5 +340,22 @@
   MONSTIEZ.store.load();
   MONSTIEZ.tracker.init($('#trackerRoot'), { onOpenRelease: (href)=>{ location.hash = href.replace(/^#/,''); } });
   if(!routeFromHash()){ if(state.entered) goTo('home'); else goTo('welcome'); }
-  if('serviceWorker' in navigator && location.protocol.startsWith('http') && !['localhost','127.0.0.1'].includes(location.hostname)) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+  if('serviceWorker' in navigator && location.protocol.startsWith('http') && !['localhost','127.0.0.1'].includes(location.hostname)) window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./service-worker.js').then(reg=>{
+      // "A new version is ready" bar (reference parity F-26): never swap the app
+      // underneath someone while they are reading — offer a Reload button instead.
+      const showBar = () => {
+        if ($('#updateBar')) return;
+        const bar=document.createElement('div');
+        bar.id='updateBar'; bar.className='update-bar'; bar.setAttribute('role','status');
+        bar.innerHTML='<span>A new version is ready.</span><button id="updateReload">Reload</button>';
+        document.querySelector('.app-shell').appendChild(bar);
+        $('#updateReload').addEventListener('click',()=>{ if(navigator.serviceWorker.controller){navigator.serviceWorker.controller.postMessage('skip-waiting');} location.reload(); });
+      };
+      const check = () => { const w = reg.waiting || (reg.installing && reg.installing.state==='installed' ? reg.installing : null); if (w && navigator.serviceWorker.controller) showBar(); };
+      reg.addEventListener('updatefound',()=>{ const nw=reg.installing; if(nw) nw.addEventListener('statechange',()=>{ if(nw.state==='installed' && navigator.serviceWorker.controller) showBar(); }); });
+      check();
+      setInterval(()=>reg.update().catch(()=>{}), 60*60*1000);
+    }).catch(()=>{});
+  });
 })();
