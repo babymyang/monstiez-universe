@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff4f9a" />
+  <meta name="description" content="A fan-made BABYMONSTER companion to discover, track and celebrate together." />
+  <title>MONSTIEZ Universe</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#home" aria-label="MONSTIEZ Universe home" data-screen="home">
+        <span class="brand-mark">♡</span><span><b>MONSTIEZ</b><em>universe</em></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" aria-label="Search" data-screen="discover">⌕</button>
+        <button class="icon-btn notification-btn" aria-label="Notifications" id="notificationButton">♧<i></i></button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section id="welcomeScreen" class="screen welcome-screen active" aria-labelledby="welcomeTitle">
+        <div class="welcome-spark spark-a">✦</div><div class="welcome-spark spark-b">♡</div><div class="welcome-spark spark-c">✧</div>
+        <div class="welcome-crown">♕</div>
+        <div class="welcome-art"><img src="./assets/myangni.svg" alt="Myangni, the MONSTIEZ Universe cat mascot" /></div>
+        <h1 id="welcomeTitle" class="welcome-logo">MONSTIEZ <span>universe</span></h1>
+        <p class="eyebrow">YOUR <strong>BABYMONSTER</strong> CORNER <span>♥</span></p>
+        <p class="welcome-copy">Discover. Track. Celebrate.<br />Everything BABYMONSTER in one place.</p>
+        <button class="primary-btn welcome-cta" id="joinButton">Join MONSTIEZ <span>→</span></button>
+        <p class="made-for-fans">A fan-made space for MONSTIEZ ♡</p>
+        <div class="page-dots" aria-hidden="true"><i class="current"></i><i></i><i></i><i></i></div>
+      </section>
+
+      <section id="homeScreen" class="screen" aria-labelledby="homeTitle">
+        <div class="mobile-brandline"><h1 id="homeTitle" class="sr-only">Home</h1><span class="date-label">THURSDAY, OCTOBER 29</span><span class="tiny-heart">♥ made for MONSTIEZ</span></div>
+        <div class="filter-row" id="homeFilters" role="group" aria-label="Home feed filter">
+          <button class="chip active" data-feed="All">All</button><button class="chip" data-feed="Videos">Videos</button><button class="chip" data-feed="News">News</button><button class="chip" data-feed="Events">Events</button><button class="chip" data-feed="For You">For You</button>
+        </div>
+        <article class="hero-card">
+          <div class="hero-copy"><span class="pill pink-pill">YOUR FAN SPACE</span><h2>Every moment.<br /><span>All seven stars.</span></h2><p>Keep your BABYMONSTER world close.</p><button class="text-link" data-screen="events">Explore what's next <span>↗</span></button></div>
+          <img src="./assets/myangni.svg" alt="Myangni holding a little heart" class="hero-mascot" />
+          <span class="decor-heart">♡</span><span class="decor-star">✦</span>
+        </article>
+        <div class="section-heading"><div><p class="kicker">YOUR UNIVERSE</p><h2>Quick actions</h2></div><span class="heading-spark">✧</span></div>
+        <div class="quick-grid">
+          <button class="quick-card" data-screen="discover"><span class="quick-icon icon-hotpink">▶</span><strong>Latest videos</strong><small>Watch & discover</small></button>
+          <button class="quick-card" data-screen="stats"><span class="quick-icon icon-purple">▥</span><strong>Stats tracker</strong><small>Views & milestones</small></button>
+          <button class="quick-card" data-screen="events"><span class="quick-icon icon-teal">▦</span><strong>Fan calendar</strong><small>Never miss a date</small></button>
+          <button class="quick-card" data-screen="member"><span class="quick-icon icon-gold">☆</span><strong>Members</strong><small>Find your bias</small></button>
+        </div>
+        <div class="section-heading"><div><p class="kicker">FRESH FROM THE UNIVERSE</p><h2>Latest for you</h2></div><button class="text-link" data-screen="discover">See all →</button></div>
+        <div id="latestList" class="content-grid"></div>
+        <div class="section-heading"><div><p class="kicker">FAN MILESTONES</p><h2>Little wins, together</h2></div><button class="text-link" data-screen="stats">Track progress →</button></div>
+        <article class="milestone-card"><div class="milestone-icon">✦</div><div class="milestone-copy"><strong>Celebrate every stream</strong><p>Keep a personal watchlist of the goals you want to help reach.</p><div class="progress-track"><span style="width:68%"></span></div><small>Personal progress is a demo in this starter build.</small></div></article>
+      </section>
+
+      <section id="discoverScreen" class="screen" aria-labelledby="discoverTitle">
+        <div class="page-title-row"><div><p class="kicker">YOUR DAILY DOSE</p><h1 id="discoverTitle">Discover</h1><p class="subcopy">Videos, news, stages and fan moments in one spot.</p></div><span class="title-sticker">✦</span></div>
+        <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search videos, topics, members…" aria-label="Search content" /><button id="clearSearch" aria-label="Clear search">×</button></div>
+        <div class="filter-row" id="discoverFilters" aria-label="Content categories"><button class="chip active" data-category="All">All</button><button class="chip" data-category="Music video">Music videos</button><button class="chip" data-category="Performance">Performances</button><button class="chip" data-category="Behind the scenes">Behind the scenes</button><button class="chip" data-category="Shorts">Shorts</button></div>
+        <div class="section-heading"><div><p class="kicker">HANDPICKED FOR MONSTIEZ</p><h2 id="discoverCount">Explore content</h2></div><span class="live-note"><i></i> Sample content</span></div>
+        <div id="discoverList" class="content-grid discover-grid"></div>
+        <div class="info-note"><span>ⓘ</span><p>This starter uses illustrative sample entries, not live API data. Content links and data providers should be verified during implementation.</p></div>
+      </section>
+
+      <section id="statsScreen" class="screen" aria-labelledby="statsTitle">
+        <div class="page-title-row"><div><p class="kicker">THE NUMBERS BEHIND THE LOVE</p><h1 id="statsTitle">Stats & milestones</h1><p class="subcopy">A fan dashboard for tracking what matters to you.</p></div><span class="title-sticker">▥</span></div>
+        <div class="segmented" role="tablist" aria-label="Stats platform"><button class="selected" role="tab" aria-selected="true" data-platform="YouTube">YouTube</button><button role="tab" aria-selected="false" data-platform="Spotify">Spotify</button><button role="tab" aria-selected="false" data-platform="Fan goals">Fan goals</button></div>
+        <article class="stats-feature"><div class="stats-feature-top"><div class="release-art"><span>BM</span><i>♡</i></div><div class="release-text"><span class="pill muted-pill" id="statsSource">ILLUSTRATIVE SAMPLE</span><h2 id="statsFeatureTitle">Track the big moments</h2><p id="statsFeatureSub">A place for verified milestones and snapshots.</p></div></div><div class="big-stat-row"><div><span class="stat-label" id="mainStatLabel">Your tracker</span><strong id="mainStatValue">♡</strong></div><div class="stat-change"><span>✦</span><span id="mainStatChange">Set a fan goal</span></div></div><p class="micro-note" id="statsDisclaimer">No live figures are claimed. Connect a verified source or enter a snapshot to make this your own.</p></article>
+        <div class="metric-grid" id="metricGrid"><article class="metric-card"><span>♡</span><strong>Save</strong><small>Your favorite moments</small></article><article class="metric-card"><span>☆</span><strong>Compare</strong><small>Snapshots over time</small></article><article class="metric-card"><span>↗</span><strong>Share</strong><small>Your fan card</small></article></div>
+        <article class="chart-card"><div class="card-title-row"><div><p class="kicker">YOUR SNAPSHOTS</p><h2>Growth over time</h2></div><select id="chartRange" aria-label="Chart range"><option value="30">30 days</option><option value="90">90 days</option><option value="365">1 year</option></select></div><div class="chart-wrap"><svg id="growthChart" viewBox="0 0 520 190" role="img" aria-label="Illustrative line chart showing sample fan goal progress"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4f9a" stop-opacity=".23"/><stop offset="1" stop-color="#ff4f9a" stop-opacity="0"/></linearGradient></defs><path d="M34 24H508 M34 66H508 M34 108H508 M34 150H508" stroke="#eee5ed" stroke-width="1" stroke-dasharray="4 5"/><path id="areaPath" d="M34 142 L120 126 L206 110 L292 86 L378 65 L464 43 L464 160 L34 160Z" fill="url(#chartFill)"/><path id="linePath" d="M34 142 L120 126 L206 110 L292 86 L378 65 L464 43" fill="none" stroke="#ff4f9a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><g id="chartDots" fill="#fff" stroke="#ff4f9a" stroke-width="3"><circle cx="34" cy="142" r="5"/><circle cx="120" cy="126" r="5"/><circle cx="206" cy="110" r="5"/><circle cx="292" cy="86" r="5"/><circle cx="378" cy="65" r="5"/><circle cx="464" cy="43" r="5"/></g></svg><div class="chart-axis"><span>Start</span><span>Snapshot</span><span>Now</span></div></div><p class="micro-note">Chart values in this build are illustrative only. Replace with dated, sourced snapshots before publishing.</p></article>
+        <div class="section-heading"><div><p class="kicker">KEEP THE LOVE MOVING</p><h2>Milestone board</h2></div><button class="text-link" id="addGoalButton">+ Add goal</button></div>
+        <div id="goalList" class="goal-list"></div>
+        <div class="section-heading"><div><p class="kicker">A LITTLE PROGRESS IS STILL PROGRESS</p><h2>My fan goals</h2></div></div>
+        <form class="goal-form" id="goalForm"><label for="goalInput">Create a personal goal</label><div class="form-inline"><input id="goalInput" type="text" maxlength="70" placeholder="e.g. Watch the new performance" required /><button class="primary-btn" type="submit">Add</button></div><p>Saved on this device only. This does not change official statistics.</p></form>
+      </section>
+
+      <section id="eventsScreen" class="screen" aria-labelledby="eventsTitle">
+        <div class="page-title-row"><div><p class="kicker">SAVE THE DATE</p><h1 id="eventsTitle">Fan calendar</h1><p class="subcopy">Keep releases, livestreams and your own reminders together.</p></div><span class="title-sticker">▦</span></div>
+        <div class="calendar-banner"><div><span class="pill pink-pill">THIS MONTH</span><h2>Make room for the moments.</h2><p>Dates shown here are editable placeholders until verified.</p></div><div class="calendar-flower">✿</div></div>
+        <div class="section-heading"><div><p class="kicker">YOUR SCHEDULE</p><h2>Upcoming reminders</h2></div><button class="text-link" id="addEventButton">+ Add event</button></div>
+        <div id="eventList" class="event-list"></div>
+        <form class="goal-form event-form" id="eventForm"><label for="eventName">Add a reminder</label><div class="form-inline"><input id="eventName" type="text" placeholder="Event name" maxlength="70" required/><input id="eventDate" type="date" required aria-label="Event date"/><button class="primary-btn" type="submit">Save</button></div><p>Local reminder list only. No notifications are sent by this starter build.</p></form>
+      </section>
+
+      <section id="memberScreen" class="screen" aria-labelledby="memberTitle">
+        <div class="page-title-row"><div><p class="kicker">MEET YOUR STARS</p><h1 id="memberTitle">Member corner</h1><p class="subcopy">Pick a member to explore a fan-curated profile.</p></div><span class="title-sticker">♡</span></div>
+        <div class="member-selectors" id="memberSelectors" aria-label="Choose member"></div>
+        <article class="member-hero"><div class="member-orbit"><div class="member-avatar-large" id="memberAvatar">A</div><span class="orbit-heart">♥</span><span class="orbit-star">✦</span></div><div class="member-bio"><span class="pill pink-pill">YOUR BIAS CORNER</span><h2 id="memberName">Ahyeon</h2><p id="memberTagline">A fan-made member space</p><p id="memberDescription">Collect favorite performances, remember memorable moments, and make this page your own.</p><button class="secondary-btn" id="favoriteMember">♡ Add to favorites</button></div></article>
+        <div class="filter-row member-content-tabs" id="memberTabs"><button class="chip active" data-member-tab="All">All</button><button class="chip" data-member-tab="Music video">Music videos</button><button class="chip" data-member-tab="Performance">Performances</button><button class="chip" data-member-tab="Behind the scenes">Behind the scenes</button></div>
+        <div class="section-heading"><div><p class="kicker">SAVED FOR THIS MEMBER</p><h2>Content collection</h2></div><button class="text-link" data-screen="discover">Browse all →</button></div>
+        <div id="memberContent" class="content-grid"></div>
+        <div class="info-note"><span>♡</span><p>Fan project, not affiliated with BABYMONSTER or YG Entertainment. Check facts and use appropriate image permissions before release.</p></div>
+      </section>
+
+      <section id="meScreen" class="screen" aria-labelledby="meTitle">
+        <div class="profile-banner"><div class="profile-mascot"><img src="./assets/myangni.svg" alt="Myangni mascot" /></div><p class="kicker">WELCOME TO YOUR CORNER</p><h1 id="meTitle">My Baemon space</h1><p>Make your own little universe.</p></div>
+        <div class="profile-menu"><button class="profile-option" data-screen="member"><span class="option-icon">♡</span><span><strong>My bias</strong><small>Explore member corners</small></span><span class="option-arrow">→</span></button><button class="profile-option" data-screen="stats"><span class="option-icon">▥</span><span><strong>My fan goals</strong><small>Track your personal progress</small></span><span class="option-arrow">→</span></button><button class="profile-option" id="exportButton"><span class="option-icon">↗</span><span><strong>Export my local data</strong><small>Download goals and reminders</small></span><span class="option-arrow">→</span></button><button class="profile-option" id="resetButton"><span class="option-icon">↺</span><span><strong>Reset this demo</strong><small>Clear locally saved demo data</small></span><span class="option-arrow">→</span></button></div>
+        <p class="legal-note">MONSTIEZ Universe is a fan-made, unofficial companion. All statistics displayed in the starter are illustrative or user-entered unless a screen explicitly identifies a verified source.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Main navigation">
+      <button data-screen="home" class="nav-item active"><span>⌂</span><small>Home</small></button>
+      <button data-screen="discover" class="nav-item"><span>⌕</span><small>Discover</small></button>
+      <button data-screen="stats" class="nav-item"><span>▥</span><small>Stats</small></button>
+      <button data-screen="events" class="nav-item"><span>▦</span><small>Events</small></button>
+      <button data-screen="me" class="nav-item"><span>♡</span><small>My space</small></button>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

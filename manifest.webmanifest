@@ -1,0 +1,13 @@
+{
+  "name": "MONSTIEZ Universe",
+  "short_name": "MONSTIEZ",
+  "description": "A fan-made BABYMONSTER companion to discover, track and celebrate together.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff4fa",
+  "theme_color": "#ff4f9a",
+  "orientation": "portrait",
+  "icons": [
+    {"src":"./assets/app-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

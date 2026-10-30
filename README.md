@@ -1,95 +1,58 @@
-# MONSTIEZ Universe 🎀
+# MONSTIEZ Universe — BM Tracker parity handoff
 
-> Your little BABYMONSTER corner — discover, follow, track, and celebrate in one place.
+This is a fresh, self-contained handoff for Super Z. It contains a working mobile-first PWA starter, real UI screens, editable Myangni mascot vectors, visual reference sheets, a detailed implementation plan, and an agent master prompt.
 
-An **unofficial, fan-made** companion PWA for MONSTIEZ (BABYMONSTER fandom). Installable on Android (and iOS via Add-to-Home-Screen), built mobile-first at 320–430 px.
+## Start here
 
-**Fan-made app. Not affiliated with, associated with, or endorsed by YG Entertainment or BABYMONSTER.**
+1. Read `SUPER_Z_BUILD_PROMPT.md` and execute it.
+2. Read `PROJECT_PLAN.md` for the milestone roadmap.
+3. Open `docs/BM_TRACKER_REVERSE_ENGINEERING_PLAN.md` and complete `docs/BM_TRACKER_FEATURE_AUDIT_TEMPLATE.md` using the Super Z browser against:
+   - https://bm-tracker.com/user-guide
+   - https://bm-tracker.com/
+4. Run and inspect the included starter before changing it.
+5. Persist the project in GitHub and update `worklog.md` after every work unit.
 
----
+## Run the starter locally
 
-## Screens
-
-| Route | Screen | Notes |
-|---|---|---|
-| `/` | Welcome | Original wordmark + mascot, functional intro slides, CTA → Home. No photography. |
-| `/home` | Home | Category chips, verified-date countdown card, quick actions, latest videos, trending. |
-| `/stats` | Stats | YouTube/Spotify tabs, real observed metrics, growth chart (requires ≥2 snapshots), milestones. |
-| `/members/[slug]` | Member detail | 7-member selector, verified profile facts, content/moments tabs. |
-| `/discover` | Search & catalogue | Instant local search, type filters, bookmarks, watched marks. |
-| `/events` | Schedule | Verified tour dates with sources; ticket links point to YG only. |
-| `/my-baemon` | You | Bias, bookmarks, watched, reminders, reset — all localStorage, no account. |
-
-## Core constraints (enforced in code, not just policy)
-
-- **No paid APIs, no API keys, no scraping of YouTube/Spotify pages, no private endpoint reverse-engineering.**
-- **No invented data.** Every metric is a dated, manually observed public value with a `sourceUrl` (`data/metric-snapshots.json`). Charts render **only** with ≥2 dated observations of the same metric; otherwise a designed empty state shows. Unavailable metrics (likes/comments/saves/Spotify streams) display `—` with an explanation.
-- **Facts need provenance.** Member birth dates come from the official YG profile (`ygfamily.com/en/artists/babymonster/profile`), stored with source + `verifiedAt`. Positions/MBTI/heights are **not officially published**, so they are not shown.
-- **Validators block placeholders** (`value: 0`, fake dates, non-official URLs) from production — see `src/lib/validation.ts` + `npm run data:validate`.
-- **Demo metrics are dev-only** (`NEXT_PUBLIC_DEMO_METRICS=1` + non-production) and cannot reach a production build.
-- **Original artwork only** — the mascot, member avatars, wordmark rendering, and covers are hand-made SVGs in `src/components/`. No official logos or rehosted photos. YouTube thumbnails are hot-linked (never copied) with attribution + official links, with gradient-cover fallbacks.
-
-## Data sources
-
-| Source | What it provides | How used |
-|---|---|---|
-| Official channel RSS `youtube.com/feeds/videos.xml?channel_id=UCqwUnggBBct-AY2lAdI88jQ` | video id/title/link/published (no view counts) | Build-time refresh via `npm run data:refresh-rss`; falls back to curated catalogue on failure |
-| YG official profile pages | member names + birth dates | Manually verified 2026-10-29, stored in `data/members.json` |
-| Official announcements (Weverse/YG FB/press) | release dates, tour dates, milestones | Manually curated with `sourceUrl` per record |
-| Manual public observation | view counts (one-time, dated) | `data/metric-snapshots.json` + CSV import (`npm run data:import-snapshots`) |
-
-**Known environment note:** at build time on 2026-10-29 the sandbox network blocked `youtube.com/feeds/videos.xml` (HTTP 404 for every channel). The feed script is correct and will work in normal environments/CI; the app gracefully used the curated catalogue meanwhile.
-
-## Development
+From this folder:
 
 ```bash
-bun install            # or npm install
-bun run dev            # dev server on :3000
-npm run lint           # eslint — 0 problems
-npm run typecheck      # tsc --noEmit — 0 errors
-npm run test           # vitest — 25 tests
-npm run data:validate  # provenance validator
-npm run build          # production build (+ generates sw-precache.json)
-npm run start          # serve the production build
+python3 -m http.server 8000
 ```
 
-### Adding a metric snapshot (manual workflow)
+Then open `http://localhost:8000` in a browser. A local HTTP server is needed for service-worker/PWA checks; opening `index.html` directly as a file is not a valid PWA test.
 
-1. Visit the public video page, note the exact view count and time.
-2. Append a row to a CSV: `entityId,entityTitle,metric,value,observedAt,sourceUrl,notes`
-3. `npm run data:import-snapshots your-file.csv` — validates, dedupes, merges into `data/metric-snapshots.json`.
-4. Commit. The chart appears automatically once ≥2 dated observations exist.
+## Included screens
 
-### Refreshing recent uploads
+- Welcome / onboarding
+- Home dashboard
+- Discover with content search and filters
+- Stats & Milestones (YouTube / Spotify / Fan Goals tabs in starter UI)
+- Fan Calendar with local reminders
+- Member Corner with all seven members
+- My Baemon personal area
 
-`npm run data:refresh-rss` fetches the official RSS feed and updates `data/youtube-feed.json` + `data/feed-status.json`. On failure it preserves last-known data and records the error; the app never fabricates replacements.
+The starter uses clear sample/illustrative labels where live data is not connected. It must not present the sample values as official or live.
 
-## PWA
+## Myangni assets
 
-- Manifest (standalone, themed icons), service worker (`public/sw.js`): network-first pages, cache-first hashed assets, offline fallback to `/offline`.
-- The **first online visit precaches the full shell** (`sw-precache.json`, generated at build).
-- Verified: after one online visit, `/`, `/home`, `/stats` render fully offline.
-- Preferences (bias/bookmarks/watched/reminders) persist in localStorage with version-safe parsing.
+`assets/myangni.svg` is the canonical vector mascot. Additional SVG expression variants are included for happy, sleepy, excited, love and peek. Use these actual SVGs in the app and keep them editable. The JPG reference sheets are for art direction, not replacement screens.
 
-## Tech
+## BM Tracker feature parity
 
-Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · shadcn/ui primitives (heavily re-themed) · lucide-react · custom SVG charts · self-hosted OFL fonts (Nunito Sans, Baloo 2 — see `public/fonts/`) · Vitest.
+The guide is a client-rendered website and its text could not be reliably extracted by the initial research page reader. The new agent must inspect it in a real browser, capture evidence, create `docs/BM_TRACKER_FEATURE_AUDIT.md`, and map every confirmed public feature to a MONSTIEZ implementation and test. Do not invent a feature list or claim parity without this audit.
 
-Design tokens and screen inventory: [`docs/DESIGN_TOKENS.md`](docs/DESIGN_TOKENS.md) · [`docs/SCREEN_INVENTORY.md`](docs/SCREEN_INVENTORY.md). UI research basis: [`docs/UI_RESEARCH.md`](docs/UI_RESEARCH.md). Agent/AI-contributor rules: [`AGENTS.md`](AGENTS.md). Session recovery: [`docs/SESSION_RECOVERY.md`](docs/SESSION_RECOVERY.md).
+## Data strategy
 
-## Deployment (static-first)
+- YouTube Data API is the intended source for current public channel/video statistics. Use the uploads playlist and batched `videos.list` calls; capture your own snapshots to build history.
+- Spotify Web API is for optional catalog metadata, not public lifetime/daily stream totals.
+- Determine BM Tracker's actual Spotify source from public guide disclosures and browser Network activity. Evaluate public candidates such as Kworb and ChartMasters, and distinguish official Spotify Charts chart-eligible figures from full stream totals.
+- Read `docs/DATA_PROVIDER_RESEARCH.md` before designing data collection.
 
-The app prerenders to static content (`next build` → all routes ○/● except the stub `/api`). Deploy options:
+## Resource and persistence rules
 
-1. **Vercel / Netlify** — connect the repo, defaults work.
-2. **Any static host** — `npm run build`, host `.next/standalone` with `npm run start` (Node), or export-compatible static hosts may serve the prerendered HTML + `public/`.
+The runtime/server may disappear. GitHub is the source of truth. Commit frequently, verify remote pushes, keep `worklog.md` current, use small bounded tasks, and leave recovery instructions. Avoid required paid services, paid APIs, paid hosting or a paid database. Keep keys in GitHub secrets, never in source code.
 
-HTTPS is required for service-worker/install. GitHub repo is the source of truth; no workspace files are needed at runtime.
+## Verification status at handoff
 
-## Limitations (v1, by design)
-
-- No live view-count history — snapshots start when recording starts; charts fill in over time.
-- No Spotify stream metrics (not publicly/legitimately accessible) — curated links only.
-- Per-member fancam links and member-specific moments/quotes are curated in future data refreshes (empty states until then).
-- Push notifications are not implemented; reminders are local-only.
-- Light theme only in v1 (token system ready for a dark column later).
+The inherited starter has previously passed `node --check app.js` and a static local asset reference audit. A browser screenshot run was not completed in the previous environment because Chromium hung during startup. Re-run visual and interaction testing in Super Z; do not treat old checks as proof that all new features work.

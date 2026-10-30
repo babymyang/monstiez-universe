@@ -1,51 +1,15 @@
+# Local env / secrets
+.env
+.env.*
+*.local
+
 # Dependencies
 node_modules/
-
-# Next.js build output
-.next/
-out/
-build/
-dist/
-
-# Environment & secrets — never commit
-.env
-.env.local
-.env.*.local
-*.pem
-*.key
-.git-credentials
-
-# Sandbox infrastructure (not part of the app)
-.zscripts/
-skills/
-examples/
-mini-services/
-Caddyfile
-dev.log
-server.log
-db/*.db
-prisma/db/
-
-# Uploaded / handoff source material (kept out of repo; reference paths documented in docs/)
-upload/
-handoff-extract/
-download/
-
-# Test & QA artifacts
-coverage/
-playwright-report/
-test-results/
-/screenshots/
-scripts/tmp/
 
 # OS / editor
 .DS_Store
 Thumbs.db
-*.swp
 
-# Misc caches
-*.tsbuildinfo
-.eslintcache
-.turbo/
-prisma/
-scripts/tmp/
+# Local tooling
+/tmp/
+*.log
