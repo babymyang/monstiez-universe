@@ -129,18 +129,19 @@ State language is explicit and honest everywhere ("Only 9 days so far", "no peak
 
 ## 9. Parity coverage ledger
 
-Tracked in `docs/BM_TRACKER_FEATURE_AUDIT.md` §3 column "MONSTIEZ target" and in the implementation issues. Summary:
+Implemented in the MONSTIEZ design language on `main` (commit history in `worklog.md`). Test evidence = live browser interaction runs recorded in the worklog + `docs/reference/` screenshots.
 
-| Area | BM Tracker features | MONSTIEZ destination |
-|---|---|---|
-| Lists + controls | F-01, F-05–F-10 | Stats screen (YouTube/Spotify tabs), tracker list |
-| Release detail | F-11–F-17 | Release detail view (video/song pages) |
-| Albums | F-18 | Spotify album grouping + band chart |
-| Totals | F-03, F-19 | Totals view |
-| Compare | F-20 | Compare view |
-| Audience | F-02, F-21 | Audience view |
-| Provenance/honesty | F-06, F-22, F-23 | Metric schema (`status`, `estimated`), source labels, DATA_SOURCES.md |
-| Shell features | F-24–F-27 | Existing PWA + additions (share, theme, offline stale bar) |
+| Area | BM Tracker features | MONSTIEZ destination | Status |
+|---|---|---|---|
+| Lists + controls | F-01, F-05–F-09 | Stats screen tracker lists (YouTube/Spotify tabs) | ✅ implemented & tested |
+| URL state | F-10 | Share button + hash deep links for screens/releases; sort/filter URL encoding deferred | ◐ partial (share works; filter-in-URL pending) |
+| Release detail | F-11–F-17 | Release detail view (`#/release/v/{id}`, `#/release/s/{key}`) | ✅ implemented & tested |
+| Albums | F-18 | Spotify Albums grouping with record totals + Spotify links; per-track band chart deferred | ◐ partial |
+| Totals | F-03, F-19 | Totals views (`#/totals/youtube`, `#/totals/spotify`) | ✅ implemented |
+| Compare | F-20 | Compare view (`#/compare/from/{kind}/{id}`) — age-aligned chart + milestone race table | ✅ implemented |
+| Audience | F-02, F-21 | Audience view (`#/audience`); TikTok/IG/X panels pending collector extension | ◐ partial (YT+SP live) |
+| Provenance/honesty | F-06, F-22, F-23 | Series schema (`estimated`, `source`, `method`, `alt`), est flags, honest state words, Sources view, `docs/DATA_SOURCES.md`, validator | ✅ implemented & enforced |
+| Shell features | F-24–F-27 | Share button, light/dark theme, update bar, offline SW v4, no accounts/tracking | ✅ implemented & tested |
 
 ## 10. Unresolved questions
 
