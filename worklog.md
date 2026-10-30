@@ -105,6 +105,9 @@ d0fc597 baseline → 21bb811 audit → a784706 tracker core → 5005598 parity s
 - TikTok/IG/X audience panels await an evidenced source (no provider named by the reference's guide).
 - Real-device PWA install test (no Android device in this environment).
 
-### Verification still pending in this session
-- [ ] Production offline re-check after these edits (SW v4 self-heal)
-- [ ] Commit + push + live-deployment browser check
+### Production verification (after push) ✅
+- Pages deployed the follow-up commit; first hit ran the self-healing SW v4 (old shell once, new shell after reload — documented behaviour, update bar offered).
+- F-10 live: `#stats?tag=music_video&sort=movement` → 18 rows, Movement selected, YouTube tab active.
+- F-18 live: album panel expands with the honest build-up state + Spotify link; no console errors.
+- **Offline on production**: `set offline on` → reload → full tracker list (18 rows) renders from cache, no false stale warning.
+- Commit pushed: `e5e1c4d` (rebased over the workflow's own `614504a` data commit; stale dry-run timestamps resolved in favour of the CI-run values).
