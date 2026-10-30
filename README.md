@@ -1,58 +1,85 @@
-# MONSTIEZ Universe — BM Tracker parity handoff
+# MONSTIEZ Universe
 
-This is a fresh, self-contained handoff for Super Z. It contains a working mobile-first PWA starter, real UI screens, editable Myangni mascot vectors, visual reference sheets, a detailed implementation plan, and an agent master prompt.
+A fan-made, unofficial **BABYMONSTER companion PWA** — discover, follow, track, celebrate.
+Android-first, installable, offline-friendly, **zero paid services**, no accounts, no tracking.
 
-## Start here
+**Live app:** https://babymyang.github.io/monstiez-universe/
 
-1. Read `SUPER_Z_BUILD_PROMPT.md` and execute it.
-2. Read `PROJECT_PLAN.md` for the milestone roadmap.
-3. Open `docs/BM_TRACKER_REVERSE_ENGINEERING_PLAN.md` and complete `docs/BM_TRACKER_FEATURE_AUDIT_TEMPLATE.md` using the Super Z browser against:
-   - https://bm-tracker.com/user-guide
-   - https://bm-tracker.com/
-4. Run and inspect the included starter before changing it.
-5. Persist the project in GitHub and update `worklog.md` after every work unit.
+## What's inside
 
-## Run the starter locally
+| Area | What you get |
+|---|---|
+| Welcome / Home / Discover | Mascot onboarding, quick actions, **138 real tracked videos** with official thumbnails, live tag filters and search |
+| Stats & Milestones | A genuine fan tracker (feature parity with the audited BM Tracker reference): YouTube + Spotify tabs, totals, milestone cards, sort/search/filters, release detail pages with history charts, milestone ladders, biggest-day, other-versions, age-aligned Compare, Audience panels, Totals pages |
+| Fan goals | Personal local goals and reminders (device-only) |
+| Member Corner | All seven members (Ruka, Pharita, Asa, Ahyeon, Rami, Rora, Chiquita) with member-filtered tracked content |
+| My Baemon | Personal corner, local data export, reset |
+| Myangni | Original editable SVG mascot with expression variants used for loading/empty/milestone states |
 
-From this folder:
+## Data honesty (the core rule)
+
+Every number in the tracker is a **dated observation with its own source**, shown in the UI:
+
+- **YouTube** — official public figures. Automatic collection uses the **YouTube Data API**
+  (channels.list → uploads playlist → batched videos.list; no search polling) once a key is configured.
+  Until then, figures come from dated manual/public observations.
+- **Spotify plays** — **Kworb** public artist page (third-party public stream figures;
+  robots.txt permits access; credited on every figure). The Spotify Web API does **not**
+  publish stream totals, so nothing here is ever labelled as a Spotify API stream count.
+- **Spotify followers / monthly listeners** — dated public observations (credited).
+- History starts when collection started (2026-10-29). **Nothing older is reconstructed.**
+  Charts appear only when at least two dated readings exist. Missing values show honest
+  words (`New`, `No full day`, `No count`) — never a made-up zero. Estimates are marked `est`.
+
+Full details: [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) ·
+Reference audit: [`docs/BM_TRACKER_FEATURE_AUDIT.md`](docs/BM_TRACKER_FEATURE_AUDIT.md)
+
+## Run locally
 
 ```bash
 python3 -m http.server 8000
+# open http://localhost:8000
 ```
 
-Then open `http://localhost:8000` in a browser. A local HTTP server is needed for service-worker/PWA checks; opening `index.html` directly as a file is not a valid PWA test.
+A local HTTP server is required for PWA/service-worker behaviour. On `localhost` the
+service worker does not register (dev convenience); it registers on the deployed site.
 
-## Included screens
+## Scheduled data collection
 
-- Welcome / onboarding
-- Home dashboard
-- Discover with content search and filters
-- Stats & Milestones (YouTube / Spotify / Fan Goals tabs in starter UI)
-- Fan Calendar with local reminders
-- Member Corner with all seven members
-- My Baemon personal area
+`.github/workflows/collect-public-stats.yml` runs daily (01:20 UTC ≈ 10:20 KST) and on
+manual dispatch:
 
-The starter uses clear sample/illustrative labels where live data is not connected. It must not present the sample values as official or live.
+1. Parses Kworb's public BABYMONSTER page (no secrets needed) and files readings under the
+   page's own "Last updated" date — never under the collection date.
+2. If `YOUTUBE_API_KEY` is set in **Settings → Secrets and variables → Actions**, collects
+   official channel + video statistics (≈5–15 quota units/day).
+3. Validates honesty invariants (`scripts/validate.js`) and commits only when data changed.
 
-## Myangni assets
+Setup: add `YOUTUBE_API_KEY` as an Actions secret to enable official YouTube collection.
+Everything else works without configuration.
 
-`assets/myangni.svg` is the canonical vector mascot. Additional SVG expression variants are included for happy, sleepy, excited, love and peek. Use these actual SVGs in the app and keep them editable. The JPG reference sheets are for art direction, not replacement screens.
+## Repository layout
 
-## BM Tracker feature parity
+```
+index.html / styles.css / app.js     app shell + screens
+js/util.js                           KST day logic, formatting, milestones, biggest-day
+js/data/store.js                     data loading, last-known-good cache, derived models
+js/ui/charts.js                      SVG line+bars chart engine, age-aligned compare chart
+js/ui/tracker.js                     tracker lists (sort/search/filters, album grouping)
+js/ui/detail.js                      release detail view (chart, milestones, versions)
+js/ui/views.js                       Audience / Totals / Compare / Sources views
+data/catalog.json                    tracked entities (videos, songs, works, tags, channels)
+data/series/youtube.json             dated YouTube readings (channel + videos)
+data/series/spotify.json             dated Spotify readings (tracks + artist)
+scripts/collect.js                   daily collector (Kworb + YouTube Data API)
+scripts/validate.js                  data honesty validation
+docs/                                audit, data sources, plans, reference screenshots
+```
 
-The guide is a client-rendered website and its text could not be reliably extracted by the initial research page reader. The new agent must inspect it in a real browser, capture evidence, create `docs/BM_TRACKER_FEATURE_AUDIT.md`, and map every confirmed public feature to a MONSTIEZ implementation and test. Do not invent a feature list or claim parity without this audit.
+## Legal
 
-## Data strategy
-
-- YouTube Data API is the intended source for current public channel/video statistics. Use the uploads playlist and batched `videos.list` calls; capture your own snapshots to build history.
-- Spotify Web API is for optional catalog metadata, not public lifetime/daily stream totals.
-- Determine BM Tracker's actual Spotify source from public guide disclosures and browser Network activity. Evaluate public candidates such as Kworb and ChartMasters, and distinguish official Spotify Charts chart-eligible figures from full stream totals.
-- Read `docs/DATA_PROVIDER_RESEARCH.md` before designing data collection.
-
-## Resource and persistence rules
-
-The runtime/server may disappear. GitHub is the source of truth. Commit frequently, verify remote pushes, keep `worklog.md` current, use small bounded tasks, and leave recovery instructions. Avoid required paid services, paid APIs, paid hosting or a paid database. Keep keys in GitHub secrets, never in source code.
-
-## Verification status at handoff
-
-The inherited starter has previously passed `node --check app.js` and a static local asset reference audit. A browser screenshot run was not completed in the previous environment because Chromium hung during startup. Re-run visual and interaction testing in Super Z; do not treat old checks as proof that all new features work.
+MONSTIEZ Universe is a fan-made, unofficial companion. It is not affiliated with
+BABYMONSTER, YG Entertainment, YouTube, Spotify, BM Tracker, Kworb or any other data
+provider. All displayed figures carry their own source labels. Functional inspiration for
+the tracker comes from BM Tracker's publicly documented behaviour — no proprietary code,
+branding or assets were copied. Myangni is an original mascot.

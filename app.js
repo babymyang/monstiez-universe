@@ -64,6 +64,7 @@
     $$('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === navId));
     $('#main').focus({preventScroll:true});
     window.scrollTo({top:0,behavior:'instant'});
+    if (screen === 'home') renderHomeContent();
     if (screen === 'discover') renderDiscover();
     if (screen === 'member') renderMember();
     if (screen === 'stats') renderStatsScreen();
