@@ -31,6 +31,8 @@
   ];
   let state = readState();
   let currentScreen = 'welcome';
+  const visited = new Set(['welcome']);
+  const mascot = () => window.Myangni;
   let feedFilter = 'All';
   let contentFilter = 'All';
   let memberFilter = 'All';
@@ -71,6 +73,17 @@
     $$('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === navId));
     $('#main').focus({preventScroll:true});
     window.scrollTo({top:0,behavior:'instant'});
+    mascot()?.setBuddyVisible(screen !== 'welcome');
+    const TIPS = {
+      home:'This is your universe home! Tap me anytime if you feel lost ♡',
+      discover:'Search or filter tracked videos — tap the heart on any card to save it!',
+      stats:'Real dated numbers with sources, and your own fan goals below ✦',
+      events:'Add a reminder here and check back on the big day ♡',
+      member:'Pick your bias and make her corner yours ♡',
+      me:'Your space! You can Ask Myangni anything from here too ✦',
+      trackerview:'Every number in this detail view has a date and a source ♡'
+    };
+    if (!visited.has(screen) && TIPS[screen]) { visited.add(screen); setTimeout(() => mascot()?.say(TIPS[screen], screen === 'stats' || screen === 'trackerview' ? 'proud' : screen === 'events' ? 'sleepy' : 'happy'), 900); }
     if (screen === 'home') renderHomeContent();
     if (screen === 'discover') renderDiscover();
     if (screen === 'member') renderMember();
@@ -165,7 +178,7 @@
     $$('[data-save]', root).forEach(button => button.addEventListener('click', () => {
       const id = button.dataset.save;
       state.saved = state.saved.includes(id) ? state.saved.filter(x => x !== id) : [...state.saved,id];
-      persist(); renderHomeContent(); renderDiscover(); renderMember(); showToast(state.saved.includes(id) ? 'Saved to your fan collection ♡' : 'Removed from your saved collection.');
+      persist(); renderHomeContent(); renderDiscover(); renderMember(); const saved = state.saved.includes(id); showToast(saved ? 'Saved to your fan collection ♡' : 'Removed from your saved collection.'); mascot()?.say(saved ? 'Nice pick! It\u2019s in your collection ♡' : 'Okay, unhearted. Your collection, your rules!', saved ? 'love' : 'wink');
     }));
   }
   function renderHomeContent() {
@@ -222,7 +235,7 @@
     // Fan goals pane content (shown when the Fan goals tab is selected).
     const host=$('#goalList');
     host.innerHTML = state.goals.length ? state.goals.map(goal=>`<article class="goal-item"><span class="goal-symbol">${goal.done?'✓':'♡'}</span><div class="goal-detail"><strong>${escapeHtml(goal.title)}</strong><small>${escapeHtml(goal.detail)}</small></div><button class="goal-state ${goal.done?'done':''}" data-toggle-goal="${escapeHtml(goal.id)}">${goal.done?'Done':'Mark done'}</button><button class="goal-delete" data-delete-goal="${escapeHtml(goal.id)}" aria-label="Delete ${escapeHtml(goal.title)}">×</button></article>`).join('') : '<div class="empty-state">No personal goals yet. Add one below to start your own fan journey.</div>';
-    $$('[data-toggle-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{const g=state.goals.find(x=>x.id===btn.dataset.toggleGoal); if(!g)return; g.done=!g.done;persist();renderStats();showToast(g.done?'Goal marked complete. Nice work!':'Goal moved back to in progress.');}));
+    $$('[data-toggle-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{const g=state.goals.find(x=>x.id===btn.dataset.toggleGoal); if(!g)return; g.done=!g.done;persist();renderStats();showToast(g.done?'Goal marked complete. Nice work!':'Goal moved back to in progress.'); mascot()?.say(g.done?'GOAL COMPLETE! Look at you go! ✦':'We\u2019ll get it next time — pawsitive thoughts!', g.done?'excited':'wink');}));
     $$('[data-delete-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{state.goals=state.goals.filter(x=>x.id!==btn.dataset.deleteGoal);persist();renderStats();showToast('Personal goal removed.');}));
   }
 
@@ -304,15 +317,15 @@
   }
   function exportData() {
     const blob=new Blob([JSON.stringify({app:'MONSTIEZ Universe',exportedAt:new Date().toISOString(),notice:'Personal local data only. Demo content and sample chart are not official statistics.',data:state},null,2)],{type:'application/json'});
-    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='monstiez-universe-my-data.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);showToast('Your local data export was created.');
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='monstiez-universe-my-data.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);showToast('Your local data export was created.');mascot()?.say('Data exported safely! Look at you being so organized ♡','proud');
   }
   function resetDemo() {
     if(!window.confirm('Reset this starter demo? This clears saved clips, favorites, personal goals and reminders on this device.'))return;
-    state={goals:defaultGoals.map(x=>({...x})),events:defaultEvents.map(x=>({...x})),saved:[],favorites:[],entered:true};persist();renderHomeContent();renderDiscover();renderStatsScreen();renderEvents();renderMember();showToast('Demo reset.');
+    state={goals:defaultGoals.map(x=>({...x})),events:defaultEvents.map(x=>({...x})),saved:[],favorites:[],entered:true};persist();renderHomeContent();renderDiscover();renderStatsScreen();renderEvents();renderMember();showToast('Demo reset.');mascot()?.say('Fresh start! Time to fill it with new memories ♡','sleepy');
   }
   // Navigation and controls
   $$('[data-screen]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();if(btn.dataset.screen==='home'&&!state.entered&&currentScreen==='welcome'){state.entered=true;persist();}goTo(btn.dataset.screen);}));
-  $('#joinButton').addEventListener('click',()=>{state.entered=true;persist();goTo('home');showToast('Welcome to your MONSTIEZ corner ♡');});
+  $('#joinButton').addEventListener('click',()=>{state.entered=true;persist();goTo('home');showToast('Welcome to your MONSTIEZ corner ♡');mascot()?.say('Welcome home, MONSTIEZ! Party time ♡','party',3400);});
   $('#notificationButton').addEventListener('click',()=>showToast('You are all caught up. Add reminders in your fan calendar.'));
   $$('[data-feed]').forEach(btn=>btn.addEventListener('click',()=>{feedFilter=btn.dataset.feed;$$('[data-feed]').forEach(b=>b.classList.toggle('active',b===btn));renderHomeContent();}));
   $$('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{contentFilter=btn.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderDiscover();}));
@@ -322,7 +335,7 @@
   $('#addGoalButton').addEventListener('click',()=>{$('#goalInput').focus();$('#goalForm').scrollIntoView({behavior:'smooth',block:'center'});});
   $('#eventForm').addEventListener('submit',e=>{e.preventDefault();addEvent($('#eventName').value,$('#eventDate').value,$('#eventName').dataset.editId);});
   $('#addEventButton').addEventListener('click',()=>{$('#eventName').focus();$('#eventForm').scrollIntoView({behavior:'smooth',block:'center'});});
-  $('#favoriteMember').addEventListener('click',()=>{state.favorites=state.favorites.includes(selectedMember)?state.favorites.filter(x=>x!==selectedMember):[...state.favorites,selectedMember];persist();renderMember();showToast(state.favorites.includes(selectedMember)?`${selectedMember} added to your favorites ♡`:`${selectedMember} removed from favorites.`);});
+  $('#favoriteMember').addEventListener('click',()=>{state.favorites=state.favorites.includes(selectedMember)?state.favorites.filter(x=>x!==selectedMember):[...state.favorites,selectedMember];persist();renderMember();showToast(state.favorites.includes(selectedMember)?`${selectedMember} added to your favorites ♡`:`${selectedMember} removed from favorites.`);mascot()?.say(state.favorites.includes(selectedMember)?`${selectedMember} is your bias now ♡ So cute together!`:'Favorites updated. The heart knows what it wants!',state.favorites.includes(selectedMember)?'love':'happy');});
   $$('[data-member-tab]').forEach(btn=>btn.addEventListener('click',()=>{memberFilter=btn.dataset.memberTab;$$('[data-member-tab]').forEach(b=>b.classList.toggle('active',b===btn));renderMember();}));
   $('#exportButton').addEventListener('click',exportData);$('#resetButton').addEventListener('click',resetDemo);
 

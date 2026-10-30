@@ -1,5 +1,5 @@
-const CACHE_NAME = 'monstiez-universe-shell-v4';
-const FILES = ['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./assets/myangni.svg','./assets/myangni-happy.svg','./assets/myangni-sleepy.svg','./assets/myangni-excited.svg','./assets/myangni-love.svg','./assets/myangni-peek.svg','./assets/app-icon.svg','./js/util.js','./js/data/store.js','./js/ui/charts.js','./js/ui/tracker.js','./js/ui/detail.js','./js/ui/views.js','./data/catalog.json','./data/series/youtube.json','./data/series/spotify.json','./data/feed-status.json'];
+const CACHE_NAME = 'monstiez-universe-shell-v5';
+const FILES = ['./','./index.html','./styles.css','./app.js','./mascot.js','./myangni-ai.js','./manifest.webmanifest','./assets/myangni.svg','./assets/myangni-happy.svg','./assets/myangni-sleepy.svg','./assets/myangni-excited.svg','./assets/myangni-love.svg','./assets/myangni-peek.svg','./assets/myangni-wink.svg','./assets/myangni-sad.svg','./assets/myangni-proud.svg','./assets/myangni-party.svg','./assets/app-icon.svg','./js/util.js','./js/data/store.js','./js/ui/charts.js','./js/ui/tracker.js','./js/ui/detail.js','./js/ui/views.js','./data/catalog.json','./data/series/youtube.json','./data/series/spotify.json','./data/feed-status.json'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(cache=>

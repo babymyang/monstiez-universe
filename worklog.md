@@ -1,5 +1,43 @@
 # Worklog — MONSTIEZ Universe + BM Tracker feature parity
 
+## Session 2026-10-30 (update 2) — Myangni AI companion ✅
+
+**Scope:** user request — "Work more on ai especially the mascot". The mascot is now a living companion and the app has a real (fully local) assistant, without breaking the zero-budget / no-paid-API / honest-data rules.
+
+### Expression art (4 new editable SVG variants)
+- Generated from the canonical vector with `/scripts/make_mascot_variants.py` (local workspace): only the `<!-- face -->` block (plus smile/decorations) differs, keeping proportions on-model.
+- `myangni-wink.svg` (playful wink + tongue), `myangni-sad.svg` (droopy eyes + tear), `myangni-proud.svg` (half-lidded confident smirk), `myangni-party.svg` (cheering + party hat + confetti).
+- All validated as well-formed XML and visually rendered in a 10-variant contact sheet.
+
+### `mascot.js` (new)
+- Expression engine: `Myangni.face(el, name)` / `Myangni.react(el, name, hold)`; all ten expressions preloaded.
+- Floating buddy above the bottom nav (hidden on Welcome): idle blink/look loop, speech bubbles, tap → opens chat; `prefers-reduced-motion` respected.
+- Empty-state faces injected via MutationObserver (peek/sleepy/proud/wink/sad per screen); Welcome art cycles expressions; hero reacts occasionally.
+
+### `myangni-ai.js` (new) — "Ask Myangni"
+- Fully local rule-based assistant: keyword/intent matching, zero cloud, zero cost, fits the no-paid-APIs rule.
+- **Tracker-grounded answers**: reads `MONSTIEZ.store` and quotes the latest dated snapshot from `data/series/youtube.json` / `spotify.json` with source URL, day, per-day delta, and honest unit caveats (e.g. SHEESH → 434.7M streams as of 2026-10-28, ~201.6K/day, Kworb, labeled third-party; WE GO UP stage → 10.57M views as of 2026-10-30, bm-tracker public API). If data isn't cached, it says so and points to Stats — no invented numbers.
+- Fan facts (members/group/fandom, fan-maintained and hedged), app how-tos (save/goals/reminders/export/reset/install/theme/share), comfort/cheer replies, navigation to any screen via existing `[data-screen]` buttons.
+- Chat history (last 40 msgs) in localStorage; typing indicator; suggestion chips; Esc/backdrop close; `beforeinstallprompt` captured so "install" questions can trigger the real dialog.
+- Entry points: floating buddy, ✦ topbar button (with gold dot), "Ask Myangni" option in My Baemon space.
+
+### Integration
+- `index.html`: ✦ topbar button, Ask-Myangni profile option, `mascot.js` + `myangni-ai.js` script tags (defer).
+- `app.js`: buddy visibility per screen, once-per-session first-visit tips (incl. tracker detail), reactions for join (party), save/unsave (love/wink), goal complete/reopen (excited/wink), favorite member (love), export (proud), reset (sleepy).
+- `styles.css`: companion section (buddy, bubble, drawer: bottom sheet mobile / side panel ≥760px, chat bubbles, chips, typing dots) **plus `html.dark` overrides** so the chat matches the dark theme (F-25).
+- `service-worker.js`: cache bumped to `monstiez-universe-shell-v5`, now precaching both new scripts and all ten mascot SVGs (with `cache:'reload'`).
+
+### Verification (agent-browser headless Chromium, light + dark, 390×844 and 1280×800)
+- Join → party cheer; home buddy + tip bubble; buddy tap opens drawer; chips submit; "how many views does WE GO UP have" → real sourced view count; "SHEESH streams" → real Kworb snapshot with caveats; "tell me about Chiquita" → fact + auto-navigate to Member corner; "open stats" navigates; goal toggle celebration; empty-state mascot injected; desktop side panel with restored history; dark theme renders correctly.
+- `node --check` PASS on `app.js`, `mascot.js`, `myangni-ai.js`, `service-worker.js`. No page errors in console.
+- Docs updated: `docs/ASSET_GUIDE.md` (new variants + live mascot system).
+
+### Next
+- Optionally extend the assistant with a fan-quiz mini-game and per-member moods.
+- Resume Milestone items from `PROJECT_PLAN.md` as needed (scheduled collector is already running).
+
+---
+
 ## Session 2026-10-30 — Super Z (fresh recovery baseline → working tracker)
 
 **Repo:** https://github.com/babymyang/monstiez-universe (branch `main`)
