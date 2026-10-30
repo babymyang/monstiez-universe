@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Status of the daily data collection. Updated by the GitHub Actions collector on every run. 'Last collected' warnings in the app read this file.",
+    "collectors": [
+      {
+        "id": "kworb-spotify",
+        "target": "Spotify per-track play totals (third-party public stream figures)",
+        "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+        "schedule": "daily (GitHub Actions scheduled workflow)",
+        "requiresSecrets": false,
+        "status": "seeded",
+        "lastRun": "2026-10-30T09:00:00Z",
+        "note": "Seeded from the public page dated 2026-10-28. Automation starts with the first scheduled workflow run."
+      },
+      {
+        "id": "youtube-data-api",
+        "target": "YouTube channel statistics + video views/likes (official)",
+        "source": "YouTube Data API v3 (channels.list, playlistItems.list, videos.list)",
+        "schedule": "daily (GitHub Actions scheduled workflow)",
+        "requiresSecrets": ["YOUTUBE_API_KEY"],
+        "status": "awaiting-key",
+        "lastRun": null,
+        "note": "Add YOUTUBE_API_KEY to the repository's Actions secrets to start official collection. Until then, YouTube figures come from dated manual/public observations only."
+      }
+    ],
+    "dataWindowBegins": "2026-10-29",
+    "honestyNote": "Days before the first dated observation are never reconstructed. Charts grow as real dated snapshots accumulate."
+  }
+}

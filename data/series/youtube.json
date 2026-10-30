@@ -1,0 +1,2529 @@
+{
+ "meta": {
+  "version": 1,
+  "description": "Cumulative daily snapshots. Each value was observed on its date from the cited source. No interpolation: missing days are simply absent. estimated=true means the value came from a source that derived it (marked for honesty).",
+  "unit": "views / subscribers (count)",
+  "collectionPlan": "Daily via GitHub Action. Official YouTube Data API when YOUTUBE_API_KEY secret is configured; otherwise no automatic collection."
+ },
+ "channel": {
+  "id": "UCqwUnggBBct-AY2lAdI88jQ",
+  "title": "BABYMONSTER",
+  "subscribers": {
+   "2026-10-30": {
+    "v": 13500000,
+    "precision": "rounded",
+    "estimated": false,
+    "source": "https://bm-tracker.com/",
+    "method": "public-api-observation"
+   }
+  },
+  "views": {
+   "2026-10-30": {
+    "v": 10587102276,
+    "estimated": false,
+    "source": "https://bm-tracker.com/",
+    "method": "public-api-observation"
+   }
+  }
+ },
+ "videos": {
+  "cDzulHX3k20": {
+   "views": {
+    "2026-10-30": {
+     "v": 1430379,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 78260,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ATQn2UhDPVw": {
+   "views": {
+    "2026-10-30": {
+     "v": 2521527,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 144453,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "cRIbAVHyQ84": {
+   "views": {
+    "2026-10-30": {
+     "v": 1516129,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 84511,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "1bIk_K_OZL4": {
+   "views": {
+    "2026-10-30": {
+     "v": 2582249,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 141107,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "oC6brLXQe4I": {
+   "views": {
+    "2026-10-30": {
+     "v": 76330759,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    },
+    "2026-10-29": {
+     "v": 66334830,
+     "estimated": false,
+     "source": "https://www.youtube.com/watch?v=oC6brLXQe4I",
+     "method": "manual-public-observation",
+     "note": "Observed by hand on the public watch page (prior agent session, recorded in handoff)."
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 804130,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "SAipiNiQff4": {
+   "views": {
+    "2026-10-30": {
+     "v": 1089170,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 70842,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "z6h1Y0zOdvM": {
+   "views": {
+    "2026-10-30": {
+     "v": 573496,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 8465,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "R5KZon9z5_c": {
+   "views": {
+    "2026-10-30": {
+     "v": 1010434,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 80258,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "dcUn0VRuDsA": {
+   "views": {
+    "2026-10-30": {
+     "v": 2127523,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 24778,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "A3xAMOkfPIo": {
+   "views": {
+    "2026-10-30": {
+     "v": 567102,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 29286,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "OWJgd75WiRE": {
+   "views": {
+    "2026-10-30": {
+     "v": 2803373,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 86798,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "YzBNFKaAv3M": {
+   "views": {
+    "2026-10-30": {
+     "v": 958211,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 91848,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "lhby9P757tU": {
+   "views": {
+    "2026-10-30": {
+     "v": 1024023,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 112359,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "fuVaqtSfYvE": {
+   "views": {
+    "2026-10-30": {
+     "v": 1321644,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 61884,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "m7YXyj1RigA": {
+   "views": {
+    "2026-10-30": {
+     "v": 2974454,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 99310,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "LYbHsAsj6i8": {
+   "views": {
+    "2026-10-30": {
+     "v": 39975424,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 315211,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "xXZwZ0DolJc": {
+   "views": {
+    "2026-10-30": {
+     "v": 90172473,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 855779,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ZhLZEvR6V5U": {
+   "views": {
+    "2026-10-30": {
+     "v": 1590072,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 66613,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "wj4HXqtZyOw": {
+   "views": {
+    "2026-10-30": {
+     "v": 2997464,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 91387,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "GFIo-tFQM8Q": {
+   "views": {
+    "2026-10-30": {
+     "v": 3114026,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 69063,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "3Q0LqUYfnL4": {
+   "views": {
+    "2026-10-30": {
+     "v": 3893080,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 73245,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "2qPfzNygRPQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 1714811,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 46522,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "QqvZAUEOrAQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 1749143,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 87364,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "9cS2wv6AfHk": {
+   "views": {
+    "2026-10-30": {
+     "v": 102843768,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 928483,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Zj0hpfQw9kc": {
+   "views": {
+    "2026-10-30": {
+     "v": 902454,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 114065,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "l54zu9rjpYc": {
+   "views": {
+    "2026-10-30": {
+     "v": 2644517,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 66732,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "tCD3K7uiF7k": {
+   "views": {
+    "2026-10-30": {
+     "v": 1917549,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 203024,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "HQsQm2Mit0A": {
+   "views": {
+    "2026-10-30": {
+     "v": 2157117,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 81851,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ISJForNHmA0": {
+   "views": {
+    "2026-10-30": {
+     "v": 3925647,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 125965,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "SsuCimm5BIU": {
+   "views": {
+    "2026-10-30": {
+     "v": 71873238,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 367973,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "naoGk-Zjc1s": {
+   "views": {
+    "2026-10-30": {
+     "v": 148377960,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1233976,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "kaRvFX3W9qk": {
+   "views": {
+    "2026-10-30": {
+     "v": 2812269,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 79291,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "qS7bL3TKGrk": {
+   "views": {
+    "2026-10-30": {
+     "v": 1575239,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 43657,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "c1jLt0EarG4": {
+   "views": {
+    "2026-10-30": {
+     "v": 7784231,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 149673,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Sf3dhbNrdwc": {
+   "views": {
+    "2026-10-30": {
+     "v": 8224078,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 132336,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "PNphlUmBIYU": {
+   "views": {
+    "2026-10-30": {
+     "v": 3211641,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 109510,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "QxXb9mvhVRI": {
+   "views": {
+    "2026-10-30": {
+     "v": 2867479,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 130693,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "UPkyursCTfE": {
+   "views": {
+    "2026-10-30": {
+     "v": 4167732,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 155437,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "wqSHogLRtJI": {
+   "views": {
+    "2026-10-30": {
+     "v": 98514671,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 543915,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "x3eqqoZPV_E": {
+   "views": {
+    "2026-10-30": {
+     "v": 205991910,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1649523,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "jumkiRQgq98": {
+   "views": {
+    "2026-10-30": {
+     "v": 10375472,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 204201,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "aG9S0sRfO18": {
+   "views": {
+    "2026-10-30": {
+     "v": 22911324,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 175518,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "OzraEK4dERY": {
+   "views": {
+    "2026-10-30": {
+     "v": 10570026,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 306079,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "SbdOIdg2McI": {
+   "views": {
+    "2026-10-30": {
+     "v": 85242805,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 738802,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "yAXnEHFKKaY": {
+   "views": {
+    "2026-10-30": {
+     "v": 95541896,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 498871,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "3cVroylPpvg": {
+   "views": {
+    "2026-10-30": {
+     "v": 47593066,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 626048,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "IOd0oJUIE8o": {
+   "views": {
+    "2026-10-30": {
+     "v": 15979901,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 355405,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "a0bc6Ownyt0": {
+   "views": {
+    "2026-10-30": {
+     "v": 15821727,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 244257,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "yd_uG3TtREs": {
+   "views": {
+    "2026-10-30": {
+     "v": 230972180,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1645416,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "O99aP4AvEF8": {
+   "views": {
+    "2026-10-30": {
+     "v": 9909085,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 221819,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "W2RhV7EIw4c": {
+   "views": {
+    "2026-10-30": {
+     "v": 1642748,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 64285,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "1MT25wqi18Q": {
+   "views": {
+    "2026-10-30": {
+     "v": 3069768,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 63097,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "R_Zn4YqvQ1o": {
+   "views": {
+    "2026-10-30": {
+     "v": 8623737,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 164750,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "BzjpJpMtj2Y": {
+   "views": {
+    "2026-10-30": {
+     "v": 2560157,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 92082,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "L_0eiYj_nu0": {
+   "views": {
+    "2026-10-30": {
+     "v": 5543179,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 235997,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "9gh7Lt7tdj8": {
+   "views": {
+    "2026-10-30": {
+     "v": 7332603,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 185172,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "o9V8HrgJgIg": {
+   "views": {
+    "2026-10-30": {
+     "v": 200876075,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 814686,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "wlHwjkYpSr0": {
+   "views": {
+    "2026-10-30": {
+     "v": 228347949,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    },
+    "2026-10-29": {
+     "v": 228252529,
+     "estimated": false,
+     "source": "https://www.youtube.com/watch?v=wlHwjkYpSr0",
+     "method": "manual-public-observation",
+     "note": "Observed by hand on the public watch page (prior agent session, recorded in handoff)."
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1468665,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "gz6zjx1fgVc": {
+   "views": {
+    "2026-10-30": {
+     "v": 2262502,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 39992,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "4iw45qO3OsE": {
+   "views": {
+    "2026-10-30": {
+     "v": 27115419,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 147944,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "QQQLDjLufNo": {
+   "views": {
+    "2026-10-30": {
+     "v": 4141153,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 76589,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "TOxKCW5E_Bg": {
+   "views": {
+    "2026-10-30": {
+     "v": 3877580,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 127416,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "8W5TWR74Mms": {
+   "views": {
+    "2026-10-30": {
+     "v": 67151265,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 310590,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "xn8mQqz2xmM": {
+   "views": {
+    "2026-10-30": {
+     "v": 179395282,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1259303,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "vq_ZN6Nt-oE": {
+   "views": {
+    "2026-10-30": {
+     "v": 4538167,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 50963,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "mFsZ6fMwIRQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 947426,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 12859,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "MN2RlOy8y8k": {
+   "views": {
+    "2026-10-30": {
+     "v": 73524916,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 674002,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Gz_yRl6703c": {
+   "views": {
+    "2026-10-30": {
+     "v": 163399648,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1295323,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "XShaIZs7J7M": {
+   "views": {
+    "2026-10-30": {
+     "v": 134147544,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1861351,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "06mCrMgv0zY": {
+   "views": {
+    "2026-10-30": {
+     "v": 68097483,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 688647,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "1kXLsrun51s": {
+   "views": {
+    "2026-10-30": {
+     "v": 89545686,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1212028,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "RdW7Ia9L8eU": {
+   "views": {
+    "2026-10-30": {
+     "v": 3041146,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 67128,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "MsOOG4Q5HvQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 11272957,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 125344,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "1YHemRmyWmU": {
+   "views": {
+    "2026-10-30": {
+     "v": 4429387,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 105865,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "9G5IUmP3E1o": {
+   "views": {
+    "2026-10-30": {
+     "v": 2611757,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 96250,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "FGXyvxzn-X8": {
+   "views": {
+    "2026-10-30": {
+     "v": 11788592,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 276331,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "n_2oVnjL1y4": {
+   "views": {
+    "2026-10-30": {
+     "v": 16454271,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 208369,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "SrF5ifoe7P0": {
+   "views": {
+    "2026-10-30": {
+     "v": 7438778,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 116352,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "KkF5Fp5Cmcs": {
+   "views": {
+    "2026-10-30": {
+     "v": 7097592,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 232975,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "OnO6cDEiDtQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 8548058,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 227516,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "B1gDCOTpDzA": {
+   "views": {
+    "2026-10-30": {
+     "v": 30885954,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 536492,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "IApenpQjcuI": {
+   "views": {
+    "2026-10-30": {
+     "v": 27014900,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 524973,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "cxhqqpVk65Q": {
+   "views": {
+    "2026-10-30": {
+     "v": 211464795,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1447635,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "frV8cZ_yA_4": {
+   "views": {
+    "2026-10-30": {
+     "v": 84558453,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 903869,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Zp-Jhuhq0bQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 417784038,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 3378031,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "o0oW3lPoOXM": {
+   "views": {
+    "2026-10-30": {
+     "v": 137995548,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1578269,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Yb2m3FkIR_g": {
+   "views": {
+    "2026-10-30": {
+     "v": 4437126,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 139869,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "2zzoyXmLQtU": {
+   "views": {
+    "2026-10-30": {
+     "v": 6073606,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 110974,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "TQfC0xdpiw4": {
+   "views": {
+    "2026-10-30": {
+     "v": 16451386,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 490566,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "J_LtDIVxIC4": {
+   "views": {
+    "2026-10-30": {
+     "v": 8508646,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 262108,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "tDt7X6coxvs": {
+   "views": {
+    "2026-10-30": {
+     "v": 77131141,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 962933,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "eJCHKjt0MPw": {
+   "views": {
+    "2026-10-30": {
+     "v": 270431402,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 3002420,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "TA_oelmkMTw": {
+   "views": {
+    "2026-10-30": {
+     "v": 11617849,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 275685,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "gnJOBNz1q0A": {
+   "views": {
+    "2026-10-30": {
+     "v": 52990367,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 792607,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "M8r3x4Re8-I": {
+   "views": {
+    "2026-10-30": {
+     "v": 255825575,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 2702042,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "0fbEdyV1dMA": {
+   "views": {
+    "2026-10-30": {
+     "v": 10799987,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 308594,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "N5OWgZskWIU": {
+   "views": {
+    "2026-10-30": {
+     "v": 7585221,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 311659,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ECgoCHpChqg": {
+   "views": {
+    "2026-10-30": {
+     "v": 2804125,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 129446,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "NB8MRPiG-yk": {
+   "views": {
+    "2026-10-30": {
+     "v": 5141484,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 184348,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "rqP7IHprryI": {
+   "views": {
+    "2026-10-30": {
+     "v": 20651830,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 253332,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Fc0MyNPMTRQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 3473358,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 202085,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "DJN7Jr4FPeA": {
+   "views": {
+    "2026-10-30": {
+     "v": 11044180,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 354946,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "FpOzMBwjSK0": {
+   "views": {
+    "2026-10-30": {
+     "v": 20580783,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 732099,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "wUQGQXPKh_k": {
+   "views": {
+    "2026-10-30": {
+     "v": 7560279,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 462147,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "kOanBE5Wg24": {
+   "views": {
+    "2026-10-30": {
+     "v": 239614674,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1778359,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "2wA_b6YHjqQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 424525613,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 4589052,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "KaM7ZxoGQuE": {
+   "views": {
+    "2026-10-30": {
+     "v": 18827487,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 263777,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "25bsCHikkh4": {
+   "views": {
+    "2026-10-30": {
+     "v": 16997867,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 309739,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "GsV1i0QHi-o": {
+   "views": {
+    "2026-10-30": {
+     "v": 141996041,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1465250,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "FinTVHCeYBo": {
+   "views": {
+    "2026-10-30": {
+     "v": 29441543,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 520808,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "buFQulSu-C4": {
+   "views": {
+    "2026-10-30": {
+     "v": 40208370,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 680059,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "kmwrN2HDgJs": {
+   "views": {
+    "2026-10-30": {
+     "v": 27455721,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 546384,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "B17yoLxkbPA": {
+   "views": {
+    "2026-10-30": {
+     "v": 83786445,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 912169,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "olDWm2veCrM": {
+   "views": {
+    "2026-10-30": {
+     "v": 353415745,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 3121318,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "G-NTJLx-nJM": {
+   "views": {
+    "2026-10-30": {
+     "v": 3514613,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 107848,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "UxPKsbk7b6w": {
+   "views": {
+    "2026-10-30": {
+     "v": 12771228,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 207125,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "sOd8rNdNYdw": {
+   "views": {
+    "2026-10-30": {
+     "v": 2950102,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 186332,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "cVUZy1MhGDw": {
+   "views": {
+    "2026-10-30": {
+     "v": 60881300,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 932786,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ynOtYmpZxak": {
+   "views": {
+    "2026-10-30": {
+     "v": 95012674,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1845427,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "YDJcbH_HgjY": {
+   "views": {
+    "2026-10-30": {
+     "v": 62215513,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 572554,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "xw7Y2gviWbA": {
+   "views": {
+    "2026-10-30": {
+     "v": 78868003,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 1183079,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "jtd6Nn1Wc5s": {
+   "views": {
+    "2026-10-30": {
+     "v": 21888620,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 366476,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "xccDvnOtAWs": {
+   "views": {
+    "2026-10-30": {
+     "v": 14723559,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 225841,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "9WqxIqLwlYA": {
+   "views": {
+    "2026-10-30": {
+     "v": 17337088,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 260140,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "RA0rsFFQ9Fk": {
+   "views": {
+    "2026-10-30": {
+     "v": 20837171,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 327282,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "skHnelFyrOk": {
+   "views": {
+    "2026-10-30": {
+     "v": 16147938,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 227262,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "c_TJXVZbL30": {
+   "views": {
+    "2026-10-30": {
+     "v": 16228979,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 255381,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "Uduk29TlDSg": {
+   "views": {
+    "2026-10-30": {
+     "v": 29045752,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 372744,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "qRwZQWinWsc": {
+   "views": {
+    "2026-10-30": {
+     "v": 11905726,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 226444,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "QZHbypZSTGg": {
+   "views": {
+    "2026-10-30": {
+     "v": 20188421,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 394031,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "rCN3xgEPEwo": {
+   "views": {
+    "2026-10-30": {
+     "v": 15548843,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 331853,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "79PhScM2_3k": {
+   "views": {
+    "2026-10-30": {
+     "v": 18681887,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 408948,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "y54f8yCK1Lc": {
+   "views": {
+    "2026-10-30": {
+     "v": 13182127,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 277360,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "SlGkck6xWWI": {
+   "views": {
+    "2026-10-30": {
+     "v": 21048717,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 516889,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "_9GF5oklUNs": {
+   "views": {
+    "2026-10-30": {
+     "v": 21048507,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 532563,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ly-p1Ve_RKQ": {
+   "views": {
+    "2026-10-30": {
+     "v": 22195970,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 587467,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "ysJCTCQYJyg": {
+   "views": {
+    "2026-10-30": {
+     "v": 18284834,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 524183,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  },
+  "aVsAVYDYhFI": {
+   "views": {
+    "2026-10-30": {
+     "v": 16797724,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   },
+   "likes": {
+    "2026-10-30": {
+     "v": 499396,
+     "estimated": false,
+     "source": "https://bm-tracker.com/api/overview",
+     "method": "public-api-observation"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,2622 @@
+{
+ "meta": {
+  "version": 1,
+  "note": "Entity catalogue. Release set and grouping follow the publicly visible set used by bm-tracker.com (observed 2026-10-30); entity metadata (titles, IDs, dates) comes from the platforms themselves. This catalogue lists BABYMONSTER-related videos from 10 channels and 44 Spotify recordings grouped into 27 works.",
+  "sources": [
+   {
+    "name": "BM Tracker public overview",
+    "url": "https://bm-tracker.com/api/overview",
+    "observedAt": "2026-10-30T09:00:00Z",
+    "method": "public-api-observation",
+    "isOfficial": false
+   },
+   {
+    "name": "Kworb",
+    "url": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "observedAt": "2026-10-28",
+    "method": "public-page-parse",
+    "isOfficial": false
+   }
+  ]
+ },
+ "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+ "artistId": "1SIocsqdEefUTE6XKGUiVS",
+ "channels": [
+  {
+   "id": "UCqwUnggBBct-AY2lAdI88jQ",
+   "title": "BABYMONSTER",
+   "videoCount": 62
+  },
+  {
+   "id": "UCS_hnpJLQTvBkqALgapi_4g",
+   "title": "SBSKPOP X INKIGAYO",
+   "videoCount": 24
+  },
+  {
+   "id": "UCbD8EppRX3ZwJSou-TVo90A",
+   "title": "Mnet K-POP",
+   "videoCount": 14
+  },
+  {
+   "id": "UCQi67q4kGdmnJaRzX81uK5g",
+   "title": "YG ENTERTAINMENT",
+   "videoCount": 10
+  },
+  {
+   "id": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "title": "MBCkpop",
+   "videoCount": 10
+  },
+  {
+   "id": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "title": "Beginagain 비긴어게인",
+   "videoCount": 5
+  },
+  {
+   "id": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "title": "So Hyang TV • Fan Channel",
+   "videoCount": 5
+  },
+  {
+   "id": "UCB9e3pof1o83aa0kkaoeJGA",
+   "title": "it's Live",
+   "videoCount": 4
+  },
+  {
+   "id": "UC9zY_E8mcAo_Oq772LEZq8Q",
+   "title": "THE FIRST TAKE",
+   "videoCount": 3
+  },
+  {
+   "id": "UCtCiO5t2voB14CmZKTkIzPQ",
+   "title": "딩고 뮤직 / dingo music",
+   "videoCount": 1
+  }
+ ],
+ "tags": [
+  {
+   "slug": "music_video",
+   "label": "Music video",
+   "colour": "--mv"
+  },
+  {
+   "slug": "performance",
+   "label": "Performance",
+   "colour": "--pf"
+  },
+  {
+   "slug": "music_show",
+   "label": "Music show",
+   "colour": "--ms"
+  },
+  {
+   "slug": "dance_performance",
+   "label": "Dance practice",
+   "colour": "--dp"
+  },
+  {
+   "slug": "cover",
+   "label": "Cover",
+   "colour": "--cv"
+  },
+  {
+   "slug": "dance_cover",
+   "label": "Dance cover",
+   "colour": "--dc"
+  },
+  {
+   "slug": "variety",
+   "label": "Variety",
+   "colour": "#58a6e0"
+  }
+ ],
+ "works": [
+  {
+   "id": 2,
+   "name": "BATTER UP"
+  },
+  {
+   "id": 9,
+   "name": "BILLIONAIRE"
+  },
+  {
+   "id": 10,
+   "name": "CHOOM"
+  },
+  {
+   "id": 26,
+   "name": "CLAP YOUR HANDS ～ Go Away"
+  },
+  {
+   "id": 11,
+   "name": "CLIK CLAK"
+  },
+  {
+   "id": 27,
+   "name": "DESERVE"
+  },
+  {
+   "id": 14,
+   "name": "DREAM"
+  },
+  {
+   "id": 3,
+   "name": "DRIP"
+  },
+  {
+   "id": 4,
+   "name": "FOREVER"
+  },
+  {
+   "id": 22,
+   "name": "Ghost"
+  },
+  {
+   "id": 13,
+   "name": "HOT SAUCE"
+  },
+  {
+   "id": 23,
+   "name": "I LIKE IT"
+  },
+  {
+   "id": 5,
+   "name": "LIKE THAT"
+  },
+  {
+   "id": 25,
+   "name": "LOCKED IN"
+  },
+  {
+   "id": 15,
+   "name": "Love In My Heart"
+  },
+  {
+   "id": 20,
+   "name": "Love, Maybe"
+  },
+  {
+   "id": 18,
+   "name": "MONSTERS"
+  },
+  {
+   "id": 21,
+   "name": "MOON"
+  },
+  {
+   "id": 7,
+   "name": "PSYCHO"
+  },
+  {
+   "id": 12,
+   "name": "Really Like You"
+  },
+  {
+   "id": 1,
+   "name": "SHEESH"
+  },
+  {
+   "id": 8,
+   "name": "Stuck In The Middle"
+  },
+  {
+   "id": 16,
+   "name": "SUGAR HONEY ICE TEA"
+  },
+  {
+   "id": 17,
+   "name": "SUPA DUPA LUV"
+  },
+  {
+   "id": 6,
+   "name": "WE GO UP"
+  },
+  {
+   "id": 24,
+   "name": "WILD"
+  },
+  {
+   "id": 19,
+   "name": "Woke Up In Tokyo"
+  }
+ ],
+ "notes": [
+  {
+   "id": 15,
+   "day": "2024-06-09",
+   "text": "LIKE THAT stepped up from 374,053 to 618,442 plays a day — ‘LIKE THAT’ DANCE PERFORMANCE VIDEO.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 5
+  },
+  {
+   "id": 16,
+   "day": "2025-01-17",
+   "text": "Really Like You stepped up from 71,717 to 233,798 plays a day — ‘Really Like You’ M/V.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 12
+  },
+  {
+   "id": 17,
+   "day": "2025-02-07",
+   "text": "BILLIONAIRE stepped up from 144,724 to 242,795 plays a day — 'BILLIONAIRE' EXCLUSIVE PERFORMANCE VIDEO.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 9
+  },
+  {
+   "id": 18,
+   "day": "2025-11-19",
+   "text": "PSYCHO stepped up from 156,519 to 430,106 plays a day — ‘PSYCHO’ M/V.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 7
+  },
+  {
+   "id": 19,
+   "day": "2025-12-19",
+   "text": "SUPA DUPA LUV stepped up from 107,868 to 170,672 plays a day — ‘SUPA DUPA LUV’ M/V.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 17
+  },
+  {
+   "id": 20,
+   "day": "2026-02-02",
+   "text": "Really Like You stepped up from 119,037 to 207,093 plays a day — ‘Really Like You’ Live at “LOVE MONSTERS”.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 12
+  },
+  {
+   "id": 21,
+   "day": "2026-07-06",
+   "text": "I LIKE IT stepped up from 62,708 to 191,245 plays a day — 'I LIKE IT' M/V.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 23
+  },
+  {
+   "id": 22,
+   "day": "2026-08-03",
+   "text": "MOON stepped up from 88,259 to 227,273 plays a day — 'MOON' M/V.",
+   "scope": "work",
+   "itemId": null,
+   "workId": 21
+  }
+ ],
+ "videos": [
+  {
+   "id": "cDzulHX3k20",
+   "title": "'DESERVE' | dingo",
+   "tag": "music_show",
+   "channelId": "UCtCiO5t2voB14CmZKTkIzPQ",
+   "channel": "딩고 뮤직 / dingo music",
+   "publishedAt": "2026-10-28T11:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/cDzulHX3k20/mqdefault.jpg",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "id": "ATQn2UhDPVw",
+   "title": "'DESERVE' | it's Live",
+   "tag": "music_show",
+   "channelId": "UCB9e3pof1o83aa0kkaoeJGA",
+   "channel": "it's Live",
+   "publishedAt": "2026-10-27T06:38:04Z",
+   "thumb": "https://i.ytimg.com/vi/ATQn2UhDPVw/mqdefault.jpg",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "id": "cRIbAVHyQ84",
+   "title": "'DESERVE' | Inkigayo 261025",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-10-25T10:32:47Z",
+   "thumb": "https://i.ytimg.com/vi/cRIbAVHyQ84/mqdefault.jpg",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "id": "1bIk_K_OZL4",
+   "title": "'DESERVE' | MBC261024",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-10-24T07:27:19Z",
+   "thumb": "https://i.ytimg.com/vi/1bIk_K_OZL4/mqdefault.jpg",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "id": "oC6brLXQe4I",
+   "title": "'DESERVE' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-10-23T04:00:09Z",
+   "thumb": "https://i.ytimg.com/vi/oC6brLXQe4I/mqdefault.jpg",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "id": "SAipiNiQff4",
+   "title": "CHIQUITA’s solo practice vlog 🐈‍⬛❤️",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-10-06T09:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/SAipiNiQff4/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "z6h1Y0zOdvM",
+   "title": "Chiquita - 'Call Out My Name' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "channel": "So Hyang TV • Fan Channel",
+   "publishedAt": "2026-08-20T10:00:25Z",
+   "thumb": "https://i.ytimg.com/vi/z6h1Y0zOdvM/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "R5KZon9z5_c",
+   "title": "RUKA’s solo dance practice🩶",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-08-20T10:00:03Z",
+   "thumb": "https://i.ytimg.com/vi/R5KZon9z5_c/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "dcUn0VRuDsA",
+   "title": "Chiquita & Tiffany Young - 'Diamonds' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "channel": "So Hyang TV • Fan Channel",
+   "publishedAt": "2026-08-20T09:00:16Z",
+   "thumb": "https://i.ytimg.com/vi/dcUn0VRuDsA/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "A3xAMOkfPIo",
+   "title": "'MOON' | GayoDaejeon Summer 2026",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-08-18T06:00:28Z",
+   "thumb": "https://i.ytimg.com/vi/A3xAMOkfPIo/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "OWJgd75WiRE",
+   "title": "INTRO + '춤 (CHOOM)' + 'SUGAR HONEY ICE TEA' | SBS GayoDaejeon Summer 2026",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-08-17T09:39:03Z",
+   "thumb": "https://i.ytimg.com/vi/OWJgd75WiRE/mqdefault.jpg",
+   "workIds": [
+    10,
+    16
+   ]
+  },
+  {
+   "id": "YzBNFKaAv3M",
+   "title": "ASA’s solo dance practice🖤",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-08-13T10:30:01Z",
+   "thumb": "https://i.ytimg.com/vi/YzBNFKaAv3M/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "lhby9P757tU",
+   "title": "PHARITA’s first solo practice vlog 🎤💓",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-08-12T09:00:26Z",
+   "thumb": "https://i.ytimg.com/vi/lhby9P757tU/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "fuVaqtSfYvE",
+   "title": "'MOON' | MBC260808",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-08-08T07:12:39Z",
+   "thumb": "https://i.ytimg.com/vi/fuVaqtSfYvE/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "m7YXyj1RigA",
+   "title": "'MOON' | Mnet 260806 EP.940",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2026-08-06T10:24:04Z",
+   "thumb": "https://i.ytimg.com/vi/m7YXyj1RigA/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "LYbHsAsj6i8",
+   "title": "'MOON' PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-08-04T14:59:57Z",
+   "thumb": "https://i.ytimg.com/vi/LYbHsAsj6i8/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "xXZwZ0DolJc",
+   "title": "'MOON' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-08-02T15:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/xXZwZ0DolJc/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "ZhLZEvR6V5U",
+   "title": "'I LIKE IT' | SBS Inkigayo 260712",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-07-12T07:48:21Z",
+   "thumb": "https://i.ytimg.com/vi/ZhLZEvR6V5U/mqdefault.jpg",
+   "workIds": [
+    23
+   ]
+  },
+  {
+   "id": "wj4HXqtZyOw",
+   "title": "'I LIKE IT' | MBC260711",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-07-11T07:28:36Z",
+   "thumb": "https://i.ytimg.com/vi/wj4HXqtZyOw/mqdefault.jpg",
+   "workIds": [
+    23
+   ]
+  },
+  {
+   "id": "GFIo-tFQM8Q",
+   "title": "'MOON' | #UP코노 EP.12",
+   "tag": "cover",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-07-10T06:00:22Z",
+   "thumb": "https://i.ytimg.com/vi/GFIo-tFQM8Q/mqdefault.jpg",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "id": "3Q0LqUYfnL4",
+   "title": "'Off My Face' (Original by Justin Bieber) | #UP코노 EP.11",
+   "tag": "cover",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-07-10T06:00:15Z",
+   "thumb": "https://i.ytimg.com/vi/3Q0LqUYfnL4/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "2qPfzNygRPQ",
+   "title": "'LOSER' (Original by BIGBANG) | #UP코노 EP.12",
+   "tag": "cover",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-07-10T06:00:13Z",
+   "thumb": "https://i.ytimg.com/vi/2qPfzNygRPQ/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "QqvZAUEOrAQ",
+   "title": "CHIQUITA’s solo dance practice 🐈‍⬛",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-07-08T10:00:01Z",
+   "thumb": "https://i.ytimg.com/vi/QqvZAUEOrAQ/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "9cS2wv6AfHk",
+   "title": "'I LIKE IT' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-07-05T15:00:00Z",
+   "thumb": "https://i.ytimg.com/vi/9cS2wv6AfHk/mqdefault.jpg",
+   "workIds": [
+    23
+   ]
+  },
+  {
+   "id": "Zj0hpfQw9kc",
+   "title": "AHYEON's voice memo",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-06-29T09:00:03Z",
+   "thumb": "https://i.ytimg.com/vi/Zj0hpfQw9kc/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "l54zu9rjpYc",
+   "title": "'SUGAR HONEY ICE TEA' | Mnet 260618 EP.933",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2026-06-18T10:39:24Z",
+   "thumb": "https://i.ytimg.com/vi/l54zu9rjpYc/mqdefault.jpg",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "id": "tCD3K7uiF7k",
+   "title": "Into CHIQUITA's World 🧜‍♀️",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-06-14T10:00:48Z",
+   "thumb": "https://i.ytimg.com/vi/tCD3K7uiF7k/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "HQsQm2Mit0A",
+   "title": "'SUGAR HONEY ICE TEA' | MBC260613",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-06-13T07:27:21Z",
+   "thumb": "https://i.ytimg.com/vi/HQsQm2Mit0A/mqdefault.jpg",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "id": "ISJForNHmA0",
+   "title": "'SUGAR HONEY ICE TEA' | Mnet 260611 EP.932",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2026-06-11T11:55:00Z",
+   "thumb": "https://i.ytimg.com/vi/ISJForNHmA0/mqdefault.jpg",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "id": "SsuCimm5BIU",
+   "title": "'SUGAR HONEY ICE TEA' PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-06-10T09:00:01Z",
+   "thumb": "https://i.ytimg.com/vi/SsuCimm5BIU/mqdefault.jpg",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "id": "naoGk-Zjc1s",
+   "title": "'SUGAR HONEY ICE TEA' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-06-07T15:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/naoGk-Zjc1s/mqdefault.jpg",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "id": "kaRvFX3W9qk",
+   "title": "RORA & CHIQUITA - 'Really Like You' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "channel": "Beginagain 비긴어게인",
+   "publishedAt": "2026-05-25T09:00:51Z",
+   "thumb": "https://i.ytimg.com/vi/kaRvFX3W9qk/mqdefault.jpg",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "id": "qS7bL3TKGrk",
+   "title": "RORA -  '천상연' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "channel": "Beginagain 비긴어게인",
+   "publishedAt": "2026-05-18T09:00:54Z",
+   "thumb": "https://i.ytimg.com/vi/qS7bL3TKGrk/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "c1jLt0EarG4",
+   "title": "'CHOOM (춤)' | MBC260516",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-05-16T07:22:37Z",
+   "thumb": "https://i.ytimg.com/vi/c1jLt0EarG4/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "Sf3dhbNrdwc",
+   "title": "'춤 (CHOOM)' | Mnet 260514 EP.928",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2026-05-14T10:54:04Z",
+   "thumb": "https://i.ytimg.com/vi/Sf3dhbNrdwc/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "PNphlUmBIYU",
+   "title": "RORA & CHIQUITA 'LOCKED IN' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "channel": "Beginagain 비긴어게인",
+   "publishedAt": "2026-05-11T09:00:45Z",
+   "thumb": "https://i.ytimg.com/vi/PNphlUmBIYU/mqdefault.jpg",
+   "workIds": [
+    25
+   ]
+  },
+  {
+   "id": "QxXb9mvhVRI",
+   "title": "'춤 (CHOOM)' | SBS Inkigayo 260510",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2026-05-10T07:32:48Z",
+   "thumb": "https://i.ytimg.com/vi/QxXb9mvhVRI/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "UPkyursCTfE",
+   "title": "'CHOOM (춤)' | MBC260509",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2026-05-09T07:17:39Z",
+   "thumb": "https://i.ytimg.com/vi/UPkyursCTfE/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "wqSHogLRtJI",
+   "title": "'춤 (CHOOM)' PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-05-05T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/wqSHogLRtJI/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "x3eqqoZPV_E",
+   "title": "'춤 (CHOOM)' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-05-04T09:21:33Z",
+   "thumb": "https://i.ytimg.com/vi/x3eqqoZPV_E/mqdefault.jpg",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "id": "jumkiRQgq98",
+   "title": "'Really Like You' - SPECIAL STAGE | Mnet 260205 EP.915",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2026-02-05T10:52:01Z",
+   "thumb": "https://i.ytimg.com/vi/jumkiRQgq98/mqdefault.jpg",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "id": "aG9S0sRfO18",
+   "title": "‘Really Like You’ Live at “LOVE MONSTERS”",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2026-02-02T09:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/aG9S0sRfO18/mqdefault.jpg",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "id": "OzraEK4dERY",
+   "title": "'WE GO UP' + 'PSYCHO' | SBS GayoDaejeon 2025",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2025-12-25T11:43:32Z",
+   "thumb": "https://i.ytimg.com/vi/OzraEK4dERY/mqdefault.jpg",
+   "workIds": [
+    7,
+    6
+   ]
+  },
+  {
+   "id": "SbdOIdg2McI",
+   "title": "‘SUPA DUPA LUV’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-12-18T15:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/SbdOIdg2McI/mqdefault.jpg",
+   "workIds": [
+    17
+   ]
+  },
+  {
+   "id": "yAXnEHFKKaY",
+   "title": "'PSYCHO' PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-12-05T15:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/yAXnEHFKKaY/mqdefault.jpg",
+   "workIds": [
+    7
+   ]
+  },
+  {
+   "id": "3cVroylPpvg",
+   "title": "[#2025MAMA] Netflix Kpop Demon Hunters HUNTR/X (feat. BABYMONSTER) | Mnet 251129",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2025-11-29T11:55:46Z",
+   "thumb": "https://i.ytimg.com/vi/3cVroylPpvg/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "IOd0oJUIE8o",
+   "title": "[#2025MAMA] 'WE GO UP' + 'DRIP' | Mnet 251128",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2025-11-28T13:03:25Z",
+   "thumb": "https://i.ytimg.com/vi/IOd0oJUIE8o/mqdefault.jpg",
+   "workIds": [
+    3,
+    6
+   ]
+  },
+  {
+   "id": "a0bc6Ownyt0",
+   "title": "'WE GO UP' | THE FIRST TAKE",
+   "tag": "music_show",
+   "channelId": "UC9zY_E8mcAo_Oq772LEZq8Q",
+   "channel": "THE FIRST TAKE",
+   "publishedAt": "2025-11-26T13:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/a0bc6Ownyt0/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "yd_uG3TtREs",
+   "title": "‘PSYCHO’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-11-18T15:00:01Z",
+   "thumb": "https://i.ytimg.com/vi/yd_uG3TtREs/mqdefault.jpg",
+   "workIds": [
+    7
+   ]
+  },
+  {
+   "id": "O99aP4AvEF8",
+   "title": "'SHEESH' | THE FIRST TAKE",
+   "tag": "music_show",
+   "channelId": "UC9zY_E8mcAo_Oq772LEZq8Q",
+   "channel": "THE FIRST TAKE",
+   "publishedAt": "2025-11-14T13:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/O99aP4AvEF8/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "W2RhV7EIw4c",
+   "title": "'WE GO UP' | MBC251101",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2025-11-01T05:53:51Z",
+   "thumb": "https://i.ytimg.com/vi/W2RhV7EIw4c/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "1MT25wqi18Q",
+   "title": "'WE GO UP' - ONE TAKE STAGE | SBS Inkigayo 251026",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2025-10-27T07:30:01Z",
+   "thumb": "https://i.ytimg.com/vi/1MT25wqi18Q/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "R_Zn4YqvQ1o",
+   "title": "'WE GO UP' | Mnet 251023 EP.910",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2025-10-23T10:44:08Z",
+   "thumb": "https://i.ytimg.com/vi/R_Zn4YqvQ1o/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "BzjpJpMtj2Y",
+   "title": "'WE GO UP' | MBC251018",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2025-10-18T07:07:46Z",
+   "thumb": "https://i.ytimg.com/vi/BzjpJpMtj2Y/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "L_0eiYj_nu0",
+   "title": "'WE GO UP' | it's Live",
+   "tag": "music_show",
+   "channelId": "UCB9e3pof1o83aa0kkaoeJGA",
+   "channel": "it's Live",
+   "publishedAt": "2025-10-17T08:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/L_0eiYj_nu0/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "9gh7Lt7tdj8",
+   "title": "'WE GO UP' | Mnet 251016 EP.909",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2025-10-16T11:37:49Z",
+   "thumb": "https://i.ytimg.com/vi/9gh7Lt7tdj8/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "o9V8HrgJgIg",
+   "title": "'WE GO UP' EXCLUSIVE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-10-13T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/o9V8HrgJgIg/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "wlHwjkYpSr0",
+   "title": "‘WE GO UP’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-10-10T04:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/wlHwjkYpSr0/mqdefault.jpg",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "id": "gz6zjx1fgVc",
+   "title": "'DRIP' + 'HOT SAUCE' + 'SHEESH (Band Ver.)' | SBS GayoDaejeon Summer 2025",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2025-08-11T10:01:25Z",
+   "thumb": "https://i.ytimg.com/vi/gz6zjx1fgVc/mqdefault.jpg",
+   "workIds": [
+    3,
+    13,
+    1
+   ]
+  },
+  {
+   "id": "4iw45qO3OsE",
+   "title": "‘HOT SAUCE’ DANCE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-07-15T15:00:03Z",
+   "thumb": "https://i.ytimg.com/vi/4iw45qO3OsE/mqdefault.jpg",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "id": "QQQLDjLufNo",
+   "title": "'HOT SAUCE' | Mnet 250710 EP.896",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2025-07-10T11:52:08Z",
+   "thumb": "https://i.ytimg.com/vi/QQQLDjLufNo/mqdefault.jpg",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "id": "TOxKCW5E_Bg",
+   "title": "'HOT SAUCE' | SBS Inkigayo 250706",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2025-07-06T04:32:58Z",
+   "thumb": "https://i.ytimg.com/vi/TOxKCW5E_Bg/mqdefault.jpg",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "id": "8W5TWR74Mms",
+   "title": "‘HOT SAUCE’ DANCE PRACTICE VIDEO",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-07-03T15:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/8W5TWR74Mms/mqdefault.jpg",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "id": "xn8mQqz2xmM",
+   "title": "‘HOT SAUCE’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-07-01T09:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/xn8mQqz2xmM/mqdefault.jpg",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "id": "vq_ZN6Nt-oE",
+   "title": "Pharita - 'Bleeding Love' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "channel": "So Hyang TV • Fan Channel",
+   "publishedAt": "2025-02-15T09:30:23Z",
+   "thumb": "https://i.ytimg.com/vi/vq_ZN6Nt-oE/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "mFsZ6fMwIRQ",
+   "title": "Pharita & EJel - 'Issues' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "channel": "So Hyang TV • Fan Channel",
+   "publishedAt": "2025-02-15T09:00:57Z",
+   "thumb": "https://i.ytimg.com/vi/mFsZ6fMwIRQ/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "MN2RlOy8y8k",
+   "title": "'BILLIONAIRE' PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-02-13T15:00:02Z",
+   "thumb": "https://i.ytimg.com/vi/MN2RlOy8y8k/mqdefault.jpg",
+   "workIds": [
+    9
+   ]
+  },
+  {
+   "id": "Gz_yRl6703c",
+   "title": "'BILLIONAIRE' EXCLUSIVE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-02-06T15:00:24Z",
+   "thumb": "https://i.ytimg.com/vi/Gz_yRl6703c/mqdefault.jpg",
+   "workIds": [
+    9
+   ]
+  },
+  {
+   "id": "XShaIZs7J7M",
+   "title": "‘Really Like You’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2025-01-16T15:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/XShaIZs7J7M/mqdefault.jpg",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "id": "06mCrMgv0zY",
+   "title": "'DRIP' | THE FIRST TAKE",
+   "tag": "music_show",
+   "channelId": "UC9zY_E8mcAo_Oq772LEZq8Q",
+   "channel": "THE FIRST TAKE",
+   "publishedAt": "2024-12-25T13:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/06mCrMgv0zY/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "1kXLsrun51s",
+   "title": "'Love In My Heart' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-12-15T15:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/1kXLsrun51s/mqdefault.jpg",
+   "workIds": [
+    15
+   ]
+  },
+  {
+   "id": "RdW7Ia9L8eU",
+   "title": "AHYEON & Gummy - 'Lonely' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "channel": "Beginagain 비긴어게인",
+   "publishedAt": "2024-12-02T09:03:00Z",
+   "thumb": "https://i.ytimg.com/vi/RdW7Ia9L8eU/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "MsOOG4Q5HvQ",
+   "title": "Ahyeon - 'Monster' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UCH1WLbKqBxQNouAWHoYQQVw",
+   "channel": "So Hyang TV • Fan Channel",
+   "publishedAt": "2024-11-26T09:00:19Z",
+   "thumb": "https://i.ytimg.com/vi/MsOOG4Q5HvQ/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "1YHemRmyWmU",
+   "title": "'DRIP' | SBS inkigayo 20241124",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-11-24T09:40:03Z",
+   "thumb": "https://i.ytimg.com/vi/1YHemRmyWmU/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "9G5IUmP3E1o",
+   "title": "'DRIP' | MBC241123",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2024-11-23T07:14:26Z",
+   "thumb": "https://i.ytimg.com/vi/9G5IUmP3E1o/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "FGXyvxzn-X8",
+   "title": "PHARITA & AHYEON - 'LIKE THAT' | Begin Again Open Mic",
+   "tag": "cover",
+   "channelId": "UC8WoHUeN-eLynnLKGkwajYQ",
+   "channel": "Beginagain 비긴어게인",
+   "publishedAt": "2024-11-18T09:01:13Z",
+   "thumb": "https://i.ytimg.com/vi/FGXyvxzn-X8/mqdefault.jpg",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "id": "n_2oVnjL1y4",
+   "title": "'DRIP' | MBC241116",
+   "tag": "music_show",
+   "channelId": "UCe52oeb7Xv_KaJsEzcKXJJg",
+   "channel": "MBCkpop",
+   "publishedAt": "2024-11-16T06:52:53Z",
+   "thumb": "https://i.ytimg.com/vi/n_2oVnjL1y4/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "SrF5ifoe7P0",
+   "title": "'DRIP' - ONE TAKE STAGE │ SBS Inkigayo 241110",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-11-11T07:30:14Z",
+   "thumb": "https://i.ytimg.com/vi/SrF5ifoe7P0/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "KkF5Fp5Cmcs",
+   "title": "'DRIP' | SBS inkigayo 20241110",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-11-10T12:13:38Z",
+   "thumb": "https://i.ytimg.com/vi/KkF5Fp5Cmcs/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "OnO6cDEiDtQ",
+   "title": "'CLIK CLAK' | SBS inkigayo 20241110",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-11-10T10:38:22Z",
+   "thumb": "https://i.ytimg.com/vi/OnO6cDEiDtQ/mqdefault.jpg",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "id": "B1gDCOTpDzA",
+   "title": "‘CLIK CLAK’ SPECIAL PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-11-08T05:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/B1gDCOTpDzA/mqdefault.jpg",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "id": "IApenpQjcuI",
+   "title": "‘DRIP' SPECIAL PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-11-08T05:00:01Z",
+   "thumb": "https://i.ytimg.com/vi/IApenpQjcuI/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "cxhqqpVk65Q",
+   "title": "‘DRIP’ PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-11-05T05:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/cxhqqpVk65Q/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "frV8cZ_yA_4",
+   "title": "‘CLIK CLAK’ PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-11-03T04:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/frV8cZ_yA_4/mqdefault.jpg",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "id": "Zp-Jhuhq0bQ",
+   "title": "'DRIP' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-11-01T04:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/Zp-Jhuhq0bQ/mqdefault.jpg",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "id": "o0oW3lPoOXM",
+   "title": "'CLIK CLAK' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-10-30T04:00:02Z",
+   "thumb": "https://i.ytimg.com/vi/o0oW3lPoOXM/mqdefault.jpg",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "id": "Yb2m3FkIR_g",
+   "title": "'FOREVER' | SBS inkigayo 20240714",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-07-14T09:03:50Z",
+   "thumb": "https://i.ytimg.com/vi/Yb2m3FkIR_g/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "2zzoyXmLQtU",
+   "title": "'FOREVER'  - ONE TAKE STAGE │ SBS Inkigayo 240707",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-07-11T09:00:02Z",
+   "thumb": "https://i.ytimg.com/vi/2zzoyXmLQtU/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "TQfC0xdpiw4",
+   "title": "'FOREVER' | it's Live",
+   "tag": "music_show",
+   "channelId": "UCB9e3pof1o83aa0kkaoeJGA",
+   "channel": "it's Live",
+   "publishedAt": "2024-07-08T08:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/TQfC0xdpiw4/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "J_LtDIVxIC4",
+   "title": "'FOREVER' | SBS inkigayo 20240707",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-07-07T10:16:09Z",
+   "thumb": "https://i.ytimg.com/vi/J_LtDIVxIC4/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "tDt7X6coxvs",
+   "title": "‘FOREVER’ DANCE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-07-04T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/tDt7X6coxvs/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "eJCHKjt0MPw",
+   "title": "‘FOREVER’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-06-30T15:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/eJCHKjt0MPw/mqdefault.jpg",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "id": "TA_oelmkMTw",
+   "title": "'LIKE THAT' | Mnet 240613 EP.847",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2024-06-13T10:44:53Z",
+   "thumb": "https://i.ytimg.com/vi/TA_oelmkMTw/mqdefault.jpg",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "id": "gnJOBNz1q0A",
+   "title": "‘LIKE THAT’ DANCE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-06-08T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/gnJOBNz1q0A/mqdefault.jpg",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "id": "M8r3x4Re8-I",
+   "title": "'LIKE THAT' EXCLUSIVE PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-05-30T15:00:02Z",
+   "thumb": "https://i.ytimg.com/vi/M8r3x4Re8-I/mqdefault.jpg",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "id": "0fbEdyV1dMA",
+   "title": "'SHEESH' | SBS inkigayo 20240428",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-04-28T09:38:52Z",
+   "thumb": "https://i.ytimg.com/vi/0fbEdyV1dMA/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "N5OWgZskWIU",
+   "title": "'SHEESH' (BAND ver.) | Mnet 240425 EP.840",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2024-04-25T10:44:29Z",
+   "thumb": "https://i.ytimg.com/vi/N5OWgZskWIU/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "ECgoCHpChqg",
+   "title": "'SHEESH' | SBS inkigayo 20240421",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-04-21T09:24:28Z",
+   "thumb": "https://i.ytimg.com/vi/ECgoCHpChqg/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "NB8MRPiG-yk",
+   "title": "'SHEESH' | Mnet 240418 EP.838",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2024-04-18T10:40:53Z",
+   "thumb": "https://i.ytimg.com/vi/NB8MRPiG-yk/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "rqP7IHprryI",
+   "title": "'SHEESH' - ONE TAKE STAGE │ SBS Inkigayo 240414",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-04-18T08:00:35Z",
+   "thumb": "https://i.ytimg.com/vi/rqP7IHprryI/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "Fc0MyNPMTRQ",
+   "title": "'SHEESH' | SBS inkigayo 20240414",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-04-14T09:33:14Z",
+   "thumb": "https://i.ytimg.com/vi/Fc0MyNPMTRQ/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "DJN7Jr4FPeA",
+   "title": "'SHEESH' - HOT DEBUT | Mnet 240411 EP.837",
+   "tag": "music_show",
+   "channelId": "UCbD8EppRX3ZwJSou-TVo90A",
+   "channel": "Mnet K-POP",
+   "publishedAt": "2024-04-11T11:09:11Z",
+   "thumb": "https://i.ytimg.com/vi/DJN7Jr4FPeA/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "FpOzMBwjSK0",
+   "title": "'SHEESH' | it's Live",
+   "tag": "music_show",
+   "channelId": "UCB9e3pof1o83aa0kkaoeJGA",
+   "channel": "it's Live",
+   "publishedAt": "2024-04-11T08:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/FpOzMBwjSK0/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "wUQGQXPKh_k",
+   "title": "Intro + 'SHEESH' | SBS inkigayo 20240407",
+   "tag": "music_show",
+   "channelId": "UCS_hnpJLQTvBkqALgapi_4g",
+   "channel": "SBSKPOP X INKIGAYO",
+   "publishedAt": "2024-04-07T10:13:51Z",
+   "thumb": "https://i.ytimg.com/vi/wUQGQXPKh_k/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "kOanBE5Wg24",
+   "title": "‘SHEESH’ PERFORMANCE VIDEO",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-04-04T15:00:01Z",
+   "thumb": "https://i.ytimg.com/vi/kOanBE5Wg24/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "2wA_b6YHjqQ",
+   "title": "‘SHEESH’ M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-03-31T15:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/2wA_b6YHjqQ/mqdefault.jpg",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "id": "KaM7ZxoGQuE",
+   "title": "'Stuck In The Middle' LIVE STAGE",
+   "tag": "performance",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2024-02-14T15:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/KaM7ZxoGQuE/mqdefault.jpg",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "id": "25bsCHikkh4",
+   "title": "'Stuck In The Middle' SPECIAL STAGE",
+   "tag": "performance",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2024-02-07T15:14:35Z",
+   "thumb": "https://i.ytimg.com/vi/25bsCHikkh4/mqdefault.jpg",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "id": "GsV1i0QHi-o",
+   "title": "'Stuck In The Middle' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2024-01-31T15:00:12Z",
+   "thumb": "https://i.ytimg.com/vi/GsV1i0QHi-o/mqdefault.jpg",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "id": "FinTVHCeYBo",
+   "title": "'BATTER UP' LIVE PERFORMANCE (Stadium Ver.)",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-12-15T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/FinTVHCeYBo/mqdefault.jpg",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "id": "buFQulSu-C4",
+   "title": "'BATTER UP' DANCE PRACTICE VIDEO",
+   "tag": "dance_performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-12-12T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/buFQulSu-C4/mqdefault.jpg",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "id": "kmwrN2HDgJs",
+   "title": "'BATTER UP' LIVE PERFORMANCE (School Ver.)",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-12-08T15:00:06Z",
+   "thumb": "https://i.ytimg.com/vi/kmwrN2HDgJs/mqdefault.jpg",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "id": "B17yoLxkbPA",
+   "title": "'BATTER UP' DANCE PERFORMANCE (DEBUT SPECIAL)",
+   "tag": "performance",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-12-03T15:00:17Z",
+   "thumb": "https://i.ytimg.com/vi/B17yoLxkbPA/mqdefault.jpg",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "id": "olDWm2veCrM",
+   "title": "'BATTER UP' M/V",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-11-26T15:00:12Z",
+   "thumb": "https://i.ytimg.com/vi/olDWm2veCrM/mqdefault.jpg",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "id": "G-NTJLx-nJM",
+   "title": "Jenny from the Block (RORA Ver.)",
+   "tag": "dance_cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-06-22T15:00:08Z",
+   "thumb": "https://i.ytimg.com/vi/G-NTJLx-nJM/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "UxPKsbk7b6w",
+   "title": "2NE1 MASH UP (RUKA Ver.)",
+   "tag": "dance_cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-06-18T02:12:57Z",
+   "thumb": "https://i.ytimg.com/vi/UxPKsbk7b6w/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "sOd8rNdNYdw",
+   "title": "2NE1 MASH UP (AHYEON Ver.)",
+   "tag": "dance_cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-06-15T15:00:43Z",
+   "thumb": "https://i.ytimg.com/vi/sOd8rNdNYdw/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "cVUZy1MhGDw",
+   "title": "Jenny from the Block - DANCE PERFORMANCE VIDEO",
+   "tag": "dance_cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-05-25T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/cVUZy1MhGDw/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "ynOtYmpZxak",
+   "title": "'DREAM' (PRE-DEBUT SONG)",
+   "tag": "music_video",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-05-13T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/ynOtYmpZxak/mqdefault.jpg",
+   "workIds": [
+    14
+   ]
+  },
+  {
+   "id": "YDJcbH_HgjY",
+   "title": "'Scars To Your Beautiful' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-22T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/YDJcbH_HgjY/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "xw7Y2gviWbA",
+   "title": "AHYEON 'Dangerously' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-21T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/xw7Y2gviWbA/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "jtd6Nn1Wc5s",
+   "title": "HARAM 'Pick Up Your Feelings' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-16T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/jtd6Nn1Wc5s/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "xccDvnOtAWs",
+   "title": "RUKA 'Astronaut In The Ocean + 멘붕' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-15T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/xccDvnOtAWs/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "9WqxIqLwlYA",
+   "title": "CHIQUITA 'traitor' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-14T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/9WqxIqLwlYA/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "RA0rsFFQ9Fk",
+   "title": "ASA 'Me, Myself & I' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-09T15:00:05Z",
+   "thumb": "https://i.ytimg.com/vi/RA0rsFFQ9Fk/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "skHnelFyrOk",
+   "title": "RORA 'Someone You Loved' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-08T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/skHnelFyrOk/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "c_TJXVZbL30",
+   "title": "PHARITA 'All Of Me' COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-04-07T15:00:07Z",
+   "thumb": "https://i.ytimg.com/vi/c_TJXVZbL30/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "Uduk29TlDSg",
+   "title": "‘Don't Know What To Do’ COVER",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-03-31T15:01:49Z",
+   "thumb": "https://i.ytimg.com/vi/Uduk29TlDSg/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "qRwZQWinWsc",
+   "title": "‘STAY’ COVER  - Asa, Haram, Rora, Chiquita",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-03-24T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/qRwZQWinWsc/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "QZHbypZSTGg",
+   "title": "‘Gone’ COVER - Ruka, Pharita, Ahyeon",
+   "tag": "cover",
+   "channelId": "UCqwUnggBBct-AY2lAdI88jQ",
+   "channel": "BABYMONSTER",
+   "publishedAt": "2023-03-17T15:00:04Z",
+   "thumb": "https://i.ytimg.com/vi/QZHbypZSTGg/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "rCN3xgEPEwo",
+   "title": "BABYMONSTER (#7) - RUKA (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-02-05T15:00:38Z",
+   "thumb": "https://i.ytimg.com/vi/rCN3xgEPEwo/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "79PhScM2_3k",
+   "title": "BABYMONSTER (#6) - PHARITA (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-02-01T15:00:03Z",
+   "thumb": "https://i.ytimg.com/vi/79PhScM2_3k/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "y54f8yCK1Lc",
+   "title": "BABYMONSTER (#5) - RORA (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-29T15:00:40Z",
+   "thumb": "https://i.ytimg.com/vi/y54f8yCK1Lc/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "SlGkck6xWWI",
+   "title": "BABYMONSTER (#4) - ASA (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-25T15:00:31Z",
+   "thumb": "https://i.ytimg.com/vi/SlGkck6xWWI/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "_9GF5oklUNs",
+   "title": "BABYMONSTER (#3) - CHIQUITA (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-22T15:00:17Z",
+   "thumb": "https://i.ytimg.com/vi/_9GF5oklUNs/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "ly-p1Ve_RKQ",
+   "title": "BABYMONSTER - Dance Performance",
+   "tag": "dance_cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-18T15:00:35Z",
+   "thumb": "https://i.ytimg.com/vi/ly-p1Ve_RKQ/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "ysJCTCQYJyg",
+   "title": "BABYMONSTER (#2) - AHYEON (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-15T15:00:37Z",
+   "thumb": "https://i.ytimg.com/vi/ysJCTCQYJyg/mqdefault.jpg",
+   "workIds": []
+  },
+  {
+   "id": "aVsAVYDYhFI",
+   "title": "BABYMONSTER (#1) - HARAM (Live Performance)",
+   "tag": "cover",
+   "channelId": "UCQi67q4kGdmnJaRzX81uK5g",
+   "channel": "YG ENTERTAINMENT",
+   "publishedAt": "2023-01-11T15:00:02Z",
+   "thumb": "https://i.ytimg.com/vi/aVsAVYDYhFI/mqdefault.jpg",
+   "workIds": []
+  }
+ ],
+ "songs": [
+  {
+   "key": "SHEESH|170356",
+   "name": "SHEESH",
+   "trackId": "1njlnn8ZKHI77Pe9szIONR",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 2,
+   "discNo": 1,
+   "durationMs": 170356,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "key": "DRIP|180845",
+   "name": "DRIP",
+   "trackId": "198zDKzyktXRG1PGpidY9h",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 2,
+   "discNo": 1,
+   "durationMs": 180845,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "key": "BATTER UP|188179",
+   "name": "BATTER UP",
+   "trackId": "3VBj0lzjmhTzVFPEDOjNCG",
+   "albumId": "2CSQuvvt3XHLDX36O3nRv7",
+   "album": "BATTER UP",
+   "albumType": "SINGLE",
+   "releaseDate": "2023-11-27",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 188179,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0224e7d3f6bcc7f5594638a4f0",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "key": "FOREVER|212734",
+   "name": "FOREVER",
+   "trackId": "6b6KXDbDn0s0Jepxm8a3nr",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 8,
+   "discNo": 1,
+   "durationMs": 212734,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "key": "LIKE THAT|168358",
+   "name": "LIKE THAT",
+   "trackId": "7GDgpad2BQVuDUzaxHFakc",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 3,
+   "discNo": 1,
+   "durationMs": 168358,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "key": "WE GO UP|186973",
+   "name": "WE GO UP",
+   "trackId": "49DTiFx70EuJLV7hDsCo6z",
+   "albumId": "2Accppyz0p8XZaSSCIAuDK",
+   "album": "WE GO UP",
+   "albumType": "EP",
+   "releaseDate": "2025-10-10",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 186973,
+   "cover": "https://i.scdn.co/image/ab67616d00001e028fbb6ffdf0fad1623c8e95f8",
+   "workIds": [
+    6
+   ]
+  },
+  {
+   "key": "PSYCHO|195409",
+   "name": "PSYCHO",
+   "trackId": "7jp2VW62Yt2bDOaRas3hR6",
+   "albumId": "2Accppyz0p8XZaSSCIAuDK",
+   "album": "WE GO UP",
+   "albumType": "EP",
+   "releaseDate": "2025-10-10",
+   "datePrecision": "DAY",
+   "trackNo": 2,
+   "discNo": 1,
+   "durationMs": 195409,
+   "cover": "https://i.scdn.co/image/ab67616d00001e028fbb6ffdf0fad1623c8e95f8",
+   "workIds": [
+    7
+   ]
+  },
+  {
+   "key": "BILLIONAIRE|157179",
+   "name": "BILLIONAIRE",
+   "trackId": "0QICKhP44TRnb4EurQ3tN9",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 5,
+   "discNo": 1,
+   "durationMs": 157179,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    9
+   ]
+  },
+  {
+   "key": "CHOOM|178880",
+   "name": "CHOOM",
+   "trackId": "4cox7ONwuCwUvfZ9fsGDVu",
+   "albumId": "1VmMG3mtIWHWm618Cwiku7",
+   "album": "춤 (CHOOM)",
+   "albumType": "EP",
+   "releaseDate": "2026-05-04",
+   "datePrecision": "DAY",
+   "trackNo": 2,
+   "discNo": 1,
+   "durationMs": 178880,
+   "cover": "https://i.scdn.co/image/ab67616d00001e020fbcc1d9dc6a647af4ebdfee",
+   "workIds": [
+    10
+   ]
+  },
+  {
+   "key": "CLIK CLAK|169073",
+   "name": "CLIK CLAK",
+   "trackId": "0Rq9lIn9fl4wiW9Tg72ifr",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 169073,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "key": "HOT SAUCE|147807",
+   "name": "HOT SAUCE",
+   "trackId": "3AjfuVk6olyesS7cVfofBE",
+   "albumId": "5kTDyVVuvyPJZX1MlXiBvW",
+   "album": "HOT SAUCE",
+   "albumType": "SINGLE",
+   "releaseDate": "2025-07-01",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 147807,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02d7b5a82f0fd5d67ddea78193",
+   "workIds": [
+    13
+   ]
+  },
+  {
+   "key": "Really Like You|197657",
+   "name": "Really Like You",
+   "trackId": "3entdIWiOuQfcXIkJEABsV",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 4,
+   "discNo": 1,
+   "durationMs": 197657,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "key": "DREAM|183362",
+   "name": "DREAM",
+   "trackId": "580sy6eZ6j0LrjvayPKD0k",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 6,
+   "discNo": 1,
+   "durationMs": 183362,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    14
+   ]
+  },
+  {
+   "key": "Stuck In The Middle|246236",
+   "name": "Stuck In The Middle",
+   "trackId": "1Ad4anaX6hJyfZvVDkrKQg",
+   "albumId": "7anlDz5EpVJ4aXmWvaSbzM",
+   "album": "Stuck In The Middle",
+   "albumType": "SINGLE",
+   "releaseDate": "2024-02-01",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 246236,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02a9363a161ad54dde56f594d8",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "key": "Love In My Heart|192186",
+   "name": "Love In My Heart",
+   "trackId": "7uGZIgNGAM4y7cyLj9SPlw",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 6,
+   "discNo": 1,
+   "durationMs": 192186,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    15
+   ]
+  },
+  {
+   "key": "SUGAR HONEY ICE TEA|178032",
+   "name": "SUGAR HONEY ICE TEA",
+   "trackId": "16ck09A3j0tqvV6t3fW1DD",
+   "albumId": "2KiMyHuf4NDqnM7GhGysBC",
+   "album": "SUGAR HONEY ICE TEA",
+   "albumType": "SINGLE",
+   "releaseDate": "2026-06-08",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 178032,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02365e11a819dd404520d288e1",
+   "workIds": [
+    16
+   ]
+  },
+  {
+   "key": "SUPA DUPA LUV|172573",
+   "name": "SUPA DUPA LUV",
+   "trackId": "5S0QxfYABBoLI4sMk2aCa2",
+   "albumId": "2Accppyz0p8XZaSSCIAuDK",
+   "album": "WE GO UP",
+   "albumType": "EP",
+   "releaseDate": "2025-10-10",
+   "datePrecision": "DAY",
+   "trackNo": 3,
+   "discNo": 1,
+   "durationMs": 172573,
+   "cover": "https://i.scdn.co/image/ab67616d00001e028fbb6ffdf0fad1623c8e95f8",
+   "workIds": [
+    17
+   ]
+  },
+  {
+   "key": "MONSTERS (Intro)|44495",
+   "name": "MONSTERS (Intro)",
+   "trackId": "2TDIYXFSaesHBw3ZtWpFev",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 44495,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    18
+   ]
+  },
+  {
+   "key": "Woke Up In Tokyo (RUKA & ASA)|143535",
+   "name": "Woke Up In Tokyo (RUKA & ASA)",
+   "trackId": "2prYdDrdqzyZgk2PyXps1F",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 7,
+   "discNo": 1,
+   "durationMs": 143535,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    19
+   ]
+  },
+  {
+   "key": "Love, Maybe|187895",
+   "name": "Love, Maybe",
+   "trackId": "5Mysty4YeFTdu2Xm7O2yHM",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 3,
+   "discNo": 1,
+   "durationMs": 187895,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    20
+   ]
+  },
+  {
+   "key": "BATTER UP (7 ver.)|188881",
+   "name": "BATTER UP (7 ver.)",
+   "trackId": "2MQmaHNnCCuisRHu551ZQq",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 5,
+   "discNo": 1,
+   "durationMs": 188881,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "key": "MOON|166040",
+   "name": "MOON",
+   "trackId": "4ni36cZOQZldZGpHyLHFqX",
+   "albumId": "1VmMG3mtIWHWm618Cwiku7",
+   "album": "춤 (CHOOM)",
+   "albumType": "EP",
+   "releaseDate": "2026-05-04",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 166040,
+   "cover": "https://i.scdn.co/image/ab67616d00001e020fbcc1d9dc6a647af4ebdfee",
+   "workIds": [
+    21
+   ]
+  },
+  {
+   "key": "I LIKE IT|206586",
+   "name": "I LIKE IT",
+   "trackId": "7vKgGaEDN3shr8HBlCbIWg",
+   "albumId": "1VmMG3mtIWHWm618Cwiku7",
+   "album": "춤 (CHOOM)",
+   "albumType": "EP",
+   "releaseDate": "2026-05-04",
+   "datePrecision": "DAY",
+   "trackNo": 3,
+   "discNo": 1,
+   "durationMs": 206586,
+   "cover": "https://i.scdn.co/image/ab67616d00001e020fbcc1d9dc6a647af4ebdfee",
+   "workIds": [
+    23
+   ]
+  },
+  {
+   "key": "Ghost|182104",
+   "name": "Ghost",
+   "trackId": "37qlRGMmN1tStZS0elymXg",
+   "albumId": "0aA475GObe8VCZvHRRloxK",
+   "album": "Ghost",
+   "albumType": "SINGLE",
+   "releaseDate": "2025-05-07",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 182104,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02b7bd2fe6ad11b7e66117b84b",
+   "workIds": [
+    22
+   ]
+  },
+  {
+   "key": "Stuck In The Middle (Remix)|199618",
+   "name": "Stuck In The Middle (Remix)",
+   "trackId": "2fJgQ2gjt5boaD9sMqwMTw",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 7,
+   "discNo": 1,
+   "durationMs": 199618,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "key": "WILD|177320",
+   "name": "WILD",
+   "trackId": "4s31m7ZtBWsK3BfndIGP4E",
+   "albumId": "2Accppyz0p8XZaSSCIAuDK",
+   "album": "WE GO UP",
+   "albumType": "EP",
+   "releaseDate": "2025-10-10",
+   "datePrecision": "DAY",
+   "trackNo": 4,
+   "discNo": 1,
+   "durationMs": 177320,
+   "cover": "https://i.scdn.co/image/ab67616d00001e028fbb6ffdf0fad1623c8e95f8",
+   "workIds": [
+    24
+   ]
+  },
+  {
+   "key": "Stuck In The Middle (7 ver.)|246668",
+   "name": "Stuck In The Middle (7 ver.)",
+   "trackId": "3RbulqgQKpX4OvvESysMI1",
+   "albumId": "0eSbsl3j8jz96LC2NCLPc4",
+   "album": "BABYMONS7ER",
+   "albumType": "EP",
+   "releaseDate": "2024-04-01",
+   "datePrecision": "DAY",
+   "trackNo": 4,
+   "discNo": 1,
+   "durationMs": 246668,
+   "cover": "https://i.scdn.co/image/ab67616d00001e024f6afc385052250c766a5683",
+   "workIds": [
+    8
+   ]
+  },
+  {
+   "key": "BATTER UP (Remix) - Bonus Track|226938",
+   "name": "BATTER UP (Remix) - Bonus Track",
+   "trackId": "0cbsrQokJdLSJSmIh2yIi7",
+   "albumId": "6Lp82GTJXzgtIopT0g7N7k",
+   "album": "DRIP",
+   "albumType": "ALBUM",
+   "releaseDate": "2024-11-01",
+   "datePrecision": "DAY",
+   "trackNo": 9,
+   "discNo": 1,
+   "durationMs": 226938,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02119800c5fc88785ee3ed1524",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "key": "LOCKED IN|181813",
+   "name": "LOCKED IN",
+   "trackId": "1vvoCAUWVRBjCarEvB6Khd",
+   "albumId": "1VmMG3mtIWHWm618Cwiku7",
+   "album": "춤 (CHOOM)",
+   "albumType": "EP",
+   "releaseDate": "2026-05-04",
+   "datePrecision": "DAY",
+   "trackNo": 4,
+   "discNo": 1,
+   "durationMs": 181813,
+   "cover": "https://i.scdn.co/image/ab67616d00001e020fbcc1d9dc6a647af4ebdfee",
+   "workIds": [
+    25
+   ]
+  },
+  {
+   "key": "BATTER UP -JP Ver.|188796",
+   "name": "BATTER UP -JP Ver.",
+   "trackId": "37Md0gjwNkqK7hwJEnTeNH",
+   "albumId": "7H2OTxkgjHasQ0M4zo7lY8",
+   "album": "BATTER UP -JP Ver.",
+   "albumType": "SINGLE",
+   "releaseDate": "2024-08-16",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 188796,
+   "cover": "https://i.scdn.co/image/ab67616d00001e02fbbc19bdfa0c01f3bfcd4428",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "key": "DESERVE|189986",
+   "name": "DESERVE",
+   "trackId": "7It5Iy4mnJWMhESt7qfipt",
+   "albumId": "7Aj6krHADdqO0MQaYejME0",
+   "album": "DESERVE",
+   "albumType": "SINGLE",
+   "releaseDate": "2026-10-23",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 189986,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0229c909f6216434515f2ab438",
+   "workIds": [
+    27
+   ]
+  },
+  {
+   "key": "DRIP (Remix) - Live Version|197426",
+   "name": "DRIP (Remix) - Live Version",
+   "trackId": "1bQJ6yV9pX39EAiQVVIn19",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 1,
+   "discNo": 1,
+   "durationMs": 197426,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    3
+   ]
+  },
+  {
+   "key": "CLAP YOUR HANDS ～ Go Away (2NE1 Cover) - Live Version|333186",
+   "name": "CLAP YOUR HANDS ～ Go Away (2NE1 Cover) - Live Version",
+   "trackId": "2QUXe4UdzwuDUG7HMJwVYT",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 11,
+   "discNo": 1,
+   "durationMs": 333186,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    26
+   ]
+  },
+  {
+   "key": "BATTER UP - Live Version|230760",
+   "name": "BATTER UP - Live Version",
+   "trackId": "2Fv6ExytN2R2t7eulA0RH8",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 2,
+   "discNo": 1,
+   "durationMs": 230760,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    2
+   ]
+  },
+  {
+   "key": "SHEESH - Live Version|173960",
+   "name": "SHEESH - Live Version",
+   "trackId": "34EpRuC8cHDA7Bu1p7psAe",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 5,
+   "discNo": 1,
+   "durationMs": 173960,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    1
+   ]
+  },
+  {
+   "key": "CLIK CLAK - Live Version|168613",
+   "name": "CLIK CLAK - Live Version",
+   "trackId": "7t52nyhDgvEjmrOjqkjxe5",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 3,
+   "discNo": 1,
+   "durationMs": 168613,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    11
+   ]
+  },
+  {
+   "key": "LIKE THAT - Live Version|172520",
+   "name": "LIKE THAT - Live Version",
+   "trackId": "3YtM4yX5TnyH4faW7AAZb4",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 4,
+   "discNo": 1,
+   "durationMs": 172520,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    5
+   ]
+  },
+  {
+   "key": "BILLIONAIRE - Live Version|159480",
+   "name": "BILLIONAIRE - Live Version",
+   "trackId": "6bHm7vxU8xUrLFqzFF2wzZ",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 9,
+   "discNo": 1,
+   "durationMs": 159480,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    9
+   ]
+  },
+  {
+   "key": "Really Like You - Live Version|202080",
+   "name": "Really Like You - Live Version",
+   "trackId": "7ry3S9PuQILIWa6eerHmiY",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 10,
+   "discNo": 1,
+   "durationMs": 202080,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    12
+   ]
+  },
+  {
+   "key": "Love In My Heart - Live Version|229133",
+   "name": "Love In My Heart - Live Version",
+   "trackId": "4lgUZTacVsjJQWygyiRXpd",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 13,
+   "discNo": 1,
+   "durationMs": 229133,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    15
+   ]
+  },
+  {
+   "key": "FOREVER - Live Version|213826",
+   "name": "FOREVER - Live Version",
+   "trackId": "02TOwv0p8ILEyMbPQB2WP4",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 12,
+   "discNo": 1,
+   "durationMs": 213826,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    4
+   ]
+  },
+  {
+   "key": "DREAM - Live Version|223973",
+   "name": "DREAM - Live Version",
+   "trackId": "2MqZsUDQ0uUh0Gb298ZYHu",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 8,
+   "discNo": 1,
+   "durationMs": 223973,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    14
+   ]
+  },
+  {
+   "key": "Woke Up In Tokyo (RUKA & ASA) - Live Version|147066",
+   "name": "Woke Up In Tokyo (RUKA & ASA) - Live Version",
+   "trackId": "4Agq7rg61ozrRpHIJ79Bsm",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 6,
+   "discNo": 1,
+   "durationMs": 147066,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    19
+   ]
+  },
+  {
+   "key": "Love, Maybe - Live Version|198826",
+   "name": "Love, Maybe - Live Version",
+   "trackId": "4PrBX9DDuDlXlrEkarHmbR",
+   "albumId": "1HpYnZeul7WTVb7nl20pET",
+   "album": "2025 BABYMONSTER 1st WORLD TOUR <HELLO MONSTERS> IN JAPAN ～2025.04.13 K-ARENA YOKOHAMA～",
+   "albumType": "ALBUM",
+   "releaseDate": "2025-09-14",
+   "datePrecision": "DAY",
+   "trackNo": 7,
+   "discNo": 1,
+   "durationMs": 198826,
+   "cover": "https://i.scdn.co/image/ab67616d00001e0207403808f4f3ad27598681f0",
+   "workIds": [
+    20
+   ]
+  }
+ ]
+}

@@ -37,6 +37,7 @@
   let selectedMember = 'Ahyeon';
   let statsPlatform = 'YouTube';
   let toastTimeout;
+  let currentTrackerView = null; // {kind:'release'|'audience'|'totals'|'compare'|'sources', ...}
 
   function readState() {
     const empty = {goals:defaultGoals,events:defaultEvents,saved:[],favorites:[],entered:false};
@@ -59,14 +60,55 @@
     $$('.screen').forEach(node => node.classList.toggle('active', node === target));
     $('#topbar').style.display = screen === 'welcome' ? 'none' : 'flex';
     $('#bottomNav').style.display = screen === 'welcome' ? 'none' : 'grid';
-    $$('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === screen || (screen === 'member' && btn.dataset.screen === 'me' && false)));
+    const navId = screen === 'trackerview' ? 'stats' : screen;
+    $$('.nav-item').forEach(btn => btn.classList.toggle('active', btn.dataset.screen === navId));
     $('#main').focus({preventScroll:true});
-    window.scrollTo({top:0,behavior:'smooth'});
+    window.scrollTo({top:0,behavior:'instant'});
     if (screen === 'discover') renderDiscover();
     if (screen === 'member') renderMember();
-    if (screen === 'stats') renderGoals();
+    if (screen === 'stats') renderStatsScreen();
     if (screen === 'events') renderEvents();
   }
+
+  /* ---------- hash router for tracker subviews ---------- */
+  function routeFromHash() {
+    const hash = location.hash.replace(/^#\/?/, '');
+    if (!hash || ['home','discover','stats','events','me','member','welcome'].includes(hash)) return false;
+    const parts = hash.split('/');
+    const detailRoot = $('#detailRoot');
+    if (parts[0] === 'release' && (parts[1] === 'v' || parts[1] === 's') && parts[2]) {
+      currentTrackerView = { kind: 'release', platformKind: parts[1], id: decodeURIComponent(parts[2]) };
+      goTo('trackerview');
+      MONSTIEZ.detail.render(parts[1], decodeURIComponent(parts[2]));
+      return true;
+    }
+    if (parts[0] === 'audience') {
+      currentTrackerView = { kind: 'audience' };
+      goTo('trackerview');
+      MONSTIEZ.views.audience(detailRoot);
+      return true;
+    }
+    if (parts[0] === 'totals' && (parts[1] === 'youtube' || parts[1] === 'spotify')) {
+      currentTrackerView = { kind: 'totals', platform: parts[1] };
+      goTo('trackerview');
+      MONSTIEZ.views.totals(detailRoot, parts[1]);
+      return true;
+    }
+    if (parts[0] === 'compare' && parts[1] === 'from' && parts[2] && parts[3]) {
+      currentTrackerView = { kind: 'compare', fromKind: parts[2], fromId: decodeURIComponent(parts[3]) };
+      goTo('trackerview');
+      MONSTIEZ.views.compare(detailRoot, parts[2], decodeURIComponent(parts[3]));
+      return true;
+    }
+    if (parts[0] === 'sources') {
+      currentTrackerView = { kind: 'sources' };
+      goTo('trackerview');
+      MONSTIEZ.views.sources(detailRoot);
+      return true;
+    }
+    return false;
+  }
+  window.addEventListener('hashchange', () => { if (!routeFromHash() && currentScreen === 'trackerview') goTo('stats'); });
   function makeContentCard(item) {
     const saved = state.saved.includes(item.id);
     return `<article class="content-card" data-id="${escapeHtml(item.id)}">
@@ -99,30 +141,27 @@
     attachSaveListeners($('#discoverList'));
   }
   function renderStats() {
-    const config = {
-      'YouTube': {title:'Track the big moments',sub:'A place for verified video milestones and snapshots.',label:'Your video tracker',value:'♡',change:'Add your first snapshot',source:'SAMPLE DASHBOARD'},
-      'Spotify': {title:'Your listening corner',sub:'A place to organize verified links and your personal listening goals.',label:'Your listening goal',value:'♪',change:'Set a personal target',source:'NO LIVE STREAM DATA'},
-      'Fan goals': {title:'Your own fan journey',sub:'Track personal goals that are meaningful to you.',label:'Goals completed',value:String(state.goals.filter(g=>g.done).length),change:`of ${state.goals.length} personal goals`,source:'LOCAL PERSONAL DATA'}
-    };
-    const c = config[statsPlatform];
-    $('#statsSource').textContent = c.source; $('#statsFeatureTitle').textContent = c.title; $('#statsFeatureSub').textContent = c.sub; $('#mainStatLabel').textContent = c.label; $('#mainStatValue').textContent = c.value; $('#mainStatChange').textContent = c.change;
-    if(statsPlatform==='Spotify') $('#statsDisclaimer').textContent='This is a listening-goal workspace, not Spotify play counts. Add source links or snapshots only after verifying the source.';
-    else if(statsPlatform==='Fan goals') $('#statsDisclaimer').textContent='Counts shown here come from goals you check off locally on this device.';
-    else $('#statsDisclaimer').textContent='No live figures are claimed. Connect a verified source or enter a snapshot to make this your own.';
-    const metrics = statsPlatform === 'Fan goals' ? [['✓','Completed',String(state.goals.filter(g=>g.done).length)],['☆','In progress',String(state.goals.filter(g=>!g.done).length)],['♡','Saved clips',String(state.saved.length)]] : statsPlatform === 'Spotify' ? [['♪','Listening','Personal'],['♡','Favorites','Local'],['↗','Links','Verify']] : [['▶','Milestones','Verify'],['▥','Snapshots','Add yours'],['♡','Fan goals','Personal']];
-    $('#metricGrid').innerHTML = metrics.map(m=>`<article class="metric-card"><span>${m[0]}</span><strong>${m[1]}</strong><small>${m[2]}</small></article>`).join('');
-    // Chart is deliberately a visual placeholder; label it as illustrative rather than implying real metrics.
-    const multiplier = $('#chartRange').value === '30' ? 1 : $('#chartRange').value === '90' ? .82 : .68;
-    const points = [142,126,110,86,65,43].map((y,i)=>[34+i*86,160-(160-y)*multiplier]);
-    const line = points.map((p,i)=>(i?'L':'M')+p[0]+' '+p[1]).join(' ');
-    $('#linePath').setAttribute('d',line); $('#areaPath').setAttribute('d',line+` L${points[points.length-1][0]} 160 L${points[0][0]} 160Z`);
-    $('#chartDots').innerHTML = points.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5"/>`).join('');
-  }
-  function renderGoals() {
-    renderStats(); const host=$('#goalList');
+    // Fan goals pane content (shown when the Fan goals tab is selected).
+    const host=$('#goalList');
     host.innerHTML = state.goals.length ? state.goals.map(goal=>`<article class="goal-item"><span class="goal-symbol">${goal.done?'✓':'♡'}</span><div class="goal-detail"><strong>${escapeHtml(goal.title)}</strong><small>${escapeHtml(goal.detail)}</small></div><button class="goal-state ${goal.done?'done':''}" data-toggle-goal="${escapeHtml(goal.id)}">${goal.done?'Done':'Mark done'}</button><button class="goal-delete" data-delete-goal="${escapeHtml(goal.id)}" aria-label="Delete ${escapeHtml(goal.title)}">×</button></article>`).join('') : '<div class="empty-state">No personal goals yet. Add one below to start your own fan journey.</div>';
-    $$('[data-toggle-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{const g=state.goals.find(x=>x.id===btn.dataset.toggleGoal); if(!g)return; g.done=!g.done;persist();renderGoals();showToast(g.done?'Goal marked complete. Nice work!':'Goal moved back to in progress.');}));
-    $$('[data-delete-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{state.goals=state.goals.filter(x=>x.id!==btn.dataset.deleteGoal);persist();renderGoals();showToast('Personal goal removed.');}));
+    $$('[data-toggle-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{const g=state.goals.find(x=>x.id===btn.dataset.toggleGoal); if(!g)return; g.done=!g.done;persist();renderStats();showToast(g.done?'Goal marked complete. Nice work!':'Goal moved back to in progress.');}));
+    $$('[data-delete-goal]',host).forEach(btn=>btn.addEventListener('click',()=>{state.goals=state.goals.filter(x=>x.id!==btn.dataset.deleteGoal);persist();renderStats();showToast('Personal goal removed.');}));
+  }
+
+  /* ---------- Stats screen: tracker tabs + fan goals ---------- */
+  function renderStatsScreen() {
+    const trackerRoot = $('#trackerRoot');
+    const goalsPane = $('#fanGoalsPane');
+    if (statsPlatform === 'Fan goals') {
+      trackerRoot.hidden = true; trackerRoot.innerHTML = '';
+      goalsPane.hidden = false;
+      renderStats();
+    } else {
+      goalsPane.hidden = true;
+      trackerRoot.hidden = false;
+      MONSTIEZ.tracker.setPlatform(statsPlatform === 'Spotify' ? 'spotify' : 'youtube');
+      MONSTIEZ.tracker.render();
+    }
   }
   function renderEvents() {
     const host=$('#eventList');
@@ -149,7 +188,7 @@
     attachSaveListeners($('#memberContent'));
   }
   function addGoal(title) {
-    const clean=title.trim();if(!clean)return;state.goals.unshift({id:'goal-'+Date.now(),title:clean,detail:'Personal fan goal · saved on this device',done:false});persist();renderGoals();$('#goalInput').value='';showToast('Your personal goal has been added ♡');
+    const clean=title.trim();if(!clean)return;state.goals.unshift({id:'goal-'+Date.now(),title:clean,detail:'Personal fan goal · saved on this device',done:false});persist();if(currentScreen==='stats')renderStatsScreen();else renderStats();$('#goalInput').value='';showToast('Your personal goal has been added ♡');
   }
   function addEvent(name,date,id) {
     const clean=name.trim();if(!clean||!date)return;
@@ -164,7 +203,7 @@
   }
   function resetDemo() {
     if(!window.confirm('Reset this starter demo? This clears saved clips, favorites, personal goals and reminders on this device.'))return;
-    state={goals:defaultGoals.map(x=>({...x})),events:defaultEvents.map(x=>({...x})),saved:[],favorites:[],entered:true};persist();renderHomeContent();renderDiscover();renderStats();renderGoals();renderEvents();renderMember();showToast('Demo reset.');
+    state={goals:defaultGoals.map(x=>({...x})),events:defaultEvents.map(x=>({...x})),saved:[],favorites:[],entered:true};persist();renderHomeContent();renderDiscover();renderStatsScreen();renderEvents();renderMember();showToast('Demo reset.');
   }
   // Navigation and controls
   $$('[data-screen]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();if(btn.dataset.screen==='home'&&!state.entered&&currentScreen==='welcome'){state.entered=true;persist();}goTo(btn.dataset.screen);}));
@@ -173,8 +212,7 @@
   $$('[data-feed]').forEach(btn=>btn.addEventListener('click',()=>{feedFilter=btn.dataset.feed;$$('[data-feed]').forEach(b=>b.classList.toggle('active',b===btn));renderHomeContent();}));
   $$('[data-category]').forEach(btn=>btn.addEventListener('click',()=>{contentFilter=btn.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===btn));renderDiscover();}));
   $('#searchInput').addEventListener('input',renderDiscover);$('#clearSearch').addEventListener('click',()=>{$('#searchInput').value='';renderDiscover();$('#searchInput').focus();});
-  $$('[data-platform]').forEach(btn=>btn.addEventListener('click',()=>{statsPlatform=btn.dataset.platform;$$('[data-platform]').forEach(b=>{b.classList.toggle('selected',b===btn);b.setAttribute('aria-selected',String(b===btn));});renderStats();}));
-  $('#chartRange').addEventListener('change',renderStats);
+  $$('[data-platform]').forEach(btn=>btn.addEventListener('click',()=>{statsPlatform=btn.dataset.platform;$$('[data-platform]').forEach(b=>{b.classList.toggle('selected',b===btn);b.setAttribute('aria-selected',String(b===btn));});renderStatsScreen();}));
   $('#goalForm').addEventListener('submit',e=>{e.preventDefault();addGoal($('#goalInput').value);});
   $('#addGoalButton').addEventListener('click',()=>{$('#goalInput').focus();$('#goalForm').scrollIntoView({behavior:'smooth',block:'center'});});
   $('#eventForm').addEventListener('submit',e=>{e.preventDefault();addEvent($('#eventName').value,$('#eventDate').value,$('#eventName').dataset.editId);});
@@ -184,7 +222,14 @@
   $('#exportButton').addEventListener('click',exportData);$('#resetButton').addEventListener('click',resetDemo);
 
   // First render: show the welcome screen until Join is tapped on a new installation.
-  renderHomeContent();renderDiscover();renderStats();renderGoals();renderEvents();renderMember();
-  if(state.entered) goTo('home'); else goTo('welcome');
-  if('serviceWorker' in navigator && location.protocol.startsWith('http')) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+  renderHomeContent();renderDiscover();renderEvents();renderMember();
+  // Dynamic date label on the home screen.
+  const dateLabel=$('#homeScreen .date-label');
+  if(dateLabel) dateLabel.textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',month:'long',day:'numeric'}).toUpperCase();
+  // Data store: load tracker data, then refresh any visible tracker UI.
+  MONSTIEZ.store.onChange(()=>{ if(currentScreen==='stats' && statsPlatform!=='Fan goals') MONSTIEZ.tracker.render(); if(currentScreen==='trackerview' && currentTrackerView){ routeFromHash(); } });
+  MONSTIEZ.store.load();
+  MONSTIEZ.tracker.init($('#trackerRoot'), { onOpenRelease: (href)=>{ location.hash = href.replace(/^#/,''); } });
+  if(!routeFromHash()){ if(state.entered) goTo('home'); else goTo('welcome'); }
+  if('serviceWorker' in navigator && location.protocol.startsWith('http') && !['localhost','127.0.0.1'].includes(location.hostname)) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
 })();
