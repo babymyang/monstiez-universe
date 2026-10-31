@@ -10,7 +10,7 @@
     "schedule": "daily (GitHub Actions scheduled workflow)",
     "requiresSecrets": false,
     "status": "ok",
-    "lastRun": "2026-10-30T09:46:59.975Z",
+    "lastRun": "2026-10-31T02:06:47.479Z",
     "note": "Seeded from the public page dated 2026-10-28. Automation starts with the first scheduled workflow run."
    },
    {
@@ -22,7 +22,7 @@
      "YOUTUBE_API_KEY"
     ],
     "status": "awaiting-key",
-    "lastRun": "2026-10-30T09:46:59.975Z",
+    "lastRun": "2026-10-31T02:06:47.479Z",
     "note": "YOUTUBE_API_KEY not configured — official collection pending; dated manual observations remain in the series."
    }
   ],
