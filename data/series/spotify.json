@@ -5,7 +5,7 @@
   "unit": "plays / followers / monthly listeners",
   "collectionPlan": "Daily Kworb page parse via GitHub Action (robots.txt allows). Figures are third-party public stream figures, NOT Spotify Web API output (the Spotify Web API does not publish stream totals).",
   "kworbUpdatedAt": "2026/11/04",
-  "lastCollection": "2026-11-06T02:23:03.132Z",
+  "lastCollection": "2026-11-07T02:08:09.514Z",
   "lastReadingDay": "2026-11-04"
  },
  "artist": {
