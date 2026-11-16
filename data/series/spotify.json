@@ -4,9 +4,9 @@
   "description": "Cumulative daily play-count snapshots per track (Kworb public page, dated) plus artist followers/listeners observations.",
   "unit": "plays / followers / monthly listeners",
   "collectionPlan": "Daily Kworb page parse via GitHub Action (robots.txt allows). Figures are third-party public stream figures, NOT Spotify Web API output (the Spotify Web API does not publish stream totals).",
-  "kworbUpdatedAt": "2026/11/10",
-  "lastCollection": "2026-11-15T02:16:45.819Z",
-  "lastReadingDay": "2026-11-10"
+  "kworbUpdatedAt": "2026/11/14",
+  "lastCollection": "2026-11-16T02:28:14.527Z",
+  "lastReadingDay": "2026-11-14"
  },
  "artist": {
   "id": "1SIocsqdEefUTE6XKGUiVS",
@@ -90,6 +90,14 @@
     "method": "public-page-parse",
     "daily": 198661,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 438090142,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 193390,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "DRIP|180845": {
@@ -153,6 +161,14 @@
     "method": "public-page-parse",
     "daily": 233276,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 327212480,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 243386,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BATTER UP|188179": {
@@ -224,6 +240,14 @@
     "method": "public-page-parse",
     "daily": 128481,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 242192124,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 130127,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "LIKE THAT|168358": {
@@ -287,6 +311,14 @@
     "method": "public-page-parse",
     "daily": 118589,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 229955474,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 120043,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "WE GO UP|186973": {
@@ -350,6 +382,14 @@
     "method": "public-page-parse",
     "daily": 173381,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 125733325,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 172986,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "PSYCHO|195409": {
@@ -413,6 +453,14 @@
     "method": "public-page-parse",
     "daily": 173953,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 115510556,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 170936,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BILLIONAIRE|157179": {
@@ -476,6 +524,14 @@
     "method": "public-page-parse",
     "daily": 89723,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 99495009,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 90754,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "CHOOM|178880": {
@@ -539,6 +595,14 @@
     "method": "public-page-parse",
     "daily": 263376,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 99398879,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 270436,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "CLIK CLAK|169073": {
@@ -602,6 +666,14 @@
     "method": "public-page-parse",
     "daily": 66275,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 92574088,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 69669,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "HOT SAUCE|147807": {
@@ -673,6 +745,14 @@
     "method": "public-page-parse",
     "daily": 93930,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 85053138,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 89597,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "DREAM|183362": {
@@ -736,6 +816,14 @@
     "method": "public-page-parse",
     "daily": 76512,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 70482696,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 71037,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Stuck In The Middle|246236": {
@@ -799,6 +887,14 @@
     "method": "public-page-parse",
     "daily": 37113,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 62848505,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 34995,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Love In My Heart|192186": {
@@ -862,6 +958,14 @@
     "method": "public-page-parse",
     "daily": 66529,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 55272113,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 67408,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "SUGAR HONEY ICE TEA|178032": {
@@ -925,6 +1029,14 @@
     "method": "public-page-parse",
     "daily": 182151,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 50494067,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 181054,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "SUPA DUPA LUV|172573": {
@@ -988,6 +1100,14 @@
     "method": "public-page-parse",
     "daily": 54916,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 40306058,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 55424,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "MONSTERS (Intro)|44495": {
@@ -1051,6 +1171,14 @@
     "method": "public-page-parse",
     "daily": 31510,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 38425308,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 30066,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Woke Up In Tokyo (RUKA & ASA)|143535": {
@@ -1114,6 +1242,14 @@
     "method": "public-page-parse",
     "daily": 26471,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 34236184,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 26563,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Love, Maybe|187895": {
@@ -1177,6 +1313,14 @@
     "method": "public-page-parse",
     "daily": 22892,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 32932504,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 23404,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BATTER UP (7 ver.)|188881": {
@@ -1240,6 +1384,14 @@
     "method": "public-page-parse",
     "daily": 18478,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 31229999,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 17449,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "MOON|166040": {
@@ -1303,6 +1455,14 @@
     "method": "public-page-parse",
     "daily": 140803,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 32770891,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 132447,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "I LIKE IT|206586": {
@@ -1366,6 +1526,14 @@
     "method": "public-page-parse",
     "daily": 94826,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 26964050,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 90023,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Ghost|182104": {
@@ -1429,6 +1597,14 @@
     "method": "public-page-parse",
     "daily": 35457,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 25854627,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 34729,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Stuck In The Middle (Remix)|199618": {
@@ -1492,6 +1668,14 @@
     "method": "public-page-parse",
     "daily": 11773,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 24360429,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 11823,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "WILD|177320": {
@@ -1555,6 +1739,14 @@
     "method": "public-page-parse",
     "daily": 43661,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 22514572,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 39961,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Stuck In The Middle (7 ver.)|246668": {
@@ -1618,6 +1810,14 @@
     "method": "public-page-parse",
     "daily": 19123,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 21963460,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 18407,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BATTER UP (Remix) - Bonus Track|226938": {
@@ -1681,6 +1881,14 @@
     "method": "public-page-parse",
     "daily": 12088,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 14614306,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 12560,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "LOCKED IN|181813": {
@@ -1744,6 +1952,14 @@
     "method": "public-page-parse",
     "daily": 47936,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 14541154,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 46610,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BATTER UP -JP Ver.|188796": {
@@ -1807,6 +2023,14 @@
     "method": "public-page-parse",
     "daily": 19815,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 11852044,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 18963,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "DESERVE|189986": {
@@ -1863,6 +2087,14 @@
     "method": "public-page-parse",
     "daily": 494135,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 15188129,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 460370,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "DRIP (Remix) - Live Version|197426": {
@@ -1926,6 +2158,14 @@
     "method": "public-page-parse",
     "daily": 4512,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 2733422,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 4736,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "CLAP YOUR HANDS ～ Go Away (2NE1 Cover) - Live Version|333186": {
@@ -1989,6 +2229,14 @@
     "method": "public-page-parse",
     "daily": 7047,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 2387824,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 7831,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BATTER UP - Live Version|230760": {
@@ -2052,6 +2300,14 @@
     "method": "public-page-parse",
     "daily": 3811,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 2170403,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 4244,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "SHEESH - Live Version|173960": {
@@ -2115,6 +2371,14 @@
     "method": "public-page-parse",
     "daily": 4231,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1993898,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 4644,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "CLIK CLAK - Live Version|168613": {
@@ -2178,6 +2442,14 @@
     "method": "public-page-parse",
     "daily": 3438,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1933660,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3872,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "LIKE THAT - Live Version|172520": {
@@ -2241,6 +2513,14 @@
     "method": "public-page-parse",
     "daily": 3510,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1845080,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3559,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "BILLIONAIRE - Live Version|159480": {
@@ -2304,6 +2584,14 @@
     "method": "public-page-parse",
     "daily": 3303,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1631052,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3100,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Really Like You - Live Version|202080": {
@@ -2367,6 +2655,14 @@
     "method": "public-page-parse",
     "daily": 3133,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1577599,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3268,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Love In My Heart - Live Version|229133": {
@@ -2430,6 +2726,14 @@
     "method": "public-page-parse",
     "daily": 3872,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1545590,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3585,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "FOREVER - Live Version|213826": {
@@ -2493,6 +2797,14 @@
     "method": "public-page-parse",
     "daily": 2676,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1496670,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 3036,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "DREAM - Live Version|223973": {
@@ -2556,6 +2868,14 @@
     "method": "public-page-parse",
     "daily": 4826,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1505120,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 4072,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Woke Up In Tokyo (RUKA & ASA) - Live Version|147066": {
@@ -2619,6 +2939,14 @@
     "method": "public-page-parse",
     "daily": 2558,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1366885,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 2564,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   },
   "Love, Maybe - Live Version|198826": {
@@ -2682,6 +3010,14 @@
     "method": "public-page-parse",
     "daily": 2646,
     "note": "Kworb public page (third-party public stream figures), page dated 2026-11-10."
+   },
+   "2026-11-14": {
+    "v": 1231602,
+    "estimated": false,
+    "source": "https://kworb.net/spotify/artist/1SIocsqdEefUTE6XKGUiVS_songs.html",
+    "method": "public-page-parse",
+    "daily": 2477,
+    "note": "Kworb public page (third-party public stream figures), page dated 2026-11-14."
    }
   }
  }
