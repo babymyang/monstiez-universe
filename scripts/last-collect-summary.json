@@ -1,12 +1,12 @@
 {
- "day": "2026-11-20",
- "at": "2026-11-20T02:23:29.491Z",
+ "day": "2026-11-21",
+ "at": "2026-11-21T02:19:00.513Z",
  "results": {
   "kworb": {
    "tracks": 43,
    "readingDay": "2026-11-18",
-   "changed": 42,
-   "alreadySame": 0,
+   "changed": 0,
+   "alreadySame": 42,
    "conflicts": 0
   },
   "youtube": {
